@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infraestructura Pro</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    /* --- VARIABLES ESTANDARIZADAS --- */
+    :root {
+      --brand: #c62828; 
+      --brand-dark: #a72b23;
+      --panel-bg: rgba(255, 255, 255, 0.98);
+      --shadow: 0 8px 24px rgba(0,0,0,0.15);
+      --border: #e5e7eb;
+    }
+    
+    * { box-sizing: border-box; }
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    #map { position: absolute; top: 60px; left: 0; width: 100%; height: calc(100% - 60px); z-index: 0; }
+
+    /* --- CABECERA ESTANDARIZADA (Copia exacta del Menú) --- */
+    .appbar { background: #c62828; color: #fff; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.12); position: absolute; top: 0; left: 0; width: 100%; z-index: 50; }
+    .appbar .row { max-width: 100%; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .appbar h1 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+    .appbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    
+    .welcome-pill { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 8px 12px; border-radius: 999px; font-weight: 700; box-shadow: inset 0 0 12px rgba(255,255,255,.08); max-width: 60vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
+    
+    .btn-menu-header { background: #fff; color: #c62828; border: none; border-radius: 12px; padding: 8px 12px; font-weight: 800; box-shadow: 0 6px 14px rgba(255,255,255,.18); cursor: pointer; text-decoration: none; display: inline-block; font-size: 14px; font-family: inherit; transition: 0.2s; }
+    .btn-menu-header:hover { filter: brightness(.98); }
+    
+    @media (max-width: 640px) { 
+      .appbar h1 { font-size: 1.15rem; } 
+      .btn-menu-header { padding: 8px 10px; } 
+    }
+    /* ------------------------------------------------------ */
+
+    .master-panel {
+        position: absolute; top: 80px; right: 20px; width: 380px;
+        background: var(--panel-bg); border-radius: 12px;
+        box-shadow: var(--shadow); z-index: 20;
+        display: flex; flex-direction: column; overflow: hidden;
+        max-height: calc(100vh - 100px);
+        transition: transform 0.3s ease;
+    }
+    
+    .tabs { display: flex; background: #f3f4f6; border-bottom: 1px solid var(--border); }
+    .tab-btn {
+        flex: 1; padding: 14px; border: none; background: transparent;
+        font-weight: 600; color: #6b7280; cursor: pointer;
+        border-bottom: 3px solid transparent; transition: 0.2s;
+    }
+    .tab-btn:hover { background: #e5e7eb; color: #374151; }
+    .tab-btn.active { color: var(--brand); border-bottom-color: var(--brand); background: white; }
+
+    .panel-content { padding: 20px; overflow-y: auto; }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; animation: fadeIn 0.3s; }
+
+    .form-group { margin-bottom: 12px; position: relative; }
+    .label { display: block; font-size: 11px; text-transform: uppercase; color: #666; margin-bottom: 4px; font-weight: 700; letter-spacing: 0.5px; }
+    .input, .select { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; }
+    .input:focus, .select:focus { outline: none; border-color: var(--brand); }
+    .input[readonly] { background-color: #f3f4f6; cursor: default; color: #555; }
+    
+    .btn { width: 100%; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; margin-top: 5px; transition: 0.2s; display: inline-block; text-align: center; }
+    .btn.primary { background: var(--brand); color: white; box-shadow: 0 4px 6px rgba(199, 53, 43, 0.2); }
+    .btn.primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn.secondary { background: #e5e7eb; color: #374151; }
+    .btn.secondary:hover { background: #d1d5db; }
+    .btn.danger { background: #fee2e2; color: #b91c1c; margin-top: 5px; }
+
+    .search-results {
+        position: absolute; top: 65px; left: 0; right: 0;
+        background: white; border: 1px solid #ddd; border-radius: 8px;
+        z-index: 100; max-height: 200px; overflow-y: auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none;
+    }
+    .search-item { padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; font-size: 12px; }
+    .search-item:hover { background: #f9f9f9; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+  
+  <script src="/js/infraestructura.js?v=31" defer></script>
+</head>
+<body data-roles-allow="editor,tecnico,supervisor">
+
+  <header class="appbar">
+    <div class="row" style="width: 100%;">
+      <h1>Infraestructura Pro</h1> 
+      <div class="appbar-actions">
+        <div id="welcomeText" class="welcome-pill" aria-live="polite">Cargando...</div>
+        <a href="/menu.html" class="btn-menu-header">Ir a menú</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+  <button id="btnSaveReshape" style="display:none; position:absolute; top:80px; left:50%; transform:translateX(-50%); z-index:100; background:#10b981; color:white; border:none; padding:12px 24px; border-radius:30px; font-weight:bold; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.3); font-size:14px; transition: 0.2s;">
+    💾 GUARDAR NUEVA RUTA DEL CABLE
+  </button>
+
+  <div class="master-panel" id="masterPanel">
+    
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('puntos')">📍 Puntos</button>
+        <button class="tab-btn" onclick="switchTab('tramos')">〰️ Tramos</button>
+    </div>
+
+    <div class="panel-content">
+        
+        <div id="tab-puntos" class="tab-pane active">
+            <div class="form-group">
+                <button id="btnPickOnMap" class="btn secondary" style="border: 2px dashed #9ca3af;">🎯 Capturar Ubicación (Clic)</button>
+            </div>
+            
+            <div class="form-group">
+                <label class="label">Nombre / Etiqueta</label>
+                <input id="ptNombre" class="input" placeholder="Ej. Poste 104" autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label class="label">Tipo</label>
+                <select id="ptTipo" class="select">
+                    <option value="poste">Poste</option>
+                    <option value="pozo">Pozo</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="mufa">Mufa</option>
+                    <option value="central">Central</option>
+                    <option value="nodo">Nodo (Virtual)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="label">Coordenadas (Lat / Lng)</label>
+                <div style="display:grid; grid-template-columns: 1fr 1fr 40px; gap:5px; align-items: end;">
+                    <input id="ptLat" class="input" type="number" step="any" placeholder="Latitud">
+                    <input id="ptLng" class="input" type="number" step="any" placeholder="Longitud">
+                    <button id="btnIrCoords" class="btn secondary" style="margin:0; height:40px; padding:0; display:flex; align-items:center; justify-content:center;" title="Ir a coordenada">📍</button>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="label">Descripción</label>
+                <input id="ptDesc" class="input" placeholder="Detalles adicionales...">
+            </div>
+
+            <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+                <label for="ptFoto" style="font-size: 13px; color: #6b7280; font-weight: bold;">EVIDENCIA FOTOGRÁFICA</label>
+                <input type="file" id="ptFoto" accept="image/*" class="input" style="padding: 10px; height: auto;">
+                <img id="ptFotoPreview" style="display: none; width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #ccc; margin-top: 8px;">
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button id="btnGuardarPunto" class="btn primary">Guardar Punto</button>
+                <button id="btnEliminarPunto" class="btn danger" style="display:none; margin-top:0;">Eliminar</button>
+            </div>
+            <button id="btnNuevoPunto" class="btn secondary" style="margin-top:10px;">Limpiar Formulario</button>
+        </div>
+
+        <div id="tab-tramos" class="tab-pane">
+            
+            <div class="form-group">
+                <label class="label">Cliente (Dueño del hilo)</label>
+                <div style="display: flex; gap: 5px;">
+                    <input id="clienteSearch" class="input" placeholder="Buscar por Nombre o ID..." autocomplete="off">
+                    <button id="btnClearCliente" class="btn secondary" style="width: 40px; padding: 0;" title="Limpiar" onclick="document.getElementById('clienteSearch').value='';">✕</button>
+                </div>
+                <div id="clienteResults" class="search-results"></div>
+                <input type="hidden" id="trClienteId">
+                <small id="clienteSelectedLabel" style="display:block; color:var(--brand); font-weight:bold; margin-top:4px; font-size:11px; min-height:15px;"></small>
+            </div>
+
+            <hr style="border:0; border-top:1px dashed #eee; margin: 10px 0;">
+
+            <div class="form-group">
+                <button id="btnTrazar" class="btn secondary" style="border: 2px dashed #9ca3af; width:100%;">✏️ Comenzar Trazo</button>
+                <small style="color:#666; display:block; margin-top:5px; font-size:11px; text-align:center;">
+                    Clic en Origen ➝ Dibuja ➝ Clic en Destino.<br>
+                    <span style="color:var(--brand);">*Guarda el tramo, selecciónalo y haz un clic en un poste para auditarlo.</span>
+                </small>
+            </div>
+
+            <div class="form-group" style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <div>
+                    <label class="label">Origen</label>
+                    <input id="trOrigenNombre" class="input" readonly placeholder="(Clic en mapa)">
+                    <input type="hidden" id="trOrigenId">
+                </div>
+                <div>
+                    <label class="label">Destino</label>
+                    <input id="trDestinoNombre" class="input" readonly placeholder="(Clic en mapa)">
+                    <input type="hidden" id="trDestinoId">
+                </div>
+            </div>
+
+            <div class="form-group" style="background:#f9fafb; padding:10px; border-radius:8px; border:1px solid #eee;">
+                <label class="label" style="color:var(--brand);">Datos del Cable</label>
+                
+                <div style="display:grid; grid-template-columns: 1fr 100px; gap:10px; margin-bottom:8px;">
+                    <div>
+                        <label class="label">Capacidad</label>
+                        <select id="trCapacidad" class="select">
+                            <option value="">-- Selecciona --</option>
+                            <option value="6">6 Hilos</option>
+                            <option value="12">12 Hilos (Azul)</option>
+                            <option value="24">24 Hilos (Naranja)</option>
+                            <option value="36">36 Hilos (Café)</option>
+                            <option value="48">48 Hilos (Verde)</option>
+                            <option value="72">72 Hilos (Morado)</option>
+                            <option value="96">96 Hilos (Aqua)</option>
+                            <option value="144">144 Hilos</option>
+                            <option value="otro">Otro / Manual</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label">Color</label>
+                        <input id="trColor" type="color" value="#E11D48" style="height:42px; width:100%; border:1px solid #ddd; border-radius:8px; cursor:pointer;">
+                    </div>
+                </div>
+                
+                <div style="margin-top:8px;">
+                    <label class="label">Detalle Cable</label>
+                    <input id="trDetalle" class="input" placeholder="Ej. ADSS Condumex, Propio...">
+                </div>
+            </div>
+
+            <button id="btnGuardarTramo" class="btn primary" style="margin-top:15px;">Guardar Tramo</button>
+            <button id="btnNuevoTramo" class="btn secondary" style="margin-top:10px;">Limpiar Formulario</button>
+        </div>
+
+    </div>
+  </div>
+
+  <div id="modalAuditoria" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:320px; background:white; border-radius:12px; box-shadow:0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); z-index:1000; padding:20px; border:1px solid #e5e7eb;">
+      
+      <h3 style="margin:0 0 10px 0; font-size:16px; color:#111;">📍 Punto de Paso: <span id="auditPuntoNombre" style="color:#c7352b;"></span></h3>
+      
+      <div style="background:#f3f4f6; padding:8px; border-radius:6px; margin-bottom:10px; font-size:12px; color:#555;">
+          Registrando datos para: <strong id="auditClienteNombre">Cliente...</strong>
+      </div>
+
+      <div class="form-group">
+          <label class="label">Metraje Impreso (Chaqueta)</label>
+          <input id="auditMetraje" type="number" class="input" placeholder="Ej. 14502">
+      </div>
+
+      <div class="form-group">
+          <label class="label">Distancia al Siguiente (m)</label>
+          <input id="auditDistancia" type="number" class="input" placeholder="Ej. 45">
+      </div>
+
+      <div class="form-group">
+          <label class="label">Observación / Mufa / Reserva</label>
+          <input id="auditNota" type="text" class="input" placeholder="Ej. Mufa paso, Reserva 15m...">
+      </div>
+
+      <div class="form-group">
+          <label class="label" style="display:flex; align-items:center; gap:5px; cursor:pointer; background:white; border:1px dashed #ccc; padding:8px; border-radius:6px;">
+              📷 <span id="auditFotoLabel">Adjuntar Foto (Opcional)</span>
+              <input id="auditFoto" type="file" accept="image/*" style="display:none;">
+          </label>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:15px;">
+          <button id="btnAuditGuardar" class="btn primary" style="font-size:13px; margin-top:0;">💾 Guardar Datos</button>
+          <button id="btnAuditContinuar" class="btn secondary" style="font-size:13px; margin-top:0;">Solo Continuar</button>
+      </div>
+  </div>
+
+  <div id="modalMufaEscritorio" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:800px; background:white; border-radius:12px; box-shadow:var(--shadow); z-index:1000; padding:20px; border:1px solid #e5e7eb; max-height:90vh; overflow-y:auto;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:10px; margin-bottom:15px;">
+          <h2 style="margin:0; font-size:18px; color:#1e40af;">🪢 Ingeniería de Empalme (Gestión de Mufa)</h2>
+          <div id="escritorioDispoMufa" style="background:#dcfce7; color:#16a34a; padding:6px 12px; border-radius:20px; font-weight:bold; font-size:13px; border:1px solid #bbf7d0;">0 / 0 Hilos Libres</div>
+      </div>
+      
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:20px;">
+          
+          <div style="background:#f8fafc; padding:15px; border-radius:8px; border:1px solid #e2e8f0;">
+              <h4 style="margin:0 0 10px 0; font-size:13px; color:#334155;">1. AÑADIR CHAQUETA / CABLE FÍSICO</h4>
+              <div style="display:grid; grid-template-columns: 80px 1fr; gap:8px; margin-bottom:8px;">
+                  <select id="mufaCableLetra" class="select" style="padding:6px; font-size:12px;">
+                      <option value="Cable A">Cable A</option><option value="Cable B">Cable B</option>
+                      <option value="Cable C">Cable C</option><option value="Cable D">Cable D</option>
+                      <option value="Cable E">Cable E</option><option value="Cable F">Cable F</option>
+                  </select>
+                  <input type="text" id="mufaCableChaqueta" class="input" placeholder="Datos de chaqueta..." style="padding:6px; font-size:12px;">
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-bottom:10px;">
+                  <select id="mufaCableCapacidad" class="select" style="padding:6px; font-size:12px;">
+                      <option value="12">12 Hilos</option><option value="24">24 Hilos</option>
+                      <option value="48">48 Hilos</option><option value="72">72 Hilos</option>
+                      <option value="96">96 Hilos</option><option value="144">144 Hilos</option>
+                  </select>
+                  <select id="mufaCableTipo" class="select" style="padding:6px; font-size:12px;">
+                      <option value="Troncal">Troncal</option><option value="Distribucion">Distribución</option>
+                      <option value="Acometida">Acometida</option>
+                  </select>
+              </div>
+              <button id="btnGuardarCableMufa" type="button" class="btn primary" style="padding:8px; font-size:12px; background:#475569;">➕ Registrar Cable Físico</button>
+              
+              <h4 style="margin:15px 0 5px 0; font-size:11px; color:#64748b;">CABLES EXISTENTES EN MUFA:</h4>
+              <div id="escritorioCablesLista" style="max-height:100px; overflow-y:auto; font-size:11px; border:1px solid #e2e8f0; border-radius:4px; padding:5px; background:white;"></div>
+          </div>
+
+          <div style="background:#fffbeb; padding:15px; border-radius:8px; border:1px solid #fde68a;">
+              <h4 style="margin:0 0 10px 0; font-size:13px; color:#92400e;">2. REGISTRAR NUEVA FUSIÓN DE HILOS</h4>
+              
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; margin-bottom:8px;">
+                  <div style="background:white; padding:5px; border-radius:4px; border:1px solid #fcd34d;">
+                      <span style="font-size:10px; font-weight:bold; color:#b45309; display:block; margin-bottom:2px;">Origen (A)</span>
+                      <select id="fusionCableOri" class="select" style="padding:4px; font-size:11px; margin-bottom:2px;"></select>
+                      <div style="display:flex; gap:2px;">
+                          <input type="text" id="fusionTuboOri" class="input" placeholder="Tubo" style="padding:4px; font-size:11px; flex:1;">
+                          <select id="fusionHiloOri" class="select" style="padding:4px; font-size:11px; flex:1;"></select>
+                      </div>
+                  </div>
+                  <div style="background:white; padding:5px; border-radius:4px; border:1px solid #fcd34d;">
+                      <span style="font-size:10px; font-weight:bold; color:#b45309; display:block; margin-bottom:2px;">Destino (B)</span>
+                      <select id="fusionCableDes" class="select" style="padding:4px; font-size:11px; margin-bottom:2px;"></select>
+                      <div style="display:flex; gap:2px;">
+                          <input type="text" id="fusionTuboDes" class="input" placeholder="Tubo" style="padding:4px; font-size:11px; flex:1;">
+                          <select id="fusionHiloDes" class="select" style="padding:4px; font-size:11px; flex:1;"></select>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="form-group" style="margin-bottom:8px;">
+                  <div style="position:relative;">
+                      <input id="mufaClienteSearch" type="text" class="input" placeholder="🔍 Buscar Cliente a Asignar..." style="padding:6px; font-size:12px;">
+                      <div id="mufaClienteResults" class="search-results" style="top:32px;"></div>
+                  </div>
+                  <input type="hidden" id="mufaIdClienteReal">
+                  <div id="mufaClienteSeleccionado" style="font-size:11px; font-weight:bold; color:#16a34a; margin-top:2px;"></div>
+              </div>
+
+              <div style="display:grid; grid-template-columns: 80px 1fr; gap:8px;">
+                  <input type="number" id="fusionDb" class="input" placeholder="dB" step="0.01" style="padding:6px; font-size:12px;">
+                  <input type="text" id="fusionObs" class="input" placeholder="Observación..." style="padding:6px; font-size:12px;">
+              </div>
+              
+              <button id="btnGuardarFusionMufa" type="button" class="btn primary" style="padding:8px; font-size:12px; background:#d97706; margin-top:10px;">🪢 Guardar Fusión</button>
+          </div>
+      </div>
+
+      <h4 style="margin:0 0 5px 0; font-size:14px; color:#1e293b; border-bottom:2px solid #e2e8f0; padding-bottom:5px;">MATRIZ DE FUSIONES ACTUALES</h4>
+      <div style="border:1px solid #e2e8f0; border-radius:8px; overflow:hidden; max-height:200px; overflow-y:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px; text-align:left;">
+              <thead style="background:#f1f5f9; position:sticky; top:0; z-index:1;">
+                  <tr>
+                      <th style="padding:8px; border-bottom:1px solid #cbd5e1;">ORIGEN</th>
+                      <th style="padding:8px; border-bottom:1px solid #cbd5e1;">DESTINO</th>
+                      <th style="padding:8px; border-bottom:1px solid #cbd5e1;">CLIENTE ASIGNADO</th>
+                      <th style="padding:8px; border-bottom:1px solid #cbd5e1;">OBS.</th>
+                      <th style="padding:8px; border-bottom:1px solid #cbd5e1; text-align:center;">DEL</th>
+                  </tr>
+              </thead>
+              <tbody id="escritorioMatrizCuerpo"></tbody>
+          </table>
+      </div>
+      <div style="text-align:right; margin-top:15px;">
+          <button onclick="document.getElementById('modalMufaEscritorio').style.display='none'; document.getElementById('modalOverlay').style.display='none';" class="btn secondary" style="width:auto; padding:10px 30px;">Cerrar Matriz</button>
+      </div>
+  </div>
+
+  <div id="modalOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.3); z-index:999;"></div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRcyrmG0cbYhiKmCo1ENi1SVxbDWu6fr4&callback=initMap" async defer></script>
+  
+  <script>
+    // Lógica para cargar el nombre en la pastilla estandarizada
+    (async () => {
+      try{
+        const r = await fetch('/api/me?_=' + Date.now());
+        if(r.ok) {
+            const d = await r.json();
+            const u = d.user;
+            if(u) document.getElementById('welcomeText').textContent = `Bienvenido, ${u.nombre || u.usuario}`;
+        }
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auditoría del Sistema</title>
+  <link rel="icon" href="/favicon.ico" />
+  <script src="/js/bitacora.js?v=7" defer></script>
+  
+  <style>
+    /* --- VARIABLES ESTANDARIZADAS (Desde menu.html) --- */
+    :root{
+      --brand: #c62828;
+      --brand-dark: #a72b23;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1f2a37;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 16px;
+      --shadow: 0 10px 18px rgba(16,24,40,.08), 0 2px 6px rgba(16,24,40,.05);
+    }
+    
+    html, body { height: 100%; margin: 0; }
+    body { 
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      -webkit-font-smoothing: antialiased; 
+      -moz-osx-font-smoothing: grayscale; 
+    }
+    
+    /* --- CABECERA ESTANDARIZADA (APPBAR) --- */
+    .appbar { background: var(--brand); color: #fff; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.12); position: sticky; top: 0; z-index: 50; }
+    .appbar .row { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .appbar h1 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+    .appbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    
+    .welcome-pill { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 8px 12px; border-radius: 999px; font-weight: 700; box-shadow: inset 0 0 12px rgba(255,255,255,.08); max-width: 60vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    
+    .btn-menu-header { background: #fff; color: var(--brand); border: none; border-radius: 12px; padding: 8px 12px; font-weight: 800; box-shadow: 0 6px 14px rgba(255,255,255,.18); cursor: pointer; text-decoration: none; display: inline-block; transition: 0.1s; }
+    .btn-menu-header:hover { filter: brightness(.98); transform: translateY(-1px); }
+
+    /* --- MARCA DE AGUA (Desde menu.html) --- */
+    .watermark { position: fixed; left: 18px; bottom: 14px; z-index: 10; display: flex; align-items: center; gap: 10px; color: #6b7280; opacity: .9; letter-spacing: .2px; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 12px; box-shadow: 0 6px 16px rgba(16,24,40,.08); font-size: .9rem; user-select: none; pointer-events: none; }
+    .wm-logo { width: 22px; height: 22px; display: inline-block; border-radius: 50%; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23c62828"/><text x="50" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="white">C</text></svg>') center/cover no-repeat; box-shadow: 0 2px 6px rgba(198,40,40,.35); flex: 0 0 auto; }
+
+    /* --- CONTENEDOR Y TARJETA PRINCIPAL --- */
+    .container { max-width: 1200px; margin: 24px auto 80px; padding: 0 16px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    
+    /* --- FILTROS DE BITÁCORA --- */
+    .filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 20px; background: #f8fafc; border-bottom: 1px solid var(--border); align-items: end; }
+    .filter-group label { display: block; font-size: 11px; font-weight: 800; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    .input-control { width: 100%; height: 40px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; background: #fff; outline: none; box-sizing: border-box; color: var(--text); transition: 0.2s; }
+    .input-control:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(198,40,40,.1); }
+    
+    .btn-action { height: 40px; padding: 0 20px; border-radius: 10px; border: none; font-weight: 700; cursor: pointer; font-size: 14px; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-primary { background: var(--brand); color: #fff; } 
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-ghost { background: #fff; border: 1px solid #cbd5e1; color: #475569; } 
+    .btn-ghost:hover { background: #f1f5f9; }
+
+    /* --- TABLA --- */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead { background: #f8fafc; border-bottom: 2px solid var(--border); }
+    th { text-align: left; padding: 14px 20px; font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 800; white-space: nowrap; }
+    td { padding: 14px 20px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:hover td { background: #fafafa; }
+    
+    /* Columnas Específicas */
+    .col-fecha { width: 150px; }
+    
+    /* JSON Box (Evidencia) */
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; min-width: 400px; }
+    .json-box { font-family: 'Menlo', 'Consolas', monospace; font-size: 11px; color: var(--text); background: #f1f5f9; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 120px; overflow-y: auto; white-space: pre-wrap; }
+    .diff-label { font-size: 10px; font-weight: 800; color: #94a3b8; margin-bottom: 4px; display: block; text-transform: uppercase; }
+
+    /* Footer Paginación */
+    .footer { padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: #fff; border-top: 1px solid var(--border); }
+    .info-text { font-size: 13px; color: var(--muted); font-weight: 600; }
+    
+    @media (max-width: 640px) { .appbar h1 { font-size: 1.15rem; } .btn-menu-header { padding: 8px 10px; } }
+  </style>
+</head>
+<body>
+
+<header class="appbar">
+  <div class="row">
+    <h1>Auditoría del Sistema</h1>
+    <div class="appbar-actions">
+      <div id="who" class="welcome-pill" aria-live="polite">Cargando...</div>
+      <a href="/menu.html" class="btn-menu-header">Menú</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    
+    <div class="filters">
+      <div class="filter-group">
+        <label>Usuario (Nombre)</label>
+        <input id="actor" class="input-control" placeholder="Ej: Joshua..." autocomplete="off">
+      </div>
+      
+      <div class="filter-group">
+        <label>Entidad</label>
+        <select id="entidad" class="input-control">
+          <option value="">Todas</option>
+          <option value="punto">Puntos Mapa</option>
+          <option value="tramo">Tramos Fibra</option>
+          <option value="ruta">Rutas (Planta Int.)</option>
+          <option value="cliente">Clientes</option>
+          <option value="odf">ODFs</option>
+          <option value="central">Centrales</option>
+          <option value="carga_masiva">Carga Masiva</option>
+          <option value="login">Login</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Acción</label>
+        <select id="accion" class="input-control">
+          <option value="">Todas</option>
+          <option value="create">Crear</option>
+          <option value="update">Editar</option>
+          <option value="delete">Eliminar</option>
+          <option value="import">Importar</option>
+          <option value="login">Login</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label>Desde Fecha</label>
+        <input id="desde" type="date" class="input-control">
+      </div>
+
+      <div class="filter-group" style="display:flex; gap:8px;">
+        <button id="btnSearch" class="btn-action btn-primary">Buscar</button>
+        <button id="btnClear" class="btn-action btn-ghost">Limpiar</button>
+        <a id="btnExport" class="btn-action btn-ghost" href="#" style="text-decoration:none; padding:0 12px;">📥 CSV</a>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Usuario</th>
+            <th>Evento Registrado</th>
+            <th>Evidencia Técnica</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr><td colspan="4" style="text-align:center;padding:40px;color:#94a3b8">Cargando bitácora...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <div id="pageLabel" class="info-text">Página 1</div>
+      <div style="display:flex;gap:8px">
+        <button id="prev" class="btn-action btn-ghost" style="height:32px" disabled>« Anterior</button>
+        <button id="next" class="btn-action btn-ghost" style="height:32px" disabled>Siguiente »</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="watermark" aria-hidden="true">
+  <span class="wm-logo"></span>
+  <span>Sistema de auditoría Claro 2026</span>
+</div>
+
+</body>
+</html>

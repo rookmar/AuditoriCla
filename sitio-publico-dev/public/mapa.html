@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa Técnico - Auditoría de Planta Externa</title>
+  
+  <style>
+    :root { 
+      --brand: #c62828; 
+      --bg: #f6f7fb; 
+      --card: #ffffff; 
+      --text: #1f2a37; 
+      --muted: #6b7280; 
+      --border: #e5e7eb;
+      --warning: #f59e0b;
+      --info: #3b82f6;
+    }
+    
+    body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); margin: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; color: var(--text); }
+    * { box-sizing: border-box; }
+    
+    /* Cabecera */
+    .appbar { background: #c62828; color: #fff; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.12); position: sticky; top: 0; z-index: 50; flex-shrink: 0; }
+    .appbar .row { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .appbar h1 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+    .appbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .welcome-pill { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 8px 12px; border-radius: 999px; font-weight: 700; box-shadow: inset 0 0 12px rgba(255,255,255,.08); max-width: 60vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; }
+    .btn-menu-header { background: #fff; color: #c62828; border: none; border-radius: 12px; padding: 8px 12px; font-weight: 800; box-shadow: 0 6px 14px rgba(255,255,255,.18); cursor: pointer; text-decoration: none; display: inline-block; font-size: 14px; }
+    
+    /* Layout */
+    .main-layout { display: flex; flex: 1; overflow: hidden; }
+    .sidebar { width: 360px; background: var(--card); border-right: 1px solid var(--border); display: flex; flex-direction: column; z-index: 5; box-shadow: 2px 0 10px rgba(0,0,0,0.05); }
+    .sidebar-header { padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--card); }
+    .sidebar-content { padding: 16px 20px; flex: 1; overflow-y: auto; }
+    
+    /* Buscador */
+    .search-box { position: relative; }
+    .inp-search { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; transition: 0.2s; box-sizing: border-box; }
+    .inp-search:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1); }
+    .results-list { position: absolute; top: 100%; left: 0; right: 0; margin-top: 6px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; max-height: 300px; overflow-y: auto; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); display: none; z-index: 100; }
+    .search-item { padding: 10px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: 0.1s; font-size: 13px; }
+    .search-item:hover { background: #fef2f2; }
+
+    /* Tarjetas generales */
+    .card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 16px; }
+    .card h3 { margin: 0 0 8px 0; color: var(--brand); font-size: 15px; font-weight: 800; }
+    .data-row { font-size: 13px; color: var(--muted); margin-bottom: 4px; display: flex; gap: 6px; font-weight: 600; }
+
+    /* Panel OTDR */
+    .fault-tool { opacity: 0.5; pointer-events: none; transition: 0.3s; margin-top: 10px; border-top: 2px dashed var(--border); padding-top: 16px; }
+    .fault-tool.active { opacity: 1; pointer-events: auto; }
+    .lbl-sm { font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; display: block; margin: 10px 0 4px 0; }
+    
+    .select-otdr { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 13px; background: #fff; color: var(--text); font-weight: 600; outline: none; }
+    .btn-action { width: 100%; background: var(--brand); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 800; cursor: pointer; margin-top: 14px; transition: 0.2s; font-size: 14px; }
+    .btn-action:hover { background: #a72b23; }
+    .btn-action:disabled { background: #fca5a5; cursor: not-allowed; }
+
+    /* Tarjeta Táctica de 3 Puntos */
+    .corredor-box { margin-top: 16px; border-top: 1px solid var(--border); padding-top: 14px; display: none; }
+    .tactical-item { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; margin-bottom: 8px; position: relative; border-left: 4px solid var(--muted); cursor: pointer; transition: 0.2s; }
+    .tactical-item:hover { transform: translateX(2px); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .tactical-item.prev { border-left-color: var(--warning); }
+    .tactical-item.corte { border-left-color: var(--brand); background: #fef2f2; }
+    .tactical-item.next { border-left-color: var(--info); }
+    
+    .tactical-title { font-size: 13px; font-weight: 800; color: var(--text); display: flex; justify-content: space-between; align-items: center; }
+    .tactical-tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 800; color: #fff; text-transform: uppercase; }
+    .tag-prev { background: var(--warning); }
+    .tag-corte { background: var(--brand); }
+    .tag-next { background: var(--info); }
+    .tactical-desc { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.4; font-weight: 500; }
+
+    /* Mapa */
+    .map-wrapper { flex: 1; position: relative; }
+    #map { width: 100%; height: 100%; }
+
+    @media (max-width: 768px) {
+      .main-layout { flex-direction: column; }
+      .sidebar { width: 100%; height: 50%; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRcyrmG0cbYhiKmCo1ENi1SVxbDWu6fr4&libraries=geometry&callback=initMap" async defer></script>
+</head>
+<body>
+
+  <header class="appbar">
+    <div class="row">
+      <h1>Mapa Técnico</h1> 
+      <div class="appbar-actions">
+        <div id="welcomeText" class="welcome-pill">Cargando...</div>
+        <a href="/menu.html" class="btn-menu-header">Ir a menú</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <label class="lbl-sm" style="margin-top:0;">Buscar Cliente</label>
+        <div class="search-box">
+            <input type="text" id="txtSmartSearch" class="inp-search" placeholder="Nombre, ID o Dirección..." autocomplete="off">
+            <div id="searchResults" class="results-list"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-content">
+        <div id="clientInfoCard" class="card" style="display:none;">
+            <h3 id="lblClienteNombre">Cliente</h3>
+            <div class="data-row">🆔 <span id="lblClienteID">--</span></div>
+            <div class="data-row">📍 <span id="lblClienteCentral">--</span></div>
+        </div>
+
+        <div id="faultPanel" class="fault-tool">
+            <h3 style="color:var(--text); margin:0; font-size: 15px;">✂️ Localizar Corte (OTDR)</h3>
+            
+            <label class="lbl-sm">1. Sentido del disparo óptico</label>
+            <select id="selSentido" class="select-otdr">
+              <option value="CENTRAL_A_CLIENTE">Central ➔ hacia Cliente</option>
+              <option value="CLIENTE_A_CENTRAL">Cliente ➔ hacia Central</option>
+            </select>
+
+            <label class="lbl-sm">2. Distancia del reflectómetro</label>
+            <input type="number" id="txtFallaMetros" class="inp-search" placeholder="Ej: 1450.5" step="any">
+            
+            <button id="btnBuscarFalla" class="btn-action">UBICAR CORTE</button>
+            
+            <div id="resFallaError" style="margin-top:10px; font-size:13px; color:var(--brand); font-weight:800; text-align:center; display:none;"></div>
+
+            <!-- Contenedor del Corredor Operativo -->
+            <div id="corredorBox" class="corredor-box">
+              <label class="lbl-sm" style="color:var(--text); font-size:12px; margin-bottom:8px;">📍 Corredor Operativo (3 Puntos)</label>
+              <div id="corredorList"></div>
+            </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="map-wrapper">
+        <div id="map"></div>
+    </div>
+  </div>
+
+  <script src="/js/mapa.js?v=2.0"></script>
+  <script>
+    (async () => {
+      try {
+        const r = await fetch('/api/me?_=' + Date.now());
+        if(r.ok) {
+            const d = await r.json();
+            const u = d.user;
+            if(u) document.getElementById('welcomeText').textContent = `Bienvenido, ${u.nombre || u.usuario}`;
+        }
+      } catch(e) {}
+    })();
+  </script>
+</body>
+</html>

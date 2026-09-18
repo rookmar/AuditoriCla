@@ -1,0 +1,240 @@
+// public/js/ruta.js
+document.addEventListener('DOMContentLoaded', () => {
+  const $ = (s) => document.querySelector(s);
+
+  // Inputs (coinciden con los ids del HTML actual)
+  const coordenadas      = $('#coordenadas');
+
+  const nombre_central   = $('#nombre_central');
+  const ID_central       = $('#ID_central');
+
+  const nombre_cliente   = $('#nombre_cliente');
+  const tarea            = $('#tarea');
+
+  const nombre_odf       = $('#nombre_odf');
+  const nemonico_odf     = $('#nemonico_odf');
+  const odf_puerto       = $('#odf_puerto');
+
+  const nemonico_patcheo = $('#nemonico_patcheo');
+  const puerto_patcheo   = $('#puerto_patcheo');
+
+  const nemonico_equipo  = $('#nemonico_equipo');
+  const marca            = $('#marca');
+  const slot             = $('#slot');
+  const posicion         = $('#posicion');
+
+  const btnGuardar       = $('#btnGuardar');
+
+  // Tabla "Rutas recientes"
+  const recientesBody    = $('#recientesBody');
+  const recientesLoading = $('#recientesLoading');
+
+  // Helpers
+  const toCoordLink = (value) => {
+    const raw = String(value ?? '').trim();
+    if (!raw) return '';
+    if (/^https?:\/\//i.test(raw)) {
+      return `<a href="${raw}" target="_blank" rel="noopener">ver ruta</a>`;
+    }
+    const m = raw.match(/^\s*([-+]?\d+(?:\.\d+)?)\s*[, ]\s*([-+]?\d+(?:\.\d+)?)\s*$/);
+    if (m) {
+      const g = `https://www.google.com/maps?q=${encodeURIComponent(m[1])},${encodeURIComponent(m[2])}`;
+      return `<a href="${g}" target="_blank" rel="noopener">ver ruta</a>`;
+    }
+    return raw;
+  };
+
+  const getIdFromQuery = () => {
+    const u = new URL(location.href);
+    const id = u.searchParams.get('id');
+    return id ? Number(id) : null;
+  };
+
+  async function loadMe() {
+    try{
+      const r = await fetch('/api/me?_=' + Date.now(), {credentials:'include', cache:'no-store'});
+      const data = await r.json().catch(()=>({}));
+      const u = data?.user; if(!u) return;
+      const nombre = (u.nombre && String(u.nombre).trim()) || u.usuario || 'Usuario';
+      const rol = String(u.rol || (u.admin ? 'admin' : '') || '').toLowerCase();
+      const el = document.getElementById('welcomeText');
+      if(el) el.textContent = `Bienvenido, ${nombre}${rol ? ` (${rol})` : ''}`;
+    }catch{}
+  }
+
+  async function loadRecientes() {
+    try {
+      const r = await fetch('/api/ruta/list?_=' + Date.now(), {
+        cache: 'no-store',
+        credentials: 'include',
+        headers: { 'Accept': 'application/json' }
+      });
+      const data = await r.json().catch(()=>({}));
+      if (recientesLoading) recientesLoading.remove();
+
+      if (!r.ok || !data.ok) {
+        recientesBody.innerHTML = `<tr><td colspan="6">Error: ${data.error || 'HTTP '+r.status}</td></tr>`;
+        return;
+      }
+
+      const rows = Array.isArray(data.rows) ? data.rows : [];
+      if (!rows.length) {
+        recientesBody.innerHTML = `<tr><td colspan="6">Sin datos</td></tr>`;
+        return;
+      }
+
+      recientesBody.innerHTML = '';
+      for (const it of rows) {
+        const tr = document.createElement('tr');
+
+        const idRuta = it.id_ruta ?? it.id;
+
+        const colAcciones = `
+          <div class="row-actions" style="display:flex; gap:8px; justify-content:flex-end">
+            <a class="btn small" href="/ruta.html?id=${encodeURIComponent(idRuta)}">Editar</a>
+            <button class="btn small" data-del="${idRuta}">Eliminar</button>
+          </div>`;
+
+        tr.innerHTML = `
+          <td>${idRuta ?? ''}</td>
+          <td>${it.nombre_cliente ?? ''}</td>
+          <td>${(it.nemonico_patcheo ?? '')}${(it.puerto_patcheo!=null)?' / '+it.puerto_patcheo:''}</td>
+          <td>${it.nemonico_equipo ?? ''}</td>
+          <td>${toCoordLink(it.coordenadas)}</td>
+          <td class="text-right">${colAcciones}</td>
+        `;
+        recientesBody.appendChild(tr);
+      }
+
+      // bind delete
+      recientesBody.querySelectorAll('button[data-del]').forEach(btn => {
+        btn.addEventListener('click', onDelete);
+      });
+
+    } catch (err) {
+      if (recientesLoading) recientesLoading.remove();
+      recientesBody.innerHTML = `<tr><td colspan="6">Error: ${err.message}</td></tr>`;
+      console.error('[ruta] loadRecientes', err);
+    }
+  }
+
+  async function onDelete(ev) {
+    const id = Number(ev.currentTarget.getAttribute('data-del'));
+    if (!id || !confirm('¿Eliminar la ruta?')) return;
+    try {
+      // cualquiera de estos endpoints está activo; usamos el canónico DELETE
+      const r = await fetch(`/api/ruta/${id}`, { method: 'DELETE' });
+      const data = await r.json().catch(()=>({}));
+      if (!r.ok || !data.ok) throw new Error(data.error || `HTTP ${r.status}`);
+      await loadRecientes();
+    } catch (e) {
+      alert('No se pudo eliminar: ' + e.message);
+    }
+  }
+
+  async function loadForEdit() {
+    const id = getIdFromQuery();
+    if (!id) return;
+    try {
+      const r = await fetch(`/api/ruta/get?id=${encodeURIComponent(id)}&_=${Date.now()}`, {
+        credentials: 'include', cache:'no-store'
+      });
+      const data = await r.json().catch(()=>({}));
+      if (!r.ok || !data.ok || !data.row) return;
+
+      const x = data.row;
+
+      // Coordenadas
+      if (coordenadas)      coordenadas.value      = x.coordenadas || '';
+
+      // Central
+      if (nombre_central)   nombre_central.value   = x.nombre_central || '';
+      if (ID_central)       ID_central.value       = x.ID_central || '';
+
+      // Cliente
+      if (nombre_cliente)   nombre_cliente.value   = x.nombre_cliente || '';
+      if (tarea)            tarea.value            = x.tarea ?? '';
+
+      // ODF
+      if (nombre_odf)       nombre_odf.value       = x.nombre_odf || '';
+      if (nemonico_odf)     nemonico_odf.value     = x.nemonico_odf || '';
+      if (odf_puerto)       odf_puerto.value       = (x.odf_puerto ?? '');
+
+      // Patcheo
+      if (nemonico_patcheo) nemonico_patcheo.value = x.nemonico_patcheo || '';
+      if (puerto_patcheo)   puerto_patcheo.value   = (x.puerto_patcheo ?? '');
+
+      // Equipo
+      if (nemonico_equipo)  nemonico_equipo.value  = x.nemonico_equipo || '';
+      if (marca)            marca.value            = x.marca || '';
+      if (slot)             slot.value             = (x.slot ?? '');
+      if (posicion)         posicion.value         = (x.posicion ?? '');
+
+    } catch (e) {
+      console.warn('loadForEdit', e);
+    }
+  }
+
+  async function guardar() {
+    const payload = {
+      id_ruta: getIdFromQuery(),
+
+      // coordenadas
+      coordenadas: (coordenadas?.value || '').trim(),
+
+      // central (obligatoria)
+      nombre_central: (nombre_central?.value || '').trim(),
+      ID_central:     (ID_central?.value || '').trim(),
+
+      // cliente
+      nombre_cliente: (nombre_cliente?.value || '').trim(),
+      tarea:          (tarea?.value || '').trim(),
+
+      // ODF
+      nombre_odf:     (nombre_odf?.value || '').trim(),
+      nemonico_odf:   (nemonico_odf?.value || '').trim(),
+      odf_puerto:     (odf_puerto?.value || '').trim(),
+
+      // patcheo
+      nemonico_patcheo: (nemonico_patcheo?.value || '').trim(),
+      puerto_patcheo:   (puerto_patcheo?.value || '').trim(),
+
+      // equipo
+      nemonico_equipo: (nemonico_equipo?.value || '').trim(),
+      marca:           (marca?.value || '').trim(),
+      slot:            (slot?.value || '').trim(),
+      posicion:        (posicion?.value || '').trim()
+    };
+
+    try {
+      const r = await fetch('/api/ruta/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify(payload)
+      });
+      const data = await r.json().catch(()=>({}));
+      if (!r.ok || !data.ok) throw new Error(data.error || `HTTP ${r.status}`);
+
+      alert('Guardado correctamente');
+      // si fue creación, redirigimos a edición
+      if (!payload.id_ruta && data.id_ruta) {
+        location.href = `/ruta.html?id=${encodeURIComponent(data.id_ruta)}`;
+        return;
+      }
+      // si fue edición, refrescamos recientes
+      await loadRecientes();
+    } catch (e) {
+      alert('Error al guardar: ' + e.message);
+    }
+  }
+
+  // Eventos
+  btnGuardar?.addEventListener('click', guardar);
+  document.getElementById('btnMenu')?.addEventListener('click', () => location.href = '/menu.html');
+
+  // Init
+  loadMe();
+  loadForEdit();
+  loadRecientes();
+});

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reporte de Incidencias</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{--brand:#c7352b;--brand-dark:#a72b23;--bg:#f5f6fa;--card:#fff;--txt:#222;--muted:#667085;--ring:#e6e7eb;--shadow:0 12px 28px rgba(16,24,40,.08);--radius:16px}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial;color:var(--txt);background:var(--bg)}
+    
+    /* --- CABECERA ESTANDARIZADA --- */
+    .appbar { background: #c62828; color: #fff; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.12); position: sticky; top: 0; z-index: 50; }
+    .appbar .row { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .appbar h1 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+    .appbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    
+    .welcome-pill { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 8px 12px; border-radius: 999px; font-weight: 700; box-shadow: inset 0 0 12px rgba(255,255,255,.08); max-width: 60vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    
+    .btn-menu-header { background: #fff; color: #c62828; border: none; border-radius: 12px; padding: 8px 12px; font-weight: 800; box-shadow: 0 6px 14px rgba(255,255,255,.18); cursor: pointer; text-decoration: none; display: inline-block; font-size: 14px; font-family: inherit; }
+    .btn-menu-header:hover { filter: brightness(.98); }
+    
+    @media (max-width: 640px) { 
+      .appbar h1 { font-size: 1.15rem; } 
+      .btn-menu-header { padding: 8px 10px; } 
+    }
+    
+    .btn{appearance:none;border:0;cursor:pointer;height:46px;padding:0 16px;border-radius:12px;font-weight:800;font-size:16px; display:inline-block; text-align:center; line-height:46px; text-decoration:none; transition: filter 0.2s;}
+    .btn:hover{filter: brightness(0.95);}
+    .btn.white{background:#fff;color:var(--brand); height:40px; line-height:40px; font-size:14px;}
+    .btn.primary{background:var(--brand);color:#fff; width:100%; margin-top:24px;}
+    .btn.primary:disabled{background:var(--muted); cursor:not-allowed;}
+    .btn.info{background:#0ea5e9;border-color:#0284c7;color:#fff; width:100%;}
+    
+    .container{max-width:1160px;margin:28px auto;padding:0 20px; padding-bottom: 40px;}
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-bottom:24px}
+    .card h3 { margin-top: 0; color: var(--brand); border-bottom: 1px solid var(--ring); padding-bottom: 12px; font-size: 18px; margin-bottom: 18px;}
+    
+    .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    
+    label{font-size:14px;color:var(--muted); font-weight:600; display:block; margin-bottom:6px; margin-top:10px;}
+    .input,.select,textarea.input{width:100%;border:1px solid var(--ring);border-radius:12px;padding:0 14px;font-size:16px;background:#fff;outline:none; transition:border-color 0.2s, box-shadow 0.2s; font-family: inherit;}
+    .input, .select {height:46px;}
+    textarea.input {padding-top: 14px;}
+    .input:focus, .select:focus, textarea.input:focus {border-color: var(--brand); box-shadow: 0 0 0 3px rgba(199, 53, 43, 0.1);}
+    input[type="file"] { width:100%; padding: 10px 0; font-size: 15px; color: var(--txt); cursor: pointer;}
+    
+    .alert-danger { background:#fee2e2; border:1px solid #fecaca; color:#b91c1c; padding:14px; border-radius:12px; margin-top:16px; font-weight:700; border-left:5px solid #b91c1c; display:none; }
+    .dropdown-content { background:#fff; border:1px solid var(--ring); border-radius:12px; max-height:200px; overflow-y:auto; box-shadow:var(--shadow); margin-top:4px; position:absolute; width:100%; z-index:10; }
+    .search-item { padding:12px 14px; cursor:pointer; border-bottom:1px solid var(--ring); font-size:15px; }
+    .search-item:hover { background:#f9fafb; color:var(--brand); }
+    .autocomplete-wrapper { position: relative; }
+
+    @media (max-width:980px){ .grid{grid-template-columns:1fr 1fr;} }
+    @media (max-width:640px){ 
+        .grid{grid-template-columns:1fr;} 
+        .btn.white{height:38px; line-height:38px;} 
+        .card {padding: 18px;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="appbar">
+  <div class="row">
+    <h1>Reportes de Incidencias</h1> 
+    <div class="appbar-actions">
+      <div id="welcomeText" class="welcome-pill" aria-live="polite">Cargando...</div>
+      <a href="/menu.html" class="btn-menu-header">Ir a menú</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  
+  <section class="card">
+    <h3>1. Información General</h3>
+    <div class="grid">
+      <div>
+        <label>Fecha de la Reparación:</label>
+        <input type="date" id="fecha_reparacion" class="input">
+      </div>
+      <div>
+        <label>Área de Trabajo:</label>
+        <select id="area_trabajo" class="select">
+          <option value="">Seleccione...</option>
+          <option value="TI_VG_SC">TI_VG_SC</option>
+          <option value="GV_NM_VN">GV_NM_VN</option>
+        </select>
+      </div>
+      <div>
+        <label>Número de Falla:</label>
+        <input type="text" id="n_falla" class="input" placeholder="Ej. INC-123456" autocomplete="off">
+      </div>
+    </div>
+    <label>Técnicos que Atienden:</label>
+    <input type="text" id="tecnicos_atienden" class="input" placeholder="Nombres de los técnicos...">
+  </section>
+
+  <section class="card">
+    <h3>2. Datos del Cliente</h3>
+    <div class="grid">
+      <div class="autocomplete-wrapper">
+        <label>ID del Cliente:</label>
+        <input type="text" id="busquedaCliente" class="input" placeholder="Buscar ID..." autocomplete="off">
+        <div id="resultadosBusqueda" class="dropdown-content" style="display:none;"></div>
+      </div>
+      <div>
+        <label>Nombre del Cliente:</label>
+        <input type="text" id="nombre_cliente" class="input" placeholder="Nombre completo...">
+      </div>
+    </div>
+    <label>Dirección del Cliente:</label>
+    <input type="text" id="direccion_cliente" class="input" placeholder="Dirección exacta...">
+    
+    <div id="alertaReincidencia" class="alert-danger">
+        ⚠️ ATENCIÓN: Este cliente reportó fallas en los últimos 30 días.
+    </div>
+  </section>
+
+  <section class="card">
+    <h3>3. Detalle de la Falla en Red</h3>
+    
+    <div class="grid" id="bloque_selectores_red">
+      <div>
+        <label>Daño en Red:</label>
+        <select id="dano_red" class="select">
+          <option value="">Seleccione tipo de red...</option>
+          <option value="Secundaria">Secundaria (Distribución/Dispersión)</option>
+          <option value="Primaria">Primaria (Troncal)</option>
+        </select>
+      </div>
+      <div>
+        <label>Nodo al que pertenece:</label>
+        <select id="nodo" class="select">
+          <option value="">Seleccione Nodo...</option>
+          <option value="Claro">Claro</option>
+          <option value="XT">XT</option>
+          <option value="Telecomuniqu">Telecomuniqu</option>
+        </select>
+      </div>
+      <div>
+        <label>Tecnología:</label>
+        <select id="tecnologia" class="select">
+          <option value="GPON">GPON</option>
+          <option value="Ultima Milla">Última Milla</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="wrap_secundaria" class="grid" style="display:none; background:#f8fafc; padding:15px; border-radius:12px; margin-top:15px; border: 1px dashed var(--ring);">
+      <div>
+        <label>Tipo de daño GPON:</label>
+        <select id="tipo_dano_secundaria" class="select">
+          <option value="">Seleccione...</option>
+          <option value="Conector">Conector</option>
+          <option value="Corte de abonado">Corte de abonado</option>
+          <option value="Nap/Fat">Nap/Fat</option>
+          <option value="Mufa">Mufa</option>
+          <option value="Spliter Dañado">Spliter Dañado</option>
+        </select>
+      </div>
+      <div>
+        <label>Tipo de Solución:</label>
+        <select id="tipo_solucion_secundaria" class="select">
+          <option value="">Seleccione...</option>
+          <option value="cambio de conector">Cambio de conector</option>
+          <option value="cambio y/o reparacion de acometida">Cambio y/o reparación de acometida</option>
+          <option value="Sustitucion de cable Fo">Sustitución de cable Fo</option>
+          <option value="Sustitucion de Cable Preconectorizado">Sustitución de Cable Preconectorizado</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="wrap_primaria" class="grid" style="display:none; background:#fdf2f8; padding:15px; border-radius:12px; margin-top:15px; border: 1px dashed #fbcfe8;">
+      <div>
+        <label>Tipo de daño Troncal:</label>
+        <select id="tipo_dano_primaria" class="select">
+          <option value="">Seleccione...</option>
+          <option value="corte">Corte</option>
+          <option value="atenuacion">Atenuación</option>
+          <option value="reflectancia">Reflectancia</option>
+        </select>
+      </div>
+      <div>
+        <label>Tipo de Solución (Troncal):</label>
+        <select id="tipo_solucion_primaria" class="select">
+          <option value="">Seleccione...</option>
+          <option value="cambio de cable">Cambio de cable</option>
+          <option value="fusion">Fusión</option>
+          <option value="reparacion en mufa">Reparación en mufa</option>
+          <option value="conector">Conector</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top: 15px;">
+        <div>
+            <label>¿Se realiza Reparación?</label>
+            <select id="reparado" class="select">
+                <option value="1">Sí</option>
+                <option value="0">No</option>
+            </select>
+        </div>
+        <div id="wrap_motivo_no" style="display:none; grid-column: span 2;">
+            <label style="color:#b91c1c;">Motivo de NO reparación (Obligatorio):</label>
+            <input type="text" id="motivo_no_reparacion" class="input" placeholder="Explique por qué no se pudo reparar..." style="border-color:#fecaca;">
+        </div>
+    </div>
+  </section>
+
+  <section class="card" id="seccion_materiales">
+    <h3>4. Materiales y Red Alterna</h3>
+    <label>Material utilizado:</label>
+    <input type="text" id="material_utilizado" class="input" placeholder="Ej. 15mts cable drop, 2 conectores...">
+    
+    <div class="grid">
+        <div>
+            <label>Red alterna (¿Se cambia a red cercana?)</label>
+            <select id="red_alterna" class="select">
+                <option value="0">No</option>
+                <option value="1">Sí</option>
+            </select>
+        </div>
+        <div id="wrap_nombre_red" style="display:none; grid-column: span 2;">
+            <label>Ingrese red alterna:</label>
+            <input type="text" id="nombre_red_alterna" class="input" placeholder="Nombre de la nueva red...">
+        </div>
+    </div>
+  </section>
+
+  <section class="card" id="seccion_evidencia">
+    <h3>5. Evidencia en Campo</h3>
+    <div style="margin-bottom: 20px;">
+      <button id="btnGPSIncidencia" class="btn info">📍 Capturar Ubicación GPS</button>
+      <div id="gpsTxtIncidencia" style="margin-top:8px; font-size:14px; color:var(--muted); text-align:center;">Sin coordenadas...</div>
+    </div>
+    <input type="hidden" id="latIncidencia">
+    <input type="hidden" id="lngIncidencia">
+    <div>
+      <label>Foto de la Avería:</label>
+      <input type="file" id="fotoIncidencia" accept="image/*" capture="camera">
+    </div>
+  </section>
+
+  <section class="card" id="seccion_notas">
+    <h3>Notas del Técnico</h3>
+    <label>Observaciones adicionales, obstáculos o sugerencias en campo:</label>
+    <textarea id="notas_tecnico" class="input" style="height: 100px; resize: vertical;" placeholder="Detalle aquí cualquier sugerencia, obstáculo en campo o trabajo pendiente..."></textarea>
+  </section>
+
+  <button id="btnGuardarIncidencia" class="btn primary">GUARDAR REPORTE</button>
+
+</main>
+
+<script>
+  (async () => {
+    try{
+      const r = await fetch('/api/me?_=' + Date.now());
+      if(r.ok) {
+          const d = await r.json();
+          const u = d.user;
+          if(u) document.getElementById('welcomeText').textContent = `Bienvenido, ${u.nombre || u.usuario}`;
+      }
+    }catch(e){}
+  })();
+</script>
+<script src="/js/incidencia.js?v=4"></script>
+</body>
+</html>

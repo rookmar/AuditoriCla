@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buscar - Centro de Consultas</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{--brand:#c7352b;--brand-dark:#a72b23;--bg:#f5f6fa;--card:#fff;--txt:#222;--muted:#667085;--ring:#e6e7eb;--shadow:0 12px 28px rgba(16,24,40,.08);--radius:16px}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial;color:var(--txt);background:var(--bg)}
+    
+    /* --- CABECERA ESTANDARIZADA (Copia exacta del Menú) --- */
+    .appbar { background: #c62828; color: #fff; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.12); position: sticky; top: 0; z-index: 50; }
+    .appbar .row { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .appbar h1 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+    .appbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    
+    .welcome-pill { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 8px 12px; border-radius: 999px; font-weight: 700; box-shadow: inset 0 0 12px rgba(255,255,255,.08); max-width: 60vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    
+    .btn-menu-header { background: #fff; color: #c62828; border: none; border-radius: 12px; padding: 8px 12px; font-weight: 800; box-shadow: 0 6px 14px rgba(255,255,255,.18); cursor: pointer; text-decoration: none; display: inline-block; font-size: 14px; font-family: inherit; }
+    .btn-menu-header:hover { filter: brightness(.98); }
+    
+    @media (max-width: 640px) { 
+      .appbar h1 { font-size: 1.15rem; } 
+      .btn-menu-header { padding: 8px 10px; } 
+    }
+    /* ------------------------------------------------------ */
+
+    .btn{appearance:none;border:0;cursor:pointer;height:40px;padding:0 16px;border-radius:12px;font-weight:800;font-size:14px}
+    .btn.white{background:#fff;color:var(--brand)}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.gray{background:#f3f4f6}
+    .btn.pag{background:#fff;border:1px solid var(--ring);margin:0 2px}
+    .btn.pag.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .btn.tiny{height:32px;padding:0 10px;font-size:13px;border:1px solid var(--ring);background:#fff; cursor: pointer;}
+    .btn.tiny.danger{background:#fee2e2;border-color:#fecaca;color:#b91c1c}
+    .btn.tiny.secondary{background:#eef2ff;border-color:#e0e7ff;color:#3730a3}
+    .btn.tiny.info{background:#0ea5e9;border-color:#0284c7;color:#fff}
+    .btn.tiny.info:hover{background:#0284c7}
+    .container{max-width:1160px;margin:28px auto;padding:0 20px; padding-bottom:40px;}
+    .card{background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-bottom:24px}
+    .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    label{font-size:14px;color:var(--muted)}
+    .input,.select{width:100%;height:46px;border:1px solid var(--ring);border-radius:12px;padding:0 14px;font-size:16px;background:#fff;outline:none}
+    .actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .tabs{display:flex;gap:8px;margin-bottom:20px;border-bottom:2px solid var(--ring);padding-bottom:10px;}
+    .tab{background:transparent;border:none;font-size:16px;font-weight:700;color:var(--muted);cursor:pointer;padding:8px 16px;border-radius:8px;}
+    .tab.active{background:var(--brand);color:#fff;}
+    .tab-content{display:none;}
+    .tab-content.active{display:block;}
+    .tabla-flotante { width: 100%; max-height: 400px; overflow: auto; border: 1px solid var(--ring); border-radius: 8px; background: #fff; margin-bottom: 24px;}
+    .tabla-flotante table { width: 100%; border-collapse: collapse; border: none; border-radius: 0; }
+    .tabla-flotante thead th { position: sticky; top: 0; background-color: #f8fafc; z-index: 10; font-size: 13px; color: var(--muted); text-align: left; padding: 12px 14px; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    tbody td{padding:12px 14px; border-bottom:1px solid var(--ring);font-size:15px;vertical-align:middle;white-space:nowrap}
+    .muted{color:var(--muted)}
+    .pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .pager-left{font-size:13px}
+    .pager-right{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+    .section-title {color:var(--brand); margin-bottom: 12px; font-size: 18px; margin-top: 0;}
+    
+    /* ESTILOS NUEVOS PARA LOS ESTADOS */
+    .badge { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; display: inline-block; }
+    .badge-alta { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-revision { background: #fef9c3; color: #854d0e; border: 1px solid #fef08a; }
+    .badge-pendiente { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+
+    @media (max-width:980px){ .grid{grid-template-columns:1fr;} }
+    @media (max-width:640px){ .btn{height:38px} tbody td{font-size:14px} }
+  </style>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="/js/buscar.js?v=34" defer></script>
+</head>
+<body>
+<noscript style="display:block;padding:10px;background:#fee2e2;color:#7f1d1d;text-align:center">
+  Necesitas habilitar JavaScript para usar la búsqueda.
+</noscript>
+
+<header class="appbar">
+  <div class="row">
+    <h1>Buscar - Centro de Consultas</h1> 
+    <div class="appbar-actions">
+      <div id="welcomeText" class="welcome-pill" aria-live="polite">Cargando...</div>
+      <a href="/menu.html" class="btn-menu-header">Ir a menú</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <div class="tabs">
+      <button class="tab active" data-target="tab-general" id="btnTabGeneral">Expediente 360 (General)</button>
+      <button class="tab" data-target="tab-gpon" id="btnTabGPON">Recepciones GPON y Visitas</button>
+    </div>
+
+    <div id="tab-general" class="tab-content active">
+        <div class="grid">
+          <div>
+            <label for="q">Escribe cliente, tarea, ODF, equipo…</label>
+            <input id="q" class="input" placeholder="p.ej. Cliente X o ID central" autocomplete="off" />
+          </div>
+          <div>
+            <label for="central">Central</label>
+            <select id="central" class="select"><option value="">(Todas)</option></select>
+          </div>
+          <div>
+            <label for="odf">ODF</label>
+            <select id="odf" class="select"><option value="">(Todos)</option></select>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="btnBuscarGeneral" class="btn primary">Buscar General</button>
+          <button id="btnLimpiarGeneral" class="btn gray">Limpiar</button>
+        </div>
+    </div>
+
+    <div id="tab-gpon" class="tab-content">
+        <div class="grid" style="grid-template-columns: 1fr;">
+          <div>
+            <label for="qGPON">Buscador Universal (Distrito, Ubicación, Técnico, Asesor)</label>
+            <input id="qGPON" class="input" placeholder="Ej. Zona 1, Juan Perez, Contratista X..." autocomplete="off" />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="btnBuscarGPON" class="btn primary">Buscar Expedientes</button>
+          <button id="btnLimpiarGPON" class="btn gray">Limpiar</button>
+        </div>
+    </div>
+    <div id="msg" class="muted" style="margin-top:8px;"></div>
+  </section>
+
+  <section class="card tab-content active" id="res-general">
+    <div class="tabla-flotante" style="max-height: calc(100vh - 360px);">
+      <table aria-label="Resultados de búsqueda">
+        <thead>
+          <tr>
+            <th>ID Ruta</th><th>ID_Central</th><th>Nombre_Central</th><th>ID_Cliente</th>
+            <th>Cliente</th><th>Tarea</th><th>Nombre_ODF</th><th>Nemonico_ODF</th>
+            <th>Hilo_ODF</th><th>Distancia_Optica</th><th>Nemonico_Patcheo</th><th>Hilo_Patcheo</th>
+            <th>Equipo</th><th>Marca</th><th>Slot</th><th>Posición</th><th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyResGeneral">
+          <tr><td colspan="17" class="muted">Sin resultados</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="pagerGeneral" class="pager"></div>
+  </section>
+
+  <section class="card tab-content" id="res-gpon">
+    
+    <h3 class="section-title">📋 Visitas Técnicas</h3>
+    <div class="tabla-flotante">
+      <table aria-label="Resultados Visitas">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Técnico</th>
+            <th>Asesor Inmobiliaria</th>
+            <th>Dirección Descriptiva</th>
+            <th>Fecha</th>
+            <th>Acciones y Evidencias</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyResVisitas">
+          <tr><td colspan="6" class="muted">Escribe en el buscador...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="section-title" style="color:#16a34a;">✅ Recepciones GPON</h3>
+    <div class="tabla-flotante">
+      <table aria-label="Resultados Recepciones">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Distrito</th>
+            <th>Lugar / Ubicación</th>
+            <th>Quien Recepciona</th>
+            <th>Quien Entrega</th>
+            <th>Fecha</th>
+            <th>Estado</th> <th>Acciones y Evidencias</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyResRecepciones">
+          <tr><td colspan="8" class="muted">Escribe en el buscador...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="pagerGPON" class="pager"></div>
+  </section>
+
+  <input type="file" id="filePlanoUpload" accept="application/pdf" style="display:none;" />
+</main>
+
+<script>
+    (async () => {
+      try{
+        const r = await fetch('/api/me?_=' + Date.now());
+        if(r.ok) {
+            const d = await r.json();
+            const u = d.user;
+            if(u) document.getElementById('welcomeText').textContent = `Bienvenido, ${u.nombre || u.usuario}`;
+        }
+      }catch(e){}
+    })();
+
+    // =========================================================================
+    // NUEVO: TRUCO PARA QUE EL MENÚ KEBAB FLOTE SOBRE EL CONTENEDOR RECORTADO
+    // =========================================================================
+    window.addEventListener('load', () => {
+        // Redefinimos la función después de que el archivo buscar.js termine de cargar
+        window.toggleKebab = function(btn, event) {
+            event.stopPropagation();
+            
+            // Cerramos otros menús abiertos
+            document.querySelectorAll('.kebab-dropdown').forEach(d => {
+                if (d !== btn.nextElementSibling) d.style.display = 'none';
+            });
+            
+            const dropdown = btn.nextElementSibling;
+            
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                // Primero lo mostramos para que exista en la pantalla
+                dropdown.style.display = 'block';
+                
+                // Aplicamos position: fixed para sacarlo del "overflow: auto" de la tabla
+                dropdown.style.position = 'fixed';
+                dropdown.style.zIndex = '999999';
+                
+                // Calculamos las coordenadas del botón en tiempo real
+                const rect = btn.getBoundingClientRect();
+                
+                // Lo posicionamos justo por debajo del botón y alineado a la derecha
+                dropdown.style.top = (rect.bottom + 2) + 'px';
+                dropdown.style.left = (rect.right - dropdown.offsetWidth) + 'px';
+            }
+        };
+
+        // Escuchamos los scrolls para esconder el menú (y que no se quede flotando solo)
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.kebab-dropdown').forEach(d => d.style.display = 'none');
+        }, true);
+    });
+</script>
+</body>
+</html>

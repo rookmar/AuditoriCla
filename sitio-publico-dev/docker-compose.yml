@@ -1,0 +1,50 @@
+services:
+  # --- TU APLICACIÓN WEB ---
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      # OJO: Aquí forzamos que el host sea "db" (el nombre del servicio de abajo)
+      # Esto sobrescribe el 127.0.0.1 de tu .env sin tener que borrarlo
+      - DB_HOST=db
+      # El resto de variables las leerá directamente de tu archivo .env
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASS} 
+      - DB_NAME=${DB_NAME}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - MAPA_API_KEY=${MAPA_API_KEY}
+      - INFRA_API_KEY=${INFRA_API_KEY}
+      - NODE_ENV=production
+    depends_on:
+      - db
+    networks:
+      - red-interna
+
+  # --- BASE DE DATOS MYSQL ---
+  db:
+    image: mysql:8.0
+    restart: always
+    # Esto evita problemas de autenticación con librerías viejas
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      # Aquí usamos los datos exactos de tu foto para crear la BD
+      MYSQL_DATABASE: auditoriafibra
+      MYSQL_USER: auditor
+      MYSQL_PASSWORD: Shadow24k
+      MYSQL_ROOT_PASSWORD: Shadow24k
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # IMPORTANTE: Aquí busca tu respaldo .sql para cargarlo automáticamente
+      - ./_respaldos/bd:/docker-entrypoint-initdb.d
+    networks:
+      - red-interna
+
+volumes:
+  mysql_data:
+
+networks:
+  red-interna:
+
+

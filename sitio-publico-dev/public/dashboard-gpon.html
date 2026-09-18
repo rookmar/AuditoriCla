@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Visitas y Recepciones GPON</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    
+    <style>
+        :root {
+            --brand: #c7352b; --brand-dark: #a72b23; --excel: #16a34a; --excel-dark: #15803d;
+            --bg: #f5f6fa; --card: #fff; --txt: #222; --muted: #667085; 
+            --ring: #e6e7eb; --shadow: 0 12px 28px rgba(16,24,40,.08); --radius: 16px;
+        }
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial; color: var(--txt); background: var(--bg); }
+        
+        /* APPBAR HOMOLOGADO */
+        .appbar { background: #c62828; color: #fff; padding: 14px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.12); position: sticky; top: 0; z-index: 50; }
+        .appbar .row { max-width: 1400px; margin: 0 auto; padding: 0 10px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+        .appbar h1 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .2px; }
+        .appbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .welcome-pill { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); color: #fff; padding: 8px 12px; border-radius: 999px; font-weight: 700; box-shadow: inset 0 0 12px rgba(255,255,255,.08); max-width: 60vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
+        .btn-menu-header { background: #fff; color: #c62828; border: none; border-radius: 12px; padding: 8px 12px; font-weight: 800; box-shadow: 0 6px 14px rgba(255,255,255,.18); cursor: pointer; text-decoration: none; display: inline-block; font-size: 14px; font-family: inherit; }
+        .btn-menu-header:hover { filter: brightness(.98); }
+        @media (max-width: 640px) { .appbar h1 { font-size: 1.15rem; } .btn-menu-header { padding: 8px 10px; } }
+
+        /* UTILIDADES Y CONTENEDORES */
+        .container { max-width: 1400px; margin: 28px auto; padding: 0 20px; padding-bottom: 40px; }
+        .card { background: var(--card); border: 1px solid var(--ring); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; margin-bottom: 24px; }
+        
+        /* FORMULARIOS */
+        label { font-size: 14px; color: var(--muted); font-weight: bold; margin-bottom: 6px; display: block; text-transform: uppercase; }
+        .input, .select { width: 100%; height: 46px; border: 1px solid var(--ring); border-radius: 12px; padding: 0 14px; font-size: 14px; background: #fff; outline: none; transition: border 0.2s; }
+        .input:focus, .select:focus { border-color: var(--brand); }
+        
+        /* BOTONES */
+        .btn { appearance: none; border: 0; cursor: pointer; height: 40px; padding: 0 16px; border-radius: 12px; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.2s; }
+        .btn.primary { background: var(--brand); color: #fff; }
+        .btn.primary:hover { background: var(--brand-dark); }
+        .btn.gray { background: #f3f4f6; color: var(--txt); }
+        .btn.gray:hover { background: #e5e7eb; }
+        .btn.excel { background: var(--excel); color: #fff; }
+        .btn.excel:hover { background: var(--excel-dark); }
+
+        .filter-grid { display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end; }
+        .filter-group { flex: 1; min-width: 160px; }
+        .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 5px; }
+
+        /* KPIS Y CONTENEDORES */
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .kpi-card { background: var(--card); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--ring); border-left: 5px solid var(--brand); }
+        .kpi-card h3 { margin: 0 0 10px 0; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; }
+        .kpi-rango { display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 4px; text-transform: none; font-weight: 600; }
+        .kpi-card .number { font-size: 2.2rem; font-weight: bold; color: var(--txt); margin: 0; }
+
+        .semanas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .semana-card { background: #f8fafc; border: 1px solid var(--ring); border-radius: 12px; padding: 15px; text-align: center; }
+        .semana-card h4 { margin: 0 0 12px 0; color: var(--txt); font-size: 1rem; border-bottom: 2px solid var(--ring); padding-bottom: 5px; }
+        .semana-card p { margin: 6px 0; font-size: 0.95rem; font-weight: bold; }
+        .txt-rojo { color: var(--brand); } .txt-azul { color: #0ea5e9; }
+
+        .dash-row { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 25px; }
+        @media (max-width: 992px) { .dash-row { grid-template-columns: 1fr; } }
+        .dash-card { background: var(--card); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--ring); }
+        .dash-card h2 { font-size: 1.15rem; margin-top: 0; margin-bottom: 15px; color: var(--brand); border-bottom: 2px solid var(--ring); padding-bottom: 10px; }
+
+        .tabs { display: flex; gap: 8px; margin-bottom: 15px; border-bottom: 2px solid var(--ring); padding-bottom: 10px; flex-wrap: wrap; }
+        .tab-btn { background: transparent; border: none; font-size: 14px; font-weight: 700; color: var(--muted); cursor: pointer; padding: 8px 16px; border-radius: 8px; transition: background 0.2s;}
+        .tab-btn.active { background: var(--brand); color: #fff; }
+        .leader-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--ring); }
+        .leader-item:last-child { border-bottom: none; }
+        .leader-name { font-weight: 600; font-size: 0.92rem; color: var(--txt); }
+        .leader-badge { background: #fee2e2; color: var(--brand-dark); padding: 4px 12px; border-radius: 15px; font-weight: bold; font-size: 0.85rem; border: 1px solid #fecaca; }
+    </style>
+</head>
+<body>
+
+    <header class="appbar">
+        <div class="row">
+            <h1>Dashboard - Visitas y Recepciones GPON</h1>
+            <div class="appbar-actions">
+                <div id="welcomeText" class="welcome-pill" aria-live="polite">Cargando...</div>
+                <a href="/menu.html" class="btn-menu-header">Ir a menú</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="filtroFechaInicio">Fecha Inicio</label>
+                    <input type="date" id="filtroFechaInicio" class="input">
+                </div>
+                <div class="filter-group">
+                    <label for="filtroFechaFin">Fecha Fin</label>
+                    <input type="date" id="filtroFechaFin" class="input">
+                </div>
+
+                <div class="filter-group">
+                    <label for="filtroArea">Área de Trabajo</label>
+                    <select id="filtroArea" class="select">
+                        <option value="">(Todas / General)</option>
+                        <option value="TI_VG_SC">TI_VG_SC</option>
+                        <option value="GV_NM_VN">GV_NM_VN</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filtroTecnico">Técnico</label>
+                    <select id="filtroTecnico" class="select"><option value="">(Todos)</option></select>
+                </div>
+                <div class="filter-group">
+                    <label for="filtroAsesor">Asesor</label>
+                    <select id="filtroAsesor" class="select"><option value="">(Todos)</option></select>
+                </div>
+                <div class="actions">
+                    <button id="btnAplicarFiltros" class="btn primary">Filtrar</button>
+                    <button id="btnLimpiarFiltros" class="btn gray">Limpiar</button>
+                    <button id="btnExportarExcel" class="btn excel">📊 Exportar Excel/CSV</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card" style="border-left-color: #c7352b;">
+                <h3>Visitas Técnicas <br><span id="label-kpi-visitas" class="kpi-rango">Seleccione filtro</span></h3>
+                <p class="number" id="kpi-visitas">0</p>
+            </div>
+            <div class="kpi-card" style="border-left-color: #0ea5e9;">
+                <h3>Total Recepciones <br><span id="label-kpi-totales" class="kpi-rango">Seleccione filtro</span></h3>
+                <p class="number" id="kpi-totales">0</p>
+            </div>
+            <div class="kpi-card" style="border-left-color: #16a34a;">
+                <h3>Recepciones Master <br><span id="label-kpi-aprobadas" class="kpi-rango">Seleccione filtro</span></h3>
+                <p class="number" id="kpi-aprobadas">0</p>
+            </div>
+            <div class="kpi-card" style="border-left-color: #ea580c;">
+                <h3>Pendientes Auditoría <br><span id="label-kpi-pendientes" class="kpi-rango">Seleccione filtro</span></h3>
+                <p class="number" id="kpi-pendientes">0</p>
+            </div>
+        </div>
+
+        <div class="dash-card" style="margin-bottom: 25px;">
+            <h2>Desglose Semanal <span id="label-titulo-semanas" style="font-size: 0.9rem; color: var(--muted); font-weight: normal; margin-left: 10px;"></span></h2>
+            <div id="contenedor-semanas" class="semanas-grid">
+                <p style="color:var(--muted); text-align:center; grid-column: 1 / -1; padding: 20px;">Por favor, seleccione una fecha, área, técnico o asesor para consultar la información.</p>
+            </div>
+        </div>
+
+        <div class="dash-row">
+            <div class="dash-card">
+                <h2>Tendencia: Visitas vs Recepciones</h2>
+                <div id="chart-tendencia" style="min-height: 330px;"></div>
+            </div>
+            <div class="dash-card">
+                <h2>Top Productividad y Demanda</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="cambiarTab('tecnicos', event)">Técnicos</button>
+                    <button class="tab-btn" onclick="cambiarTab('asesores', event)">Asesores</button>
+                    <button class="tab-btn" onclick="cambiarTab('auditores', event)">Auditores</button>
+                </div>
+                <div id="leaderboard-content">
+                    <p style="color:var(--muted); text-align:center; padding: 20px;">Seleccione un filtro para consultar el ranking.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard-gpon.js"></script>
+    <script>
+        (async () => {
+            try{
+                const r = await fetch('/api/me?_=' + Date.now());
+                if(r.ok) {
+                    const d = await r.json();
+                    const u = d.user;
+                    if(u) document.getElementById('welcomeText').textContent = `Bienvenido, ${u.nombre || u.usuario}`;
+                }
+            }catch(e){}
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# --- Dependencias (pesan mucho y se instalan solas) ---
+node_modules/
+
+# --- Secretos y Claves (¡PELIGRO!) ---
+.env
+
+# --- Archivos de Sistema y Logs ---
+.DS_Store
+npm-debug.log*
+
+# --- Respaldos de Base de Datos (Seguridad de datos) ---
+*.sql
+*.gz
+_respaldos/
+backups/
+
+# --- Archivos temporales ---
+tmp/

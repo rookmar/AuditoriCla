@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>vientos del valle - brentag</name>
+    <Style id="icon-1610-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1610-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1610-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1610-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1610-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1729-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1729-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1729-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1729-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1729-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1826-1A237E-normal">
+      <IconStyle>
+        <color>ff7e231a</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1826-1A237E-highlight">
+      <IconStyle>
+        <color>ff7e231a</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1826-1A237E">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1826-1A237E-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1826-1A237E-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-1A237E-6425-normal">
+      <LineStyle>
+        <color>ff7e231a</color>
+        <width>6.425</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-1A237E-6425-highlight">
+      <LineStyle>
+        <color>ff7e231a</color>
+        <width>9.6375</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-1A237E-6425">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-1A237E-6425-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-1A237E-6425-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-1A237E-7000-normal">
+      <LineStyle>
+        <color>ff7e231a</color>
+        <width>7</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-1A237E-7000-highlight">
+      <LineStyle>
+        <color>ff7e231a</color>
+        <width>10.5</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-1A237E-7000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-1A237E-7000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-1A237E-7000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-7CB342-5263-normal">
+      <LineStyle>
+        <color>ff42b37c</color>
+        <width>5.263</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-7CB342-5263-highlight">
+      <LineStyle>
+        <color>ff42b37c</color>
+        <width>7.8945</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-7CB342-5263">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-7CB342-5263-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-7CB342-5263-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>pozo 21</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop56kbjn2esNH5ZXsNbSA_MUbIpD3Z5MaCZzceK1-eK_7x6J2HQh5sOneKEFTQQZdVTdsqsLrzxpVtKEOV-o-3ARzNbmuNWVQXozU5CL1FIL6eLl9PllIca0EYeFE5z4Ly74WTn9ysoW9afH9fkgiOSS6YlL0HMW2cYzp02J1pqQPUlMwGgrC65PCRsbw-mLDONZzWpfcvCxhNrL_7xIwLFCTU8vZZaant7QIGwPdU_gFKEWyIetiU-N64?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3577 mts<br>distancia a siguiente pozo/poste: 89 mts<br>descripción: pozo tipo 4 frente a refona sobre rodadura con reserva de 35 mts de reserva]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3577 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>89 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a refona sobre rodadura con reserva de 35 mts de reserva</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop56kbjn2esNH5ZXsNbSA_MUbIpD3Z5MaCZzceK1-eK_7x6J2HQh5sOneKEFTQQZdVTdsqsLrzxpVtKEOV-o-3ARzNbmuNWVQXozU5CL1FIL6eLl9PllIca0EYeFE5z4Ly74WTn9ysoW9afH9fkgiOSS6YlL0HMW2cYzp02J1pqQPUlMwGgrC65PCRsbw-mLDONZzWpfcvCxhNrL_7xIwLFCTU8vZZaant7QIGwPdU_gFKEWyIetiU-N64?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5480714,14.5711917,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 16</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop-ZiqjNaE84UhT09n-ES9VoJ_Xn6PbcOGY3EcsZLNHyUmLiI54WVWNrdf9st0wMBxzg9OafL-q6FGognJuANNZPvC5RPh3KLBMrQzUUk6Pq2mUjE5FXuNzbczTl6BDvshFAxdSu6XUdHbJfKFI9BbiYxrTi_dm9lhpipl4g806ZTfmKmZvPcViRNRW0VdQJyzuGeQ1-Ee8MsIEjm7-GE6QinD4ybujhpulLMpsl284aSKr9Fda2ka51Fg?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3192 mts<br>distancia a siguiente pozo/poste: 91 mts<br>descripción: pozo tipo 4 frente a globalflex sobre rodadura]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3192 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>91 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a globalflex sobre rodadura</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop-ZiqjNaE84UhT09n-ES9VoJ_Xn6PbcOGY3EcsZLNHyUmLiI54WVWNrdf9st0wMBxzg9OafL-q6FGognJuANNZPvC5RPh3KLBMrQzUUk6Pq2mUjE5FXuNzbczTl6BDvshFAxdSu6XUdHbJfKFI9BbiYxrTi_dm9lhpipl4g806ZTfmKmZvPcViRNRW0VdQJyzuGeQ1-Ee8MsIEjm7-GE6QinD4ybujhpulLMpsl284aSKr9Fda2ka51Fg?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5490462,14.5681673,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 14</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqDVPhQgG5sy3VFLKS-cEmkdzNt3Q6nC5UP-3-E_f09Y47vWvP_37ev0TstshM_637gwxnr3qpFosAbxDQHwNpS8nmqTsYr4NupQxW2PSSqmrRm03TYA93wpp1jISBAOIeHP-oN8OyY2SCY-C_N_tYhrxgglDbHbrMuCisOPhXJArf2WIyB10X5v_Wwjxw0zYyxEKroqxIsj23-s77f3QUL1q6GOlm6eg68yqqSqGdhz8EFZi3bFBVZSl8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3032 mts<br>distancia a siguiente pozo/poste: 7 mts<br>descripción: pozo tipo 4 frente a DIstincomer 46-73]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3032 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>7 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a DIstincomer 46-73</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqDVPhQgG5sy3VFLKS-cEmkdzNt3Q6nC5UP-3-E_f09Y47vWvP_37ev0TstshM_637gwxnr3qpFosAbxDQHwNpS8nmqTsYr4NupQxW2PSSqmrRm03TYA93wpp1jISBAOIeHP-oN8OyY2SCY-C_N_tYhrxgglDbHbrMuCisOPhXJArf2WIyB10X5v_Wwjxw0zYyxEKroqxIsj23-s77f3QUL1q6GOlm6eg68yqqSqGdhz8EFZi3bFBVZSl8?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5491205,14.5672561,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 15</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBootbVv_bbYueeVeMXhySduW54LHhpas8zaBBAwQO5BaW_bGlUg90U39UCzpXGF6jzUuWNZuwLM7r0Ag-4njlProd476XVP5z3vFUc8X7_TmNQQvZzMj8pUCJSH1NlujMkOleInTw9v1uw8Y1EqqRo5mkhK3dVkMdbphzRo6gMlcjDcT1Tlberf5ac6ExCCsTsdZJyA7EPwnaHYaS0L6KDYUXm44tqUSZy8eZDBWQfO9dIssvNLqGr3Q5ow?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3098 mts<br>distancia a siguiente pozo/poste: 98 mts<br>descripción: pozo tipo 4 frente a distincomer sobre rodadura]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3098 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>98 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a distincomer sobre rodadura</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBootbVv_bbYueeVeMXhySduW54LHhpas8zaBBAwQO5BaW_bGlUg90U39UCzpXGF6jzUuWNZuwLM7r0Ag-4njlProd476XVP5z3vFUc8X7_TmNQQvZzMj8pUCJSH1NlujMkOleInTw9v1uw8Y1EqqRo5mkhK3dVkMdbphzRo6gMlcjDcT1Tlberf5ac6ExCCsTsdZJyA7EPwnaHYaS0L6KDYUXm44tqUSZy8eZDBWQfO9dIssvNLqGr3Q5ow?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5492306,14.5672602,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 17</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoooZH_lYWtDCfpqZUCdOaEvAlKajLG6-ySRluDWfQuSdC7a0q3o-uKrZCF-tC0OeFpEY0wEbGXsPJtHiAeKp3Crp4Ry7wHxzNzlCUsx9aPM-ZgD0P5qAoRysQSCxCjBDYLU6QMQ4j3ph-fofsgFzuwS477f1R_xgro14gFKEllLkJkka8JQMj5i1iMfBC8JBiHNjR2JcPbBAl1ZmuLKPydesgZ9V3f4mjbV9ud9iJjeoNHkNIoDLcEmOhk?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3268 mts<br>distancia a siguiente pozo/poste: 10 mts<br>descripción: pozo tipo 4 sobre rodadura frente a dolar city]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3268 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>10 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 sobre rodadura frente a dolar city</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoooZH_lYWtDCfpqZUCdOaEvAlKajLG6-ySRluDWfQuSdC7a0q3o-uKrZCF-tC0OeFpEY0wEbGXsPJtHiAeKp3Crp4Ry7wHxzNzlCUsx9aPM-ZgD0P5qAoRysQSCxCjBDYLU6QMQ4j3ph-fofsgFzuwS477f1R_xgro14gFKEllLkJkka8JQMj5i1iMfBC8JBiHNjR2JcPbBAl1ZmuLKPydesgZ9V3f4mjbV9ud9iJjeoNHkNIoDLcEmOhk?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5488712,14.5689548,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 18</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoogLSDR5JnQJ9f-cvXoiu17HUVQwTipOTxdTPTZeY__MIR7glL4Ov3cckWQOqSX16Hlolcl1tm9i72kX6_zAH0XJzjITdWKK891wcIrf79o9i0eikelVob1ihSRvsKAPSDC6mRcqZGYuR2SIow5ANOxGNVlE0CMZna_wniyuv4YnVT3Ff_vELdi_aOOeUK-EqocjLhicMaNV8FPtsssE4vJQM8pzKx__zcJxL-K31AfCfeTARleEP0e4IY?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3278 mts<br>distancia a siguiente pozo/poste: 91 mts<br>descripción: pozo tipo 4 frente a super 24 sobre rodadura]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3278 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>91 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a super 24 sobre rodadura</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoogLSDR5JnQJ9f-cvXoiu17HUVQwTipOTxdTPTZeY__MIR7glL4Ov3cckWQOqSX16Hlolcl1tm9i72kX6_zAH0XJzjITdWKK891wcIrf79o9i0eikelVob1ihSRvsKAPSDC6mRcqZGYuR2SIow5ANOxGNVlE0CMZna_wniyuv4YnVT3Ff_vELdi_aOOeUK-EqocjLhicMaNV8FPtsssE4vJQM8pzKx__zcJxL-K31AfCfeTARleEP0e4IY?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5488262,14.569075,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 30</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorLaIkfXM_aEDSXFTTj29D6rszT83XyXxnig61lg-ngRDX0GqkmplcXfSWGAdBqawB2wKUmjWqxmMaYI7c8-HepRb3ykwUd_rS8YEfd7j6Hx87Ixm9CGAK0lBzAyf6yrPQGOEszeV3s3djLrQU9p0NqBouRnHYeAlHkx7ETTP3dXCIvkCV1iMiR1kaqfjXGqwpfZCows2OOdiP8U_Sb5-a4tVMHm2QifI3sHSTwfgKHD79Wt-0gq1GzFcA?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 105 mts<br>distancia a siguiente pozo/poste: 28 mts<br>descripción: pzo frenta a gasolinera puma<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopCKhdW62IgZgg--bqB0SkSCzyvfSda6o5ZnZgbNcjkiPjiUjGKuC9OE3-vi70rWEGPhg7Bx7up22oSunmjG_zeXZYFAK-yczwDXn5ICIvr53YOmIIwsq6NqyWwxC06quu7G7rE-2qbFH7lon2SUWfTqEMQpTbNd8XIu9L3dVh-i3ExfG5I6UBLiZgcYZGQbkP5AKKtkaDMSJ43Sr4HrRKrxX_P5yzK95jNY1WpYeuu8sOMEnUx2AUkbM8?authuser=0&fife=s16383" height="200" width="auto" />]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>105 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>28 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pzo frenta a gasolinera puma</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorLaIkfXM_aEDSXFTTj29D6rszT83XyXxnig61lg-ngRDX0GqkmplcXfSWGAdBqawB2wKUmjWqxmMaYI7c8-HepRb3ykwUd_rS8YEfd7j6Hx87Ixm9CGAK0lBzAyf6yrPQGOEszeV3s3djLrQU9p0NqBouRnHYeAlHkx7ETTP3dXCIvkCV1iMiR1kaqfjXGqwpfZCows2OOdiP8U_Sb5-a4tVMHm2QifI3sHSTwfgKHD79Wt-0gq1GzFcA?authuser=0&fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopCKhdW62IgZgg--bqB0SkSCzyvfSda6o5ZnZgbNcjkiPjiUjGKuC9OE3-vi70rWEGPhg7Bx7up22oSunmjG_zeXZYFAK-yczwDXn5ICIvr53YOmIIwsq6NqyWwxC06quu7G7rE-2qbFH7lon2SUWfTqEMQpTbNd8XIu9L3dVh-i3ExfG5I6UBLiZgcYZGQbkP5AKKtkaDMSJ43Sr4HrRKrxX_P5yzK95jNY1WpYeuu8sOMEnUx2AUkbM8?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.546495,14.5759443,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 20</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqPSEwE7y03-RfuiSvLVjqSo7ErcCKE4_s-fXvY0PMpdYS9ChaKY0aP3X6yjwdiJLfHmlj2u1KAJCReUUGpgJGn2yskEsfcKiZ5weWM3UB6bDIRZJon_DmJGq2p9BJ8CRa1hNgLTgGndSCjPRWxp7oxAR-TSPu-xrmXqHdTTK5uJLQXIBVsqCS-KbdDknYT88oklik7tMzgxcb3KerRiNZWulgvM7pj8F9GlS8VGRwmefZkqslBL-ZSMac?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3440 mts<br>distancia a siguiente pozo/poste: 92 mts<br>descripción: pozo tipo 4 frente a banco chn sobre rodadura]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3440 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>92 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a banco chn sobre rodadura</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqPSEwE7y03-RfuiSvLVjqSo7ErcCKE4_s-fXvY0PMpdYS9ChaKY0aP3X6yjwdiJLfHmlj2u1KAJCReUUGpgJGn2yskEsfcKiZ5weWM3UB6bDIRZJon_DmJGq2p9BJ8CRa1hNgLTgGndSCjPRWxp7oxAR-TSPu-xrmXqHdTTK5uJLQXIBVsqCS-KbdDknYT88oklik7tMzgxcb3KerRiNZWulgvM7pj8F9GlS8VGRwmefZkqslBL-ZSMac?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5483116,14.5704262,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 19</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqB8XwaPepEhoVXwusCVjGT26C6HjxMDlNiwslXFw7n-vNsqUokutneSk04sjB_DO4eSCzrIMJA6aNkqkSVZil004oGqQBBtKZxLq7vvQJE1PefiNalaAPSRxpxYnMOb2LlRkuBE-QhVk3IJeLNqNV6oynChw65Quu9OLL36UfAQJ5ScHZtL_Tr8kbTsE9EBxtQI5NDqXOuxcCNgOefpxtmjbjNf6RGTH6zK96rpBuSnIRqhBIelWAWBn8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3369 mts<br>distancia a siguiente pozo/poste: 71 mts<br>descripción: pozo tipo 4 sobre rodadura,  frente a gasolinera texaco]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3369 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>71 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 sobre rodadura,  frente a gasolinera texaco</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqB8XwaPepEhoVXwusCVjGT26C6HjxMDlNiwslXFw7n-vNsqUokutneSk04sjB_DO4eSCzrIMJA6aNkqkSVZil004oGqQBBtKZxLq7vvQJE1PefiNalaAPSRxpxYnMOb2LlRkuBE-QhVk3IJeLNqNV6oynChw65Quu9OLL36UfAQJ5ScHZtL_Tr8kbTsE9EBxtQI5NDqXOuxcCNgOefpxtmjbjNf6RGTH6zK96rpBuSnIRqhBIelWAWBn8?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5485477,14.5697695,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 22</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop1vempMvV-9gGxkdjVs4tUuyXOaGjSUq0NuSNRSccGjIhE0X-KGU1tKh7zc8GvJJT-z7EDwN_oArrdETArk_YEFz8Hg-VT3pxbuzS6u32ux98TEh2NwmP-quvhn8hkv-DCAJu4lwmckZmAZ1Jk0aj6zhdjmL3N2zJABHKqdi3QniiNBCqqWba-IewXOfIXaQl7juHqYq3LDeFL8H5Ft9v5mhbn-ebxIULay51ysaM6foEFcJP5mWq8ZWk?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3666 mts<br>distancia a siguiente pozo/poste: 95 mts<br>descripción: pozo tipo 4 sobre rodadura frente a andares 12]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3666 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>95 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 sobre rodadura frente a andares 12</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop1vempMvV-9gGxkdjVs4tUuyXOaGjSUq0NuSNRSccGjIhE0X-KGU1tKh7zc8GvJJT-z7EDwN_oArrdETArk_YEFz8Hg-VT3pxbuzS6u32ux98TEh2NwmP-quvhn8hkv-DCAJu4lwmckZmAZ1Jk0aj6zhdjmL3N2zJABHKqdi3QniiNBCqqWba-IewXOfIXaQl7juHqYq3LDeFL8H5Ft9v5mhbn-ebxIULay51ysaM6foEFcJP5mWq8ZWk?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5477804,14.5719601,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 24</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorGPuMTBNez8h7CcgPALGQm87VwgAhBA62N_-i__Diw5G0fWaj2wUYJxvumN5raUwUCWCEG8QzVzjPnsnbV-HCDNRJkgfDLX-7883zvA7b8SJpx9h9mvz-KOjMucsf5rsK-B9SnDeJfEQCpLJywHF1xEoCs5iYIblTh1eApg-DjVtrjCQHtXAAgbox30A5hmMMuP3b24utcC-biqxWsC3ZobshBb3FOxSjQEKLTDXCGUTIasd7UrMa_UDk?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3828 mts<br>distancia a siguiente pozo/poste: 77 mts<br>descripción: pozo tipo 4 frente aceros de calidad<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoppQwkMWRTzW_VPQY6Tq-H3NjeSmTyBK_-hcWRQ6QGObKmQWpBi0gvx0NqxhiM9enORVf7Sn9CHLzVDy14DmhqW3ysMNr8iphPjyLPmnTwiG-CET8BoI51rHKNQDR5lOPryoN5H74FgkVIMSK-T88B5wDTkhRhpCNdDm8f8mUo7Uw_r_FkYT7DBA9sJPrHZF3WHDVkKFfNfXjYfaAeSG-noInFgvKaro4_ZZM9jms625Pej1J_i_dzJU18?authuser=0&fife=s16383" height="200" width="auto" />]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3828 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>77 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente aceros de calidad</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorGPuMTBNez8h7CcgPALGQm87VwgAhBA62N_-i__Diw5G0fWaj2wUYJxvumN5raUwUCWCEG8QzVzjPnsnbV-HCDNRJkgfDLX-7883zvA7b8SJpx9h9mvz-KOjMucsf5rsK-B9SnDeJfEQCpLJywHF1xEoCs5iYIblTh1eApg-DjVtrjCQHtXAAgbox30A5hmMMuP3b24utcC-biqxWsC3ZobshBb3FOxSjQEKLTDXCGUTIasd7UrMa_UDk?authuser=0&fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoppQwkMWRTzW_VPQY6Tq-H3NjeSmTyBK_-hcWRQ6QGObKmQWpBi0gvx0NqxhiM9enORVf7Sn9CHLzVDy14DmhqW3ysMNr8iphPjyLPmnTwiG-CET8BoI51rHKNQDR5lOPryoN5H74FgkVIMSK-T88B5wDTkhRhpCNdDm8f8mUo7Uw_r_FkYT7DBA9sJPrHZF3WHDVkKFfNfXjYfaAeSG-noInFgvKaro4_ZZM9jms625Pej1J_i_dzJU18?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5472423,14.573256,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 23</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqkkeyYRaqmRZGerE63y7Q-36ULnT_eT4uu2tv2EiBmPlIt3g5l_unh1zg-eeChho22zrToaaLHdrqg971p1BD-CqnSVXRWkdNCtS-ULCJQyk6AbjG1PXtvJgrlZmSzwSr-0tvqisjHtmYX83dqpnfYi-ga90LoLPaOF-QbxTZcG4zsrdiuWK46pADtTH7onN53vgnojq3NS1PSvQhRny6hUYCP1ozlNDHFC7TdJJGvgZB2NkYtThI0eng?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3761 mts<br>distancia a siguiente pozo/poste: 77 mts<br>descripción: pozo tipo 4 frente a aceros de calidad sobre rodadura]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3761 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>77 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a aceros de calidad sobre rodadura</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqkkeyYRaqmRZGerE63y7Q-36ULnT_eT4uu2tv2EiBmPlIt3g5l_unh1zg-eeChho22zrToaaLHdrqg971p1BD-CqnSVXRWkdNCtS-ULCJQyk6AbjG1PXtvJgrlZmSzwSr-0tvqisjHtmYX83dqpnfYi-ga90LoLPaOF-QbxTZcG4zsrdiuWK46pADtTH7onN53vgnojq3NS1PSvQhRny6hUYCP1ozlNDHFC7TdJJGvgZB2NkYtThI0eng?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5474424,14.5727459,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 27</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopKckFatMjFlb-_zCWE90-eNtcV6udHeowVrVufS5lZe_guj5uYuG3r5iJZXAeeISyAVOs-HgF9S9LrJizvS6_W7S7ThQdKySnVhHrkFYTrZbzusbAnZArlbRIKSOMdbO434bV7Mr8-zIvPpoKGJLq91NLskk2L4mgdFy663EvxHpZGqVo6lct0B9rQpXdlrbCxBFek5l8VteVoUSN8Xk9vtl7jCogcpzipa59g0ONn2EM8Va3YDjoTbqo?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 4046 mts<br>distancia a siguiente pozo/poste: 16 mts<br>descripción: pozo tipo 4 ubicado en equinda de 42 calle]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>4046 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>16 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 ubicado en equinda de 42 calle</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopKckFatMjFlb-_zCWE90-eNtcV6udHeowVrVufS5lZe_guj5uYuG3r5iJZXAeeISyAVOs-HgF9S9LrJizvS6_W7S7ThQdKySnVhHrkFYTrZbzusbAnZArlbRIKSOMdbO434bV7Mr8-zIvPpoKGJLq91NLskk2L4mgdFy663EvxHpZGqVo6lct0B9rQpXdlrbCxBFek5l8VteVoUSN8Xk9vtl7jCogcpzipa59g0ONn2EM8Va3YDjoTbqo?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5465742,14.5750712,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 26</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopc-bt_-eI6yaCHv2_2T5XbDVIeiIIKxCRtcVvtTy493tLmAUCdgBA3tYDMPlcfQnsugG7JgTmCPFIyhWvLJD7jBNo56IFZFpX76eTy_9EU_yxZGWDQ1c-eVoFpotee2O8cGPzjulv2aaD8K1Vp4pNJibUeZrVPA3qkWelGjWH4DzMGVthNv28JPPXuDTumKlvrh8gEauvvKqQKGkbXESi9xzVQdUe56bJPkct00uAnzGsnBChAfET7JnQ?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3957 mts<br>distancia a siguiente pozo/poste: 89 mts<br>descripción: pozo tipo  4 frente a ingreso de orkin 42- 21]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3957 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>89 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo  4 frente a ingreso de orkin 42- 21</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopc-bt_-eI6yaCHv2_2T5XbDVIeiIIKxCRtcVvtTy493tLmAUCdgBA3tYDMPlcfQnsugG7JgTmCPFIyhWvLJD7jBNo56IFZFpX76eTy_9EU_yxZGWDQ1c-eVoFpotee2O8cGPzjulv2aaD8K1Vp4pNJibUeZrVPA3qkWelGjWH4DzMGVthNv28JPPXuDTumKlvrh8gEauvvKqQKGkbXESi9xzVQdUe56bJPkct00uAnzGsnBChAfET7JnQ?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5466276,14.5742891,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 25</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorxnScgTD5iR3JOJmWMmq_n0CgzQAU-l1pMM4XcJzXjnDlquu1Jspqh_H7lZEgh9O0o5oKAHYtw_JqQuT_KuuAhIthtblj2THSvn7Chvpior0gs3QDbYwyIl3urLMGionotm8otHaBvxAR9WC2kJJNfHqsWMl311i1HpISrYYbiGLqn2PPKmxNngIAcDwUjlt4zJkrVdPRkWzKryC-XDs-K0MZzXwvUXvOL_tVfHL6KthQlAQPFaXlVoP4?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 3893 mts<br>distancia a siguiente pozo/poste: 65 mts<br>descripción: pozo tipo 4 frente a ingreso de forza<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqHhEb6f-Sy2O2x8Sk8MicXnXgn2Te1P64p43UIMqiiKORbA1oO8qqjGKQqLVcvHMOhYLzn1H0OIGdutgPBcwCoHmOGCK4eRv7GazM2lRXLncItNjpfuMBLXsXHOHvsn-rptR211mOnKxv2j2mF-PeyZ1ELezJ6Z9nGNmgiU4Hq2Ai7ZpuCYNdhxfQa6h5cqHuQDrhjLt7GMt0R_K1__2cB4ktQ5l7jc61Nz26ohItFT6TpYTMKK8TAIp0?authuser=0&fife=s16383" height="200" width="auto" />]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3893 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>65 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a ingreso de forza</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorxnScgTD5iR3JOJmWMmq_n0CgzQAU-l1pMM4XcJzXjnDlquu1Jspqh_H7lZEgh9O0o5oKAHYtw_JqQuT_KuuAhIthtblj2THSvn7Chvpior0gs3QDbYwyIl3urLMGionotm8otHaBvxAR9WC2kJJNfHqsWMl311i1HpISrYYbiGLqn2PPKmxNngIAcDwUjlt4zJkrVdPRkWzKryC-XDs-K0MZzXwvUXvOL_tVfHL6KthQlAQPFaXlVoP4?authuser=0&fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqHhEb6f-Sy2O2x8Sk8MicXnXgn2Te1P64p43UIMqiiKORbA1oO8qqjGKQqLVcvHMOhYLzn1H0OIGdutgPBcwCoHmOGCK4eRv7GazM2lRXLncItNjpfuMBLXsXHOHvsn-rptR211mOnKxv2j2mF-PeyZ1ELezJ6Z9nGNmgiU4Hq2Ai7ZpuCYNdhxfQa6h5cqHuQDrhjLt7GMt0R_K1__2cB4ktQ5l7jc61Nz26ohItFT6TpYTMKK8TAIp0?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.54692,14.5737647,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 28</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopyh4KHzVQS_PQC5k0JyzpQsRhmoKvcbhzTUzc8msRiWQjMskcJIw7hvGqfh97zHB7K4DJMIijiCMt5picDHC8e6AbVkCdXHJnr5TKj78uJEtxmIkv3AM_t1ClU58h422O3U8zuwz9MSTjUIs0Pd9MLdc0yGEqVfSwedh4tI28aP5ZNK4VZ9RGlJ2t-kAfIUn9EbUg2cs2w5_aL7RrQ58HE3SbnRNiNzC78hKkPgqtQ15orepqT8sDiAUw?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 4062 mts - 23 mts<br>distancia a siguiente pozo/poste: 55 mts<br>descripción: pozo tipo 4 frente a semaforo 42 calle sobre rodadura, sale cable UM 12 fo 09/2006]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>4062 mts - 23 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>55 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a semaforo 42 calle sobre rodadura, sale cable UM 12 fo 09/2006</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopyh4KHzVQS_PQC5k0JyzpQsRhmoKvcbhzTUzc8msRiWQjMskcJIw7hvGqfh97zHB7K4DJMIijiCMt5picDHC8e6AbVkCdXHJnr5TKj78uJEtxmIkv3AM_t1ClU58h422O3U8zuwz9MSTjUIs0Pd9MLdc0yGEqVfSwedh4tI28aP5ZNK4VZ9RGlJ2t-kAfIUn9EbUg2cs2w5_aL7RrQ58HE3SbnRNiNzC78hKkPgqtQ15orepqT8sDiAUw?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5465738,14.575203,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 29</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor9tnh9z0ae2jGmNaD0hloGFyG0dTDiLh7XxQsMi6834w_6Sr-uTWS1A03uNHevdzGPUsAzrN-QqD9xUU92fiDYfZ8lqqBaGkC5qGWY4lyfoAYDX2h0U4Qe8xdV5VZUkg9-CzlLOVFD59XruJjdptgdmYxDLdkSLrSBGo_RhEzw-IzFTpf5c46WtSFW3xZWtThs-Nfd_Dtid5Prt0sHSqZLW5qmhPAkxYLguOlJxys3ABjUQ-dlJducUUA?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 78 mts<br>distancia a siguiente pozo/poste: 27 mts<br>descripción: pozo tipo 4 frente a la muebleria]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>78 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>27 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a la muebleria</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor9tnh9z0ae2jGmNaD0hloGFyG0dTDiLh7XxQsMi6834w_6Sr-uTWS1A03uNHevdzGPUsAzrN-QqD9xUU92fiDYfZ8lqqBaGkC5qGWY4lyfoAYDX2h0U4Qe8xdV5VZUkg9-CzlLOVFD59XruJjdptgdmYxDLdkSLrSBGo_RhEzw-IzFTpf5c46WtSFW3xZWtThs-Nfd_Dtid5Prt0sHSqZLW5qmhPAkxYLguOlJxys3ABjUQ-dlJducUUA?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5465197,14.5757051,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 31</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBooi7uvWIpoD1ABI9nFxxJ7JoXpZtyNHFBi3L28QYHQUS8w4ZhS3EizNciByxcaIqNmXH4Yqcou9KN1BD5rqdYNs8NQ1xhUVeu2EUYyrp1LJbljIJmQASKjLXxzTV5D-vuam-lnKEgL7_wZzXS1A89p_1NfqZ51jswLD42Yer3SBmXzA75ccW_QDxDaofhb68W6hyd9PFtht5cmzxdVNwe2e3o35Zd-BdaBOSJMzvW5GilSyzNCR4ecp9uY?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 133 mts<br>distancia a siguiente pozo/poste: 45 mts<br>descripción: pozo tipo 4 frente a lacetex]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>133 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>45 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a lacetex</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBooi7uvWIpoD1ABI9nFxxJ7JoXpZtyNHFBi3L28QYHQUS8w4ZhS3EizNciByxcaIqNmXH4Yqcou9KN1BD5rqdYNs8NQ1xhUVeu2EUYyrp1LJbljIJmQASKjLXxzTV5D-vuam-lnKEgL7_wZzXS1A89p_1NfqZ51jswLD42Yer3SBmXzA75ccW_QDxDaofhb68W6hyd9PFtht5cmzxdVNwe2e3o35Zd-BdaBOSJMzvW5GilSyzNCR4ecp9uY?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5464544,14.5761981,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>central vientos del valle</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4b0F8GEelqH28_HavaJZv0gAHz2KHcpC_OE7fL8kkss46sBB7u1DVRYwmfY5H7ZyuQ3CbaHhnd5SKgVYN6ulteAZcSUPqw59ao4gjhmEOu1Rl3lbgYAcG742DGsWOQN1IPz7FlwaiSetqjfwJtsMjT9wGS2f0JmVmTEkYmsE6NNrkIwjUxfxTTwXfj78e8ZQgPxR68dkzESI5iSvFi3Ss-S8KgKAt1ZkWIwuyPLkEtHKBzO0fB_NLCmdP4nmRymqsuFJ1Be74vLPCVD_u9YaImvfTUTr2bUBLpLbrhrsvNbAkGUOWjC7_5D2YOfYTatSHNoon0Go6N2sQYOb8iOBO1ZTGK7Ijv0eP8qreqK1IXYH0DpBRv39vOR1ZNvV1kUw00dFzJTiqGvtgmJ36NSNBT76CSYEHmIX-hT4PgzWT5zXnYageWI4MYejDYeX9cFEz3QUxNzBp6_n_BMMLaCP-4D3fWBzM-7ko8YemVK-rq4LJREx9h7tVXhRZgSzd85d605mUE_irPvNw35kgh_-uZoDGZTSzEejyFdQ5_csdTQcFzYJ_GPLA7r1h3i20MWBt3GkG7pLvY_ukhTzfR6CXkpoZA3kfws4VOOzcqQq0cJY7WeDBQpQbuefNk-Mc0d47nOT6s6VdTDGLt95RnrnMjHE8uwnGj3_G9w1fDROATDBosIOilW5zz940IoWJYDdq0q19zHl2WnVpKbodLIvQsT3fk" height="200" width="auto" /><br><br>metraje de cable: 3932 mts<br>distancia a siguiente pozo/poste: 15 mts<br>descripción: ]]></description>
+      <styleUrl>#icon-1826-1A237E</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3932 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>15 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value/>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4b0F8GEelqH28_HavaJZv0gAHz2KHcpC_OE7fL8kkss46sBB7u1DVRYwmfY5H7ZyuQ3CbaHhnd5SKgVYN6ulteAZcSUPqw59ao4gjhmEOu1Rl3lbgYAcG742DGsWOQN1IPz7FlwaiSetqjfwJtsMjT9wGS2f0JmVmTEkYmsE6NNrkIwjUxfxTTwXfj78e8ZQgPxR68dkzESI5iSvFi3Ss-S8KgKAt1ZkWIwuyPLkEtHKBzO0fB_NLCmdP4nmRymqsuFJ1Be74vLPCVD_u9YaImvfTUTr2bUBLpLbrhrsvNbAkGUOWjC7_5D2YOfYTatSHNoon0Go6N2sQYOb8iOBO1ZTGK7Ijv0eP8qreqK1IXYH0DpBRv39vOR1ZNvV1kUw00dFzJTiqGvtgmJ36NSNBT76CSYEHmIX-hT4PgzWT5zXnYageWI4MYejDYeX9cFEz3QUxNzBp6_n_BMMLaCP-4D3fWBzM-7ko8YemVK-rq4LJREx9h7tVXhRZgSzd85d605mUE_irPvNw35kgh_-uZoDGZTSzEejyFdQ5_csdTQcFzYJ_GPLA7r1h3i20MWBt3GkG7pLvY_ukhTzfR6CXkpoZA3kfws4VOOzcqQq0cJY7WeDBQpQbuefNk-Mc0d47nOT6s6VdTDGLt95RnrnMjHE8uwnGj3_G9w1fDROATDBosIOilW5zz940IoWJYDdq0q19zHl2WnVpKbodLIvQsT3fk</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.55564,14.562365,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 13</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor-b1zG50dZTxqY869Hf1FRiNMe0ErliHSePhIhFuYQ7Kq1WxLR3kXZzSxeNVqZg0lImU9cD9GovVOxw9Bh3L44QpmUWqmih6XNgFFrkSENqChMm8VDLWffsaRx9K1tPGZ2MsGueByU6q5JaXQ08PKdCQvgsq_m_oRF8JaO6lsc1vY72g20wIQhGI8xZiSxMcjx8rBiC8XGc5ZLCUU5dCmpBx3E-oCP9zr4lUFkjNr0FchObQDUQuznM-0?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 390 mts<br>distancia a siguiente pozo/poste: 35 mts<br>descripción: poste ubicado a un costado de celasa 40 calle ]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>390 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>35 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado a un costado de celasa 40 calle </value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor-b1zG50dZTxqY869Hf1FRiNMe0ErliHSePhIhFuYQ7Kq1WxLR3kXZzSxeNVqZg0lImU9cD9GovVOxw9Bh3L44QpmUWqmih6XNgFFrkSENqChMm8VDLWffsaRx9K1tPGZ2MsGueByU6q5JaXQ08PKdCQvgsq_m_oRF8JaO6lsc1vY72g20wIQhGI8xZiSxMcjx8rBiC8XGc5ZLCUU5dCmpBx3E-oCP9zr4lUFkjNr0FchObQDUQuznM-0?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5461672,14.5782119,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 33</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorCXjBKuthrRpxL5umLeTe3NbSnQj62dzcghn3wiZINVX-akJgG8gJLWoKdn4DrSFwxCdB_2apoK7SPE67KzPkpWNjPXBXMm22EMZog2RD1MQ1ak8RBSW20N3i5EIz2HhupbPPdcdb61FNY6kVrtEGub-OVFjXCm8xIIo8JwV-XxsPjmRy8u_YW6221csyBVnw-CNL8Zy1Mua9xOTSizGlV_id7_po8tSxqfB_kCeXw0b1BBAAGXnKZEbU?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 207 mts<br>distancia a siguiente pozo/poste: 86 mts<br>descripción: pozo tipo 4 frente a ingreso de genpact]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>207 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>86 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a ingreso de genpact</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorCXjBKuthrRpxL5umLeTe3NbSnQj62dzcghn3wiZINVX-akJgG8gJLWoKdn4DrSFwxCdB_2apoK7SPE67KzPkpWNjPXBXMm22EMZog2RD1MQ1ak8RBSW20N3i5EIz2HhupbPPdcdb61FNY6kVrtEGub-OVFjXCm8xIIo8JwV-XxsPjmRy8u_YW6221csyBVnw-CNL8Zy1Mua9xOTSizGlV_id7_po8tSxqfB_kCeXw0b1BBAAGXnKZEbU?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5464054,14.5768507,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 32</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoq8O1P7eJIJaNS7wrnJALNepsjMmJ-EwWEN3v6AmrcgfPapTaAWqrlEr0HYk98AoC5mrOREjfuhqJUWMEJyww_fWI5Bb_5beWW8ZBY_5muI8hXxgSJImG92F6Eelm2pW_v7jrz9l-3tIRW6bIOqDzFOhLqt2hsQNeZ5air_O0PDZ5e-aKOKZRMsHDDPDOy6t5jWv3UchihUMBdipWOcttPt1R7asTKUessdnIFBQHaXqhNQh_NHmnl7xjY?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 178 mts<br>distancia a siguiente pozo/poste: 29 mts<br>descripción: pozo tipo 4 frente a vivitos 40-51  ]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>178 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>29 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a vivitos 40-51  </value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoq8O1P7eJIJaNS7wrnJALNepsjMmJ-EwWEN3v6AmrcgfPapTaAWqrlEr0HYk98AoC5mrOREjfuhqJUWMEJyww_fWI5Bb_5beWW8ZBY_5muI8hXxgSJImG92F6Eelm2pW_v7jrz9l-3tIRW6bIOqDzFOhLqt2hsQNeZ5air_O0PDZ5e-aKOKZRMsHDDPDOy6t5jWv3UchihUMBdipWOcttPt1R7asTKUessdnIFBQHaXqhNQh_NHmnl7xjY?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5464404,14.576606,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo35</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqD5OlFQNOBOBaHDyW58qBLYRYN56t_pQIRXa8ZOGuzGWLWpvdgfRKzuzEt9x45cklpbD9-tuDBVMZf6ajucubxZNQJp7gQHeFWf7Q46ds0fwTunG60CWnUmd-kMg0qplBKZVAAk1dvKZ9Ha5wLt17XxoDEPQnpfsbZ93vwq6aWnUj-GvC2KdwUx-HYn7FxjUkTul3Ynxe2VqHDPFzmI5pAVOzHnrBs3ILCfNkMWnbo_sOhA_0VcZbm-n0?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 369 mts<br>distancia a siguiente pozo/poste: 21 mts<br>descripción: pozo tipo 4 en esquina de celasa 40 calle]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>369 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>21 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 en esquina de celasa 40 calle</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqD5OlFQNOBOBaHDyW58qBLYRYN56t_pQIRXa8ZOGuzGWLWpvdgfRKzuzEt9x45cklpbD9-tuDBVMZf6ajucubxZNQJp7gQHeFWf7Q46ds0fwTunG60CWnUmd-kMg0qplBKZVAAk1dvKZ9Ha5wLt17XxoDEPQnpfsbZ93vwq6aWnUj-GvC2KdwUx-HYn7FxjUkTul3Ynxe2VqHDPFzmI5pAVOzHnrBs3ILCfNkMWnbo_sOhA_0VcZbm-n0?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5462592,14.5781945,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 34</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoo7zuBUPvH_JSXuSTJFFQkJHNcHwMzYev9OGDKorOv-7NfkiTEHmTKRXN54QLpKnQm3NuNsq1J_4wTNuR4iEE7grd__BDbE5JWvkvF7DdrB_cETYl9PS1ZbpOEkscjpVAkIfGKkkrk4z-LrEgXsTeEHUNaW-t4hGtyjnczGAfSLvQvU-UW37tg5evDv0mhRBcHYKki_MgS43xrk8lW0pQfc-ZFhVQ_SJgG_W2it9E2etjRgv4-PO2IcxX8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 293 mts<br>distancia a siguiente pozo/poste: 66 mts<br>descripción: pozo tip 4 frente a sherwin williams]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>293 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>66 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tip 4 frente a sherwin williams</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoo7zuBUPvH_JSXuSTJFFQkJHNcHwMzYev9OGDKorOv-7NfkiTEHmTKRXN54QLpKnQm3NuNsq1J_4wTNuR4iEE7grd__BDbE5JWvkvF7DdrB_cETYl9PS1ZbpOEkscjpVAkIfGKkkrk4z-LrEgXsTeEHUNaW-t4hGtyjnczGAfSLvQvU-UW37tg5evDv0mhRBcHYKki_MgS43xrk8lW0pQfc-ZFhVQ_SJgG_W2it9E2etjRgv4-PO2IcxX8?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.546326,14.5776412,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 0</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4b_RURyZcDHUV4zcy09lJprUWytYH3CJz4FoTtPPPN1gMYxuqVh2zod1XJIxQRDGDsyaU7ntBDOArAIZrnJy03Ivxhs25vu7a-QA_ZMeEj2KBBCNAJAykzfMtE8npsU1ulxw65sg-aEKdQjAPUv2-Hmx7Bxqxle7IP-XxMNSUlLH3oV2MjV4KmOnSmq_cMQBghHH5KerqUZZIhL8t5T-YnXaqINDbjhI4LDmgae6Bzr-cMDFCOlEWqONqIzFRYgrYl3N1RPbOgp5lc0Zo9Og2xLf_ayR4Pw2oc0gIRJ_OnRyXjs1xX7PwY3_QLsjDE0TaYUtXa5ORa149paRH0wU8DxxrRundmnm907bJpsP-J3kDel0kpNS56XOh15sI_a2WQmZePncrJ71qsWFuyH0VKPt4B4wPGJUKH1RKOXWY4dCHV4fPjmvpWjq9ZkygQGwqtwmj9IsFq3e2lIjP6n0xbaZrDbFItCzJ65j_cWPWCVVY8rKOJvI3svCGM0ypM6pxlGCWxbwBO2TZrlbOiS9wMnQUCOwiwb9oNfbuYLa_ShgADnutHClKd7CCDfEuTgomB_DvAs_bW27ZaY3avbTUPEwiLpnpaCPK3TEmM725L7dHt6Y2BAO_77kFd1AyVKXtLM-Xcm_4wbbnCVlYrNB2DN_ySPu-5v8p5uNk_gHr9KC84RdlNV7uLzwO8dLIcifPvm_anUe_WOTF5asxs5WIjbZ1GRw" height="200" width="auto" /><br><br>metraje de cable: 3909vmts<br>distancia a siguiente pozo/poste: 12 mts<br>descripción: pozo ubicado frente a apartamento 57 B porton azul, de bajo de mazetas<br><br><img src="https://lh3.googleusercontent.com/umsh/AN6v0v5gO6D2lHK_XgbKZnc7EjScFkFIoqHcOUTDehVZ7WjC2Qg7j_hZTgFvu98yK9-G6NGvlE6wx7_HmMnnlSChN0IgjHAca_IkHtiylhqfrorYG1NI360QEGt-2rvMgo3uHYkmVKWnOdNzgFzN84clRmaNvd0bl7eVOBalkHRM5fhCw33hzAwLvj2mszxlqzmQPKKQuswnE2xRni8d2jgE5L5G-XQ1J0Z8Usv9aBGOrgEl8WzjfNxjNEwrXpweOPUVyX8P_kW0jW71CHAX6OlLSvdK99kDaGI2lPygc0BbXZUG7aSbPa_adumK-MHQ-DanX2R3c5-J2oGlnipG-GXmtwYaJsKLbmPqq2VCnxa7z09lBxdzT-wKAOYdpL_VxLKjxH_qdBva9CjnQ2oH4D8zJhm_7mPwQXZSHa-f-FIBeumHkK5HuxTD-gufuCXBMyH04zW3Fc-0_53NF1n_a1ol33HID94BcSxjwri2nc0dpXCqmWXG39Le0SFRWer9OrXXYxTeODpZFEURBImLRNnxIIvCQSacETA1jVe_sLhlWnPXC8AIQ-YKP-1Q3TswW6lqunaLRm3HjBiURO9-_VZh223V1O-6yAtXF7MusznWyMv_sKimFIek8uc5rzXxgtjRdm5_d3VduAH60jbF5iNkLGTm2-XLZDemO9gbdcJa_QZimmYY7RrTO6FjUq5kwl8ZVwTYGnlVRpsRRGVv8oc77EgNLIg1TQ" height="200" width="auto" />]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3909vmts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>12 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo ubicado frente a apartamento 57 B porton azul, de bajo de mazetas</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4b_RURyZcDHUV4zcy09lJprUWytYH3CJz4FoTtPPPN1gMYxuqVh2zod1XJIxQRDGDsyaU7ntBDOArAIZrnJy03Ivxhs25vu7a-QA_ZMeEj2KBBCNAJAykzfMtE8npsU1ulxw65sg-aEKdQjAPUv2-Hmx7Bxqxle7IP-XxMNSUlLH3oV2MjV4KmOnSmq_cMQBghHH5KerqUZZIhL8t5T-YnXaqINDbjhI4LDmgae6Bzr-cMDFCOlEWqONqIzFRYgrYl3N1RPbOgp5lc0Zo9Og2xLf_ayR4Pw2oc0gIRJ_OnRyXjs1xX7PwY3_QLsjDE0TaYUtXa5ORa149paRH0wU8DxxrRundmnm907bJpsP-J3kDel0kpNS56XOh15sI_a2WQmZePncrJ71qsWFuyH0VKPt4B4wPGJUKH1RKOXWY4dCHV4fPjmvpWjq9ZkygQGwqtwmj9IsFq3e2lIjP6n0xbaZrDbFItCzJ65j_cWPWCVVY8rKOJvI3svCGM0ypM6pxlGCWxbwBO2TZrlbOiS9wMnQUCOwiwb9oNfbuYLa_ShgADnutHClKd7CCDfEuTgomB_DvAs_bW27ZaY3avbTUPEwiLpnpaCPK3TEmM725L7dHt6Y2BAO_77kFd1AyVKXtLM-Xcm_4wbbnCVlYrNB2DN_ySPu-5v8p5uNk_gHr9KC84RdlNV7uLzwO8dLIcifPvm_anUe_WOTF5asxs5WIjbZ1GRw https://lh3.googleusercontent.com/umsh/AN6v0v5gO6D2lHK_XgbKZnc7EjScFkFIoqHcOUTDehVZ7WjC2Qg7j_hZTgFvu98yK9-G6NGvlE6wx7_HmMnnlSChN0IgjHAca_IkHtiylhqfrorYG1NI360QEGt-2rvMgo3uHYkmVKWnOdNzgFzN84clRmaNvd0bl7eVOBalkHRM5fhCw33hzAwLvj2mszxlqzmQPKKQuswnE2xRni8d2jgE5L5G-XQ1J0Z8Usv9aBGOrgEl8WzjfNxjNEwrXpweOPUVyX8P_kW0jW71CHAX6OlLSvdK99kDaGI2lPygc0BbXZUG7aSbPa_adumK-MHQ-DanX2R3c5-J2oGlnipG-GXmtwYaJsKLbmPqq2VCnxa7z09lBxdzT-wKAOYdpL_VxLKjxH_qdBva9CjnQ2oH4D8zJhm_7mPwQXZSHa-f-FIBeumHkK5HuxTD-gufuCXBMyH04zW3Fc-0_53NF1n_a1ol33HID94BcSxjwri2nc0dpXCqmWXG39Le0SFRWer9OrXXYxTeODpZFEURBImLRNnxIIvCQSacETA1jVe_sLhlWnPXC8AIQ-YKP-1Q3TswW6lqunaLRm3HjBiURO9-_VZh223V1O-6yAtXF7MusznWyMv_sKimFIek8uc5rzXxgtjRdm5_d3VduAH60jbF5iNkLGTm2-XLZDemO9gbdcJa_QZimmYY7RrTO6FjUq5kwl8ZVwTYGnlVRpsRRGVv8oc77EgNLIg1TQ</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.55572,14.562319,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 1</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v7LgoPqywTCglV-_sUgEhMORyX7pvvR2zBiCxiEgySEgPD47DnRr9SY_9Ysi48umJuMYBzUFHplFpy-5BnUNwU6gNBSVgraH1GzjFak3DrrZXCkrTLGCX4qUVC7bhCNNIGuuH5MkgiM3ZLrSBSA1-KUMRY8uJSpv6YKgXijtV49YvL3eP0Nq_U3LRbTCHOVwURkNoDv4GM8TRfLLOrW6EMW5DEoafNbe4FVSdC0KEoOtYA_iCBUoEVAM3ArWAApq2OetO9rDFKCEX7wSs7lzCPhN4W3jHbUqkIsM1-mLaAAtsUIr6Y3G-Ir_E-x0irAbh151FUAQhq_yECwq4TLuE3gTFdyud26bZMc2tSZLC2f7lR6bcxfS-Q4p0B7c0X2ZWxfYW7oxiTa2hsaoRuN3t82BdnWIijDYm1_TqL-vhOFEMafukfUKaVdRQgBZF2uPw1S5-6t4iH22C1aju2UkOAmhEidkSOtavcc7f5irp3CJaR0tUSSRQtUWMxz9IWONvDpAu_D9nYLuIQ5ZHGzE8A0IzUKHlE2nF1jC98K5ZmRJQlYhfUd_rE1S9BtJjhkAQ7Ay2l0wJnW4_sWirfMHogYw32yN-ECPQ0nhIAa27gYLnOmTWxjmjax9eh64T5KQpLmF_jMRtj1OD49QI7cxXs27RNqZK6nIz8ADDaZ8BhcHQOVkpXO-PeINVGv0zg5RMsg-wCNGO79XB1S1m174RtAWF00Aw" height="200" width="auto" /><br><br>metraje de cable: 3898 mts<br>distancia a siguiente pozo/poste: 32 mts<br>descripción: poste ubicado frente a apartamento 57 b]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3898 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>32 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado frente a apartamento 57 b</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v7LgoPqywTCglV-_sUgEhMORyX7pvvR2zBiCxiEgySEgPD47DnRr9SY_9Ysi48umJuMYBzUFHplFpy-5BnUNwU6gNBSVgraH1GzjFak3DrrZXCkrTLGCX4qUVC7bhCNNIGuuH5MkgiM3ZLrSBSA1-KUMRY8uJSpv6YKgXijtV49YvL3eP0Nq_U3LRbTCHOVwURkNoDv4GM8TRfLLOrW6EMW5DEoafNbe4FVSdC0KEoOtYA_iCBUoEVAM3ArWAApq2OetO9rDFKCEX7wSs7lzCPhN4W3jHbUqkIsM1-mLaAAtsUIr6Y3G-Ir_E-x0irAbh151FUAQhq_yECwq4TLuE3gTFdyud26bZMc2tSZLC2f7lR6bcxfS-Q4p0B7c0X2ZWxfYW7oxiTa2hsaoRuN3t82BdnWIijDYm1_TqL-vhOFEMafukfUKaVdRQgBZF2uPw1S5-6t4iH22C1aju2UkOAmhEidkSOtavcc7f5irp3CJaR0tUSSRQtUWMxz9IWONvDpAu_D9nYLuIQ5ZHGzE8A0IzUKHlE2nF1jC98K5ZmRJQlYhfUd_rE1S9BtJjhkAQ7Ay2l0wJnW4_sWirfMHogYw32yN-ECPQ0nhIAa27gYLnOmTWxjmjax9eh64T5KQpLmF_jMRtj1OD49QI7cxXs27RNqZK6nIz8ADDaZ8BhcHQOVkpXO-PeINVGv0zg5RMsg-wCNGO79XB1S1m174RtAWF00Aw</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.55574,14.562318,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 2</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4D_vdTssBkJalyPSfff7bTmj7waeaJEICAOWqRzIeU1csdMd3BJxyT2A7Pz-HcUDbGuvFwvDJCgj3XMcIpocTwOtIJVLxs7AfepWXrQ0alZ-6gPN6ZimfOXOjOu1pH6OM1gCgM5vkr52Inc5gF8qlGN2cVtMUHZj8YuYX-JQo3qHalLLw84gCbioyKgPxrjhLyG4i25FbaP9unFY_MrX1zCucuinkmueVklTqD4YlNonq-aO8vrPTNvXOFQbvkwLAZrVYDrNYExgRjHVGCGLT5FQlgsXcxaxpuQHx9zlhdcn5CMyWHBpkajOXDHQ2xyjFJBwyFlXH-dusU2wIdxCI4C2lEiHkLGIqn6o_yfX8xRBZNLVyx27KB1sjQZDq4l_dAfTaDy7NqeC-tu5OlgMwfeyV7DVX5ozwxww8U6d8pvV_LPfMRSYOHu3JLAnAv4EZSkVqV19m3s5fIsjGe3OjY2Z7-qcLsxhALuVM4nZcJpo852G9cAUg9mv-Oy65dOEIePpes2iui3kGseYYazmRENsguUqYyGtI0qJVIY32ZFGs55xNfQEWoYqfQBXh46LksVS_JKGxXhLi5GbwEwLwYaDGAls_8Sobk_P1rDDXU_WD2LTXHkdQONUpGzbW01cYnr2GqsX_v5t9R4W233S6RrA0lMHBWuJB023Lkcm9f18KmX9baznfuOQA9jIL-i5oJ1XpXW0nOKRfGoM-xnnThyoU0" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 30 mts<br>descripción: poste ubicado aun costado de ingreso a garita]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>30 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado aun costado de ingreso a garita</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4D_vdTssBkJalyPSfff7bTmj7waeaJEICAOWqRzIeU1csdMd3BJxyT2A7Pz-HcUDbGuvFwvDJCgj3XMcIpocTwOtIJVLxs7AfepWXrQ0alZ-6gPN6ZimfOXOjOu1pH6OM1gCgM5vkr52Inc5gF8qlGN2cVtMUHZj8YuYX-JQo3qHalLLw84gCbioyKgPxrjhLyG4i25FbaP9unFY_MrX1zCucuinkmueVklTqD4YlNonq-aO8vrPTNvXOFQbvkwLAZrVYDrNYExgRjHVGCGLT5FQlgsXcxaxpuQHx9zlhdcn5CMyWHBpkajOXDHQ2xyjFJBwyFlXH-dusU2wIdxCI4C2lEiHkLGIqn6o_yfX8xRBZNLVyx27KB1sjQZDq4l_dAfTaDy7NqeC-tu5OlgMwfeyV7DVX5ozwxww8U6d8pvV_LPfMRSYOHu3JLAnAv4EZSkVqV19m3s5fIsjGe3OjY2Z7-qcLsxhALuVM4nZcJpo852G9cAUg9mv-Oy65dOEIePpes2iui3kGseYYazmRENsguUqYyGtI0qJVIY32ZFGs55xNfQEWoYqfQBXh46LksVS_JKGxXhLi5GbwEwLwYaDGAls_8Sobk_P1rDDXU_WD2LTXHkdQONUpGzbW01cYnr2GqsX_v5t9R4W233S6RrA0lMHBWuJB023Lkcm9f18KmX9baznfuOQA9jIL-i5oJ1XpXW0nOKRfGoM-xnnThyoU0</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.555509,14.56255,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 3</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v5RYeYzH-gW39XyPGGupWM4FEXdK-Uoe881em0BFERdk1lOug3B8FNooHLa9QHhj-qhWAchvuXrhOKGcJYMdO-L0gzBFdGWqlK6aFPFNu8nK3GBdQUVMQ2NYMAEyJLpY5yx5FVwqLCpa2oP1b8FxYGCqmlGjUgfK1LEcl8bZ0UqR9ETgXcY6xd6DvkQTLIlHbQFTLPWZh_ulcogNUpwJdYViLKjgEMS_iTRhBNI06nAfAbbFyTqOVXtsp7hPWsiFNjsY56K9diemIA_NcIrob05GPRpR6owWYZBD9QBjV5e6bw_VR0GqU-_w4FCLTuT0M4Mceyul4Z4SHJimmUDmYc6LdGbgkVR0is2A_cqLFUpfYFhl7zInZAqK9ZVB53tismTJxLAZ6j1HSs1fOkZMbAEDu67BlmSbdVLGPiIffDE0CfU16ckuQBPuLH_Z71JaJBv_-G5Dl-8rchkhboqJ7nJxTfIcfHdq8xDUkovX-IcH-OGgqwxrX4-fTWd4ix142XNt7ZcT5ZV9J_XkVBYAtI2BCL2zIGrBdP5CYKRXJKL4tFxH7T2EndLz1TQDiPAWzvz9EtLb-yqHpKomwyjtAyKqCGpuHMTU2Kaf88au6cj1OXgWz2GXTyn3MZ8Qfj7T3ZSUWNV5jx_CvsOYRPhILdfQQp32a40ZVVJxx7Vn9GpGsnOTVEzkYR-VyVmqbL4mgbq0k40UiNp5SD7UIDda5PgT5rz_Q" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 30 mts<br>descripción: poste ubicado  a un costado de telefono publico]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>30 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado  a un costado de telefono publico</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v5RYeYzH-gW39XyPGGupWM4FEXdK-Uoe881em0BFERdk1lOug3B8FNooHLa9QHhj-qhWAchvuXrhOKGcJYMdO-L0gzBFdGWqlK6aFPFNu8nK3GBdQUVMQ2NYMAEyJLpY5yx5FVwqLCpa2oP1b8FxYGCqmlGjUgfK1LEcl8bZ0UqR9ETgXcY6xd6DvkQTLIlHbQFTLPWZh_ulcogNUpwJdYViLKjgEMS_iTRhBNI06nAfAbbFyTqOVXtsp7hPWsiFNjsY56K9diemIA_NcIrob05GPRpR6owWYZBD9QBjV5e6bw_VR0GqU-_w4FCLTuT0M4Mceyul4Z4SHJimmUDmYc6LdGbgkVR0is2A_cqLFUpfYFhl7zInZAqK9ZVB53tismTJxLAZ6j1HSs1fOkZMbAEDu67BlmSbdVLGPiIffDE0CfU16ckuQBPuLH_Z71JaJBv_-G5Dl-8rchkhboqJ7nJxTfIcfHdq8xDUkovX-IcH-OGgqwxrX4-fTWd4ix142XNt7ZcT5ZV9J_XkVBYAtI2BCL2zIGrBdP5CYKRXJKL4tFxH7T2EndLz1TQDiPAWzvz9EtLb-yqHpKomwyjtAyKqCGpuHMTU2Kaf88au6cj1OXgWz2GXTyn3MZ8Qfj7T3ZSUWNV5jx_CvsOYRPhILdfQQp32a40ZVVJxx7Vn9GpGsnOTVEzkYR-VyVmqbL4mgbq0k40UiNp5SD7UIDda5PgT5rz_Q</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.555353,14.562719,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 4</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v6WDorvICg0PceUXlkiLn0d629Z6sErX3q3j-bbNUAD3W-9OPvVONMCw2l5cncX6UIotIDcxzWvz_Z0GJ2o1Rb_M7bxTRibTGg8GFuwNZFu9itUNJ4wEsI9qOFZCtj3VzKgouzicqUbyfjmpg6UXr0OcjUVGTVR2wwxrTdTzrlkvz8CfxxOujIMJLuLWMTlziYFqf_lWQJH8vy-DD1qTonPCRjNxcV8CA8hSHzQ79Lo1_RDhWXnjqJV-KUZBWOxsO3rhxvxiYvTVJownLgslXQ2CK0PPVqLAmkLnE4FH0oRknhTaWav-fX9lniDyWnTvC51Mfg07fll5RIFU6ljquHp9zC191ZIPu-atKzF69Prn55FvVU11di6XC4mPbUkss1ytGnBKjPAMxMkgfy_y5mnH2jIfuJTSBc9ZNP9vibUA9LDBhd05xcWFvwzYiMxCH6FKSbRDmG2iQgh-n2bEKB3MyciQutGUu6qgtg7GmTO0ky8KmE2JRzYRFfcRpOCywUIcZrbXHTPKFTQ1RdfBSC2b2tg3yh_FqFK65vlOi7iiWVBnQeE-x-zOdQc3pBawb-ts4pmYVZ8Ar6DybiKF2gZnloiNBsI2q5tleHsEFmKtOszE6ZtSmXSNB_OHoFewoyUbdEO77NRpgBqsjC1Qr5fbJJKUG6bkvA7JC2HPQAGCt7fLHF27SYmhA_yo90mq96GeI39BgsfeFm9i9kkDWbI1G2k" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 30 mts<br>descripción: poste ubicado frente a numeral 50-56 detra de poste electrico]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>30 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado frente a numeral 50-56 detra de poste electrico</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v6WDorvICg0PceUXlkiLn0d629Z6sErX3q3j-bbNUAD3W-9OPvVONMCw2l5cncX6UIotIDcxzWvz_Z0GJ2o1Rb_M7bxTRibTGg8GFuwNZFu9itUNJ4wEsI9qOFZCtj3VzKgouzicqUbyfjmpg6UXr0OcjUVGTVR2wwxrTdTzrlkvz8CfxxOujIMJLuLWMTlziYFqf_lWQJH8vy-DD1qTonPCRjNxcV8CA8hSHzQ79Lo1_RDhWXnjqJV-KUZBWOxsO3rhxvxiYvTVJownLgslXQ2CK0PPVqLAmkLnE4FH0oRknhTaWav-fX9lniDyWnTvC51Mfg07fll5RIFU6ljquHp9zC191ZIPu-atKzF69Prn55FvVU11di6XC4mPbUkss1ytGnBKjPAMxMkgfy_y5mnH2jIfuJTSBc9ZNP9vibUA9LDBhd05xcWFvwzYiMxCH6FKSbRDmG2iQgh-n2bEKB3MyciQutGUu6qgtg7GmTO0ky8KmE2JRzYRFfcRpOCywUIcZrbXHTPKFTQ1RdfBSC2b2tg3yh_FqFK65vlOi7iiWVBnQeE-x-zOdQc3pBawb-ts4pmYVZ8Ar6DybiKF2gZnloiNBsI2q5tleHsEFmKtOszE6ZtSmXSNB_OHoFewoyUbdEO77NRpgBqsjC1Qr5fbJJKUG6bkvA7JC2HPQAGCt7fLHF27SYmhA_yo90mq96GeI39BgsfeFm9i9kkDWbI1G2k</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.555182,14.562885,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 5</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v466nR1ZXuRNZUmi-Pn6pyBw4yF6uWxQlzh4Myb1L0kNLqIA40OolnIa4wre7bOf3_oR-wBMRJt4x_jtBffU2j9MS_7UJMu7hBzY9j4RyWBnY1CloZAQbhq_bgqvY7Cw1creAgbtjIfQCLffjaCt_Sf8Mt2BSkFf_Bag6aCDv6m0py7xdjGCO8ZYYd7ju3Rv-uOlLHMp8PCxUygplMsFpfKBRvya98E9EGhyXZZClhJepSwxlM6dVeAVhwDZ8Kff0HBa8CGPzvjj4Ynl9szc_rOFVvUz1MQxF4UmJSWgoA3dbUZU-aa6FyBTzukHpFHVMUedihUZLReMHxBb1KDd3OqHDoFgtpbaLqtGkbEgTM4Rke8fyqqQSz3I_l5RBsSNhE5lWR2mGfId4X5HfDPEOIVJXZD465hQAJIXHyTiX6NRvt--PBezRBIVsL4hRCksUUZUd0G9X4URXpgsVxq8T_9cm35iBj508SoMWhGlv-7SfCB16l_ODKownOoTWzjSG2GipUXx942d8oxDW72EewrD9TxJdomHj9thF5M9wE4Zob0LTWlqw398NryKg9MRP0DznGgrl9-Zmo29iXqCfDfouvvBVQ0uk7NmbOfl_GGWvYQHF_Sf2F-Rp9lcUA690BO-nSAh7_Rpf6-kOaLH8srGc4t1JT_odnQdel-J1Hqkf2rqGg9fAuIC8FowecKWznS32uo84cObKyvXIDlsktan49z" height="200" width="auto" /><br><br>metraje de cable: 3779 mts<br>distancia a siguiente pozo/poste: 27 mts<br>descripción: poste ubicado aun costado de casa rosada de 2 niveles]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3779 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>27 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado aun costado de casa rosada de 2 niveles</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v466nR1ZXuRNZUmi-Pn6pyBw4yF6uWxQlzh4Myb1L0kNLqIA40OolnIa4wre7bOf3_oR-wBMRJt4x_jtBffU2j9MS_7UJMu7hBzY9j4RyWBnY1CloZAQbhq_bgqvY7Cw1creAgbtjIfQCLffjaCt_Sf8Mt2BSkFf_Bag6aCDv6m0py7xdjGCO8ZYYd7ju3Rv-uOlLHMp8PCxUygplMsFpfKBRvya98E9EGhyXZZClhJepSwxlM6dVeAVhwDZ8Kff0HBa8CGPzvjj4Ynl9szc_rOFVvUz1MQxF4UmJSWgoA3dbUZU-aa6FyBTzukHpFHVMUedihUZLReMHxBb1KDd3OqHDoFgtpbaLqtGkbEgTM4Rke8fyqqQSz3I_l5RBsSNhE5lWR2mGfId4X5HfDPEOIVJXZD465hQAJIXHyTiX6NRvt--PBezRBIVsL4hRCksUUZUd0G9X4URXpgsVxq8T_9cm35iBj508SoMWhGlv-7SfCB16l_ODKownOoTWzjSG2GipUXx942d8oxDW72EewrD9TxJdomHj9thF5M9wE4Zob0LTWlqw398NryKg9MRP0DznGgrl9-Zmo29iXqCfDfouvvBVQ0uk7NmbOfl_GGWvYQHF_Sf2F-Rp9lcUA690BO-nSAh7_Rpf6-kOaLH8srGc4t1JT_odnQdel-J1Hqkf2rqGg9fAuIC8FowecKWznS32uo84cObKyvXIDlsktan49z</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554945,14.563108,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 6</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v5K4JEpxXZQYAbt0hyPBngzvfk3Wd0BMH5QK10RT7Hqmq9pgIGbNLfGhlUSbRVK5QZTvJq1xI_-WX18YKIVLSBjP6GE139FEWnNYUn__t6eHY_rbHqeqU9zWUNdmPet8mXbOkPjyHc0h_5_6-35t5Kc4_xacq97TgwL88SYbP4_l7k_9qY0krF4rGsYf0Ydvaf86HCHNdr8zlLL7muErCaWGBrBpOw8pF8hoxq-ASbtXZylVag_PLVWVLwWF2F-aiQJEDDDFiBevGVJJGVQ-SO-WJmPa8Ub7fhxuXbMZN9IY3ZJPQbeadBxpXAAz6cL23BZAMkeLtrdOvw8YkYqz398Mdv5QPjvInRqc0bF27B_nDwfck7srGSQfLa2JMtu_Q3O9ONNquRL7f6FX9inZ36xkn0Jsx1IBWuW9SDhEtN-JexQhe8_4ycb1tujHqQT16FmQVPJj4M-TvTG2bh2Z78tukWsJdGF_iFrs7jLaStO1cpbC_j7YfATbW0TRAwMGFfAhrkFZlvxLiq_tPXueo4siUvu2YBAGEubDz6BUn4oAKwVvZrG-5ibnlsLld8E9xXw_l_miP8btrnwJS5wQ9t0U8GUn877D3UkasibBodwEd5SS-jhKQZHBL_9aDkHwFFGvQp2jwM6LWsWsQWBd-7aY8A9GtOlezMUpD0waD5sAEKVSby9Ip-2LDWcRxGxaq4bDHXLV0XiIBZ9N0nEF6IG0iOeMA" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 14 mts<br>descripción: poste ubicado a un costado de numeral 50-23 y telefono publico]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>14 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado a un costado de numeral 50-23 y telefono publico</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v5K4JEpxXZQYAbt0hyPBngzvfk3Wd0BMH5QK10RT7Hqmq9pgIGbNLfGhlUSbRVK5QZTvJq1xI_-WX18YKIVLSBjP6GE139FEWnNYUn__t6eHY_rbHqeqU9zWUNdmPet8mXbOkPjyHc0h_5_6-35t5Kc4_xacq97TgwL88SYbP4_l7k_9qY0krF4rGsYf0Ydvaf86HCHNdr8zlLL7muErCaWGBrBpOw8pF8hoxq-ASbtXZylVag_PLVWVLwWF2F-aiQJEDDDFiBevGVJJGVQ-SO-WJmPa8Ub7fhxuXbMZN9IY3ZJPQbeadBxpXAAz6cL23BZAMkeLtrdOvw8YkYqz398Mdv5QPjvInRqc0bF27B_nDwfck7srGSQfLa2JMtu_Q3O9ONNquRL7f6FX9inZ36xkn0Jsx1IBWuW9SDhEtN-JexQhe8_4ycb1tujHqQT16FmQVPJj4M-TvTG2bh2Z78tukWsJdGF_iFrs7jLaStO1cpbC_j7YfATbW0TRAwMGFfAhrkFZlvxLiq_tPXueo4siUvu2YBAGEubDz6BUn4oAKwVvZrG-5ibnlsLld8E9xXw_l_miP8btrnwJS5wQ9t0U8GUn877D3UkasibBodwEd5SS-jhKQZHBL_9aDkHwFFGvQp2jwM6LWsWsQWBd-7aY8A9GtOlezMUpD0waD5sAEKVSby9Ip-2LDWcRxGxaq4bDHXLV0XiIBZ9N0nEF6IG0iOeMA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554794,14.563289,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 7</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v5LEVYx20Dzsdw1JRvDGgWPTxtCNn8zS1nzpaGxqb0jP9rWr8MBD9YC8uJmSro2NJwUaVEntXB3_HLKqhR5mud7pxLQYDiTLxQYgBLntuf2konLpcLGG7VFb97JUgUUHLfN6hN5Ns1MW6NmRdrpkMln2E5rC9wpi6EkGZBMYYJwaIfS18K-LnohCukUoFKDFuEQNNcHIEBKByY7WoL40SefAmQhHdCuS_3kL4H6MC4JEqht5DGT5iPd8HIsSzWMjDzgt2HlYUkUJ8lHM3bQe7BU104Qk2qs52Vqh3hpwq27W6WHUM8UfMo4bDfrpenO3SSY_09MrqG8OLIm3TgpXvPolSILwfhYJ6rK0jiCAlCyX4jnSjObgiCg8iMduUxIoY6YTCG9Tgq2Tq_MdZ_kPxXBwCbXtt2ktJVILbJWpw4oJvsgooM4a6rCxBzAjYyK9cFhlOMn9zh2wgg3uKEz_r8kLCWl2k_VthiS7F-47tteCLz6FcLgQxvoHpXolipvx9GSlcp7R_IJ6tbpOUmt8xSa4G3T-ux_M-VmlFEAWWsSR8Wj_iqXoCFZ4f0LOqMYQHKHuYj55OhGhodTXRnWMHqtrUYbR8axvw9VVtoC2k0vC_hzzwKKq4LHe2awkXaA4rnZw6lIitYZtl-9v9ccx19VIAkWrkaMsIm7N48H033KTbgnwiFaW7533mwmTvANwR_LxfDnp0v6Dlu75LPQcBFunm8FeA" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 44 mts<br>descripción: poste ubicado aun cotado de porton gris]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>44 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado aun cotado de porton gris</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v5LEVYx20Dzsdw1JRvDGgWPTxtCNn8zS1nzpaGxqb0jP9rWr8MBD9YC8uJmSro2NJwUaVEntXB3_HLKqhR5mud7pxLQYDiTLxQYgBLntuf2konLpcLGG7VFb97JUgUUHLfN6hN5Ns1MW6NmRdrpkMln2E5rC9wpi6EkGZBMYYJwaIfS18K-LnohCukUoFKDFuEQNNcHIEBKByY7WoL40SefAmQhHdCuS_3kL4H6MC4JEqht5DGT5iPd8HIsSzWMjDzgt2HlYUkUJ8lHM3bQe7BU104Qk2qs52Vqh3hpwq27W6WHUM8UfMo4bDfrpenO3SSY_09MrqG8OLIm3TgpXvPolSILwfhYJ6rK0jiCAlCyX4jnSjObgiCg8iMduUxIoY6YTCG9Tgq2Tq_MdZ_kPxXBwCbXtt2ktJVILbJWpw4oJvsgooM4a6rCxBzAjYyK9cFhlOMn9zh2wgg3uKEz_r8kLCWl2k_VthiS7F-47tteCLz6FcLgQxvoHpXolipvx9GSlcp7R_IJ6tbpOUmt8xSa4G3T-ux_M-VmlFEAWWsSR8Wj_iqXoCFZ4f0LOqMYQHKHuYj55OhGhodTXRnWMHqtrUYbR8axvw9VVtoC2k0vC_hzzwKKq4LHe2awkXaA4rnZw6lIitYZtl-9v9ccx19VIAkWrkaMsIm7N48H033KTbgnwiFaW7533mwmTvANwR_LxfDnp0v6Dlu75LPQcBFunm8FeA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554703,14.563388,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 9 (cruce americano)</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v63dtU3nnvS5ME8QtnXRK9M4jSDp6JVOUfVXjxIc-4Ja0IWlF7j8cu0efn43jgZ4c8FjP1RhxfEW6VppEhKRdTj0k98ZQnON64cmQ-rUz6JWfH4w9tWIJBeN3vJUBRa3SwbHhVqkAU4QItcXY75DTS4-OD49EwsnVpVUci5I7XT1_uJ4Zb1txc1uDBLyo-TbOpz7Jo6bu40pl8MtNfiLdaYnKBYp8-MDw4-Gk7-tjfPQa_Sj8OeNfSCZpCYvx3gd9RZjVSuC3QU8UzzqsCB9HbNvLfl_8TuHGYgWutdPSPeV-hxHwmE27WqMvSA9lhfuHPkzasQeS_1eAKJpxUBgM2oB5u-oaAoQBcHs05X0oBZoKk3c4L9DB931F3vciMQFtPm5v3kSLeKCSpqFWzCytx2btvqR6fQPsvsdFNmp0BOMluSLcAOFWtlVOVcsEGX_WjpvQ9mD0gLsI3Zkz0z9KaeTCUqudsaoMl2fJ5rOqego3lCCF3bgsslBC2Skdl_jbMnEHosijMYuwT5KhDuAntOaxDEua8mhlstF1yqBPDe7mUIak9hUpZEUae9quRN_RQDOcYcwjC6t5dLYgpvkPr3aHBDzrKSk3xsphPkyaqgIYwlqrWuwf5hDT1bgy5uHSXUYW3box4ldR8qa8kenRz5isyjZF5ED098TJondoFCRHKIJo4cZR3TCb8WXN5UNdZ8dHiRm7Rwl9ugAjmD3fb_KNwXvA" height="200" width="auto" /><br><br>metraje de cable: 3695 mts<br>distancia a siguiente pozo/poste: 14 mts<br>descripción: poste ubicado en esuina de miscelanea]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3695 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>14 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado en esuina de miscelanea</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v63dtU3nnvS5ME8QtnXRK9M4jSDp6JVOUfVXjxIc-4Ja0IWlF7j8cu0efn43jgZ4c8FjP1RhxfEW6VppEhKRdTj0k98ZQnON64cmQ-rUz6JWfH4w9tWIJBeN3vJUBRa3SwbHhVqkAU4QItcXY75DTS4-OD49EwsnVpVUci5I7XT1_uJ4Zb1txc1uDBLyo-TbOpz7Jo6bu40pl8MtNfiLdaYnKBYp8-MDw4-Gk7-tjfPQa_Sj8OeNfSCZpCYvx3gd9RZjVSuC3QU8UzzqsCB9HbNvLfl_8TuHGYgWutdPSPeV-hxHwmE27WqMvSA9lhfuHPkzasQeS_1eAKJpxUBgM2oB5u-oaAoQBcHs05X0oBZoKk3c4L9DB931F3vciMQFtPm5v3kSLeKCSpqFWzCytx2btvqR6fQPsvsdFNmp0BOMluSLcAOFWtlVOVcsEGX_WjpvQ9mD0gLsI3Zkz0z9KaeTCUqudsaoMl2fJ5rOqego3lCCF3bgsslBC2Skdl_jbMnEHosijMYuwT5KhDuAntOaxDEua8mhlstF1yqBPDe7mUIak9hUpZEUae9quRN_RQDOcYcwjC6t5dLYgpvkPr3aHBDzrKSk3xsphPkyaqgIYwlqrWuwf5hDT1bgy5uHSXUYW3box4ldR8qa8kenRz5isyjZF5ED098TJondoFCRHKIJo4cZR3TCb8WXN5UNdZ8dHiRm7Rwl9ugAjmD3fb_KNwXvA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554419,14.563694,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 10</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v7rOXnZcImOWef2s2mykEcmywkqpZT_yBvxh_BboEEUrSeaalIF8-roA_TLEZ3p2RPY-mMVRuOf58jLZMS2ab2Q500OsNDgUEIvZsBWYEQRGOtt41ItDYgWNekq-EJPL3c1ru6l2Qf5pJXWgCZrFfw1jBLrXBR7QDtZP3SlhezJSiE27gF2aWqSm6Ko8BdYQjFhJgKlRt5rZNzZ69BBW3l0WvpIH5r6UKAqF4Us_iEJ9Ky8-0rwtIOtJmcUhS6gZen065ZUT94PUOYRSy8Xrsq_DbvJCQDv-1S1hJgRplCCAKjWru1vgSxsqtt-qubMT8TPabmhEtEmS3kgJu4tzhvYDhIlGFNG09dXUwb1I0tNhfN6PXtnQDVA4wG4BrQdmSBvaz9xaiNypT-3Dj2KEzJvE4t5O-ZlnplvJfs_YtIJ4g5osR16j3_JCOsaqqqrivd_oL_9NMN1BqP4cg15YIv8dC5OXatDcmpF7aAOJ3bZRDBb734hPTVVi33QZ5tU69jLoc10UgrD12QrnTVl7t6J8OLYPpa0XIo2JGMRN-PI9K50pFtMcxKbjb1U6eoBVkSykGe8-FTB7Pqcr-AO8jx9P6Jlj8mD_T3mb9K0KvlcbUko9VYes7scVbgsoozLn3ETKp3Op6g6MYG3qF53CiUiAizPXa6Ktd0sy0bJfTFUmaDFGc_gHXEOFr5pN3oS30aed44prmj_PeWN0iQ9up1NaCezoA" height="200" width="auto" /><br><br>metraje de cable: 3681 mts<br>distancia a siguiente pozo/poste: 51 mts<br>descripción: a un costado a ingreso de pollo campero, con mufa de derivación ]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3681 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>51 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>a un costado a ingreso de pollo campero, con mufa de derivación </value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v7rOXnZcImOWef2s2mykEcmywkqpZT_yBvxh_BboEEUrSeaalIF8-roA_TLEZ3p2RPY-mMVRuOf58jLZMS2ab2Q500OsNDgUEIvZsBWYEQRGOtt41ItDYgWNekq-EJPL3c1ru6l2Qf5pJXWgCZrFfw1jBLrXBR7QDtZP3SlhezJSiE27gF2aWqSm6Ko8BdYQjFhJgKlRt5rZNzZ69BBW3l0WvpIH5r6UKAqF4Us_iEJ9Ky8-0rwtIOtJmcUhS6gZen065ZUT94PUOYRSy8Xrsq_DbvJCQDv-1S1hJgRplCCAKjWru1vgSxsqtt-qubMT8TPabmhEtEmS3kgJu4tzhvYDhIlGFNG09dXUwb1I0tNhfN6PXtnQDVA4wG4BrQdmSBvaz9xaiNypT-3Dj2KEzJvE4t5O-ZlnplvJfs_YtIJ4g5osR16j3_JCOsaqqqrivd_oL_9NMN1BqP4cg15YIv8dC5OXatDcmpF7aAOJ3bZRDBb734hPTVVi33QZ5tU69jLoc10UgrD12QrnTVl7t6J8OLYPpa0XIo2JGMRN-PI9K50pFtMcxKbjb1U6eoBVkSykGe8-FTB7Pqcr-AO8jx9P6Jlj8mD_T3mb9K0KvlcbUko9VYes7scVbgsoozLn3ETKp3Op6g6MYG3qF53CiUiAizPXa6Ktd0sy0bJfTFUmaDFGc_gHXEOFr5pN3oS30aed44prmj_PeWN0iQ9up1NaCezoA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554443,14.563758,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 11</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v413CKuUu9kqjOw5ZrJS9Y5vJTHFRP1j_gkqa8ioUnvksWLGetGoCp_MBNGiipIxGpCbkLkC_Xzsoszp2xdFSCllcw30ako8c4h7EAhFEEpe-GLLl05cXbhTqe_JEkqIEAuhTp2CvwfJCg8LMEIw4OzcDp6LD_kdMYOYPioiIwVfbS_Ci-yGuiguycnss0HShEVx0uba6AC2R2MfBYNdV6FmZ1ephwMA6gKKyCky5BwLjng644FlvvD3AlxrpegTUybpQRpY2Dk67E8H_wpxiwF3-JiraAI3U1lqfVDt_NSCqCSEbhBLYJyQqO_KOuuacAHGyEHxrCl71Td-uYmWkdUmrFBnwgV7p7fWAz4qvWrJi2XMyoZaVekQh7A0OMyXp1GIzlzmbb4iPweMHv7Eb0Sxq71oAfqKNtDFcFj5fExU-xIQcYVl0pSnTCGTj4NWtScjA96uV0WSGiyhAhqiy6iPORNCVGmJa1LFeS9325ikFxCGUlsu43YVEeWrSJA1QCvSPEm7JRxZmVnM-vYbtrLCTLahAyP9DeNVb5vMnfAjH--gTv6QhnVe7VwS1A67cCbJ9y2YXSfWRjVqlv08RDIvCYDVvVuHRtcLGtUqddwDq_9qF5MkxuwSjFOE3Jb8SxKWuzmoXy_k9rFZX9nVpzu2L5-GNzn1dD0FWa3Ie2GVsRfsmHB7BhhbF8la48Fgz97QpBXplaNfNF8jl0DBMSytW-mIA" height="200" width="auto" /><br><br>metraje de cable: 3617 mts<br>distancia a siguiente pozo/poste: 48 mts<br>descripción: con 13 mts de reserva y mufa de derivacion sale cable optico 16FO tm1 propiedad de telgua 05/2002, metraje de salida 1252mts]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>3617 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>48 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>con 13 mts de reserva y mufa de derivacion sale cable optico 16FO tm1 propiedad de telgua 05/2002, metraje de salida 1252mts</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v413CKuUu9kqjOw5ZrJS9Y5vJTHFRP1j_gkqa8ioUnvksWLGetGoCp_MBNGiipIxGpCbkLkC_Xzsoszp2xdFSCllcw30ako8c4h7EAhFEEpe-GLLl05cXbhTqe_JEkqIEAuhTp2CvwfJCg8LMEIw4OzcDp6LD_kdMYOYPioiIwVfbS_Ci-yGuiguycnss0HShEVx0uba6AC2R2MfBYNdV6FmZ1ephwMA6gKKyCky5BwLjng644FlvvD3AlxrpegTUybpQRpY2Dk67E8H_wpxiwF3-JiraAI3U1lqfVDt_NSCqCSEbhBLYJyQqO_KOuuacAHGyEHxrCl71Td-uYmWkdUmrFBnwgV7p7fWAz4qvWrJi2XMyoZaVekQh7A0OMyXp1GIzlzmbb4iPweMHv7Eb0Sxq71oAfqKNtDFcFj5fExU-xIQcYVl0pSnTCGTj4NWtScjA96uV0WSGiyhAhqiy6iPORNCVGmJa1LFeS9325ikFxCGUlsu43YVEeWrSJA1QCvSPEm7JRxZmVnM-vYbtrLCTLahAyP9DeNVb5vMnfAjH--gTv6QhnVe7VwS1A67cCbJ9y2YXSfWRjVqlv08RDIvCYDVvVuHRtcLGtUqddwDq_9qF5MkxuwSjFOE3Jb8SxKWuzmoXy_k9rFZX9nVpzu2L5-GNzn1dD0FWa3Ie2GVsRfsmHB7BhhbF8la48Fgz97QpBXplaNfNF8jl0DBMSytW-mIA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554073,14.563665,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 12</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v5_pQX_sVMuAQFDswtlBTEG6KSmls1SCL_kCwQWsAFZ2M3mRD_w9VZ5DZh8U-Jo185miPtXbnsZvX_H3_hGLPNiaW0Mzj3I2xWV2-IdZrHgJtjn8nmWI4cUFWIag04NwfTGfNAWCwgiCS6nUzuG1n1GcXxjraIXupMp-sOpBRfnOFobCQhuQnt21F16Q3_6BwudA7OUmUlg7_BlDGoQFMGGlX0LifTatLPM3QDmqG3c3OR1PpLxD4ddZerXtthVC2slpULnqGNVjMi6M6IOQJ-NCcd1L-LbQq3D0BsinNK07G09THLs4Q8kdh2uIZQZ25NXRSCjmLLBluscXcgVpE4b8QEjSL6o5BzNPuJ9nYkbkOBpG35pGxFkiKyuPH3xSo7W-UM8lupafs8jHQK72P6PRo33VV4KMACk9_8MRrCDqB2I4mcWIe2MA8lpgW14KlnmOD93um8dvng4FpTbg743s1tJ8HGQU5HNqeYXEt1rtGqNI7eEkOuN_Jiu5jXmokgF1AmRcgo2hf9ceINY2cW0N09OYMgsO-CU5YMqcHnFcRG-vCF5hormP4LOyHWzB6GDFPEg9hyK08ayzyMPIycKwmo2gw1f7CE4Ca_n2PrmkHbmlc6F3Pj3-yKYFs8WuWlDgPXqLjkAp2kpLW1pDbo87CQm2d_2aZ5XDvueWJLvDWlrJc1cNIzx45OpX_bY1-DY_uqC4K_YshNcW970uxpT8HgE" height="200" width="auto" /><br><br>metraje de cable: 1195 mts<br>distancia a siguiente pozo/poste: 8 mts<br>descripción: poste aun costado de numeral 16-25 a un costado de taller miller con bajada a pozo tipo 7]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>1195 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>8 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste aun costado de numeral 16-25 a un costado de taller miller con bajada a pozo tipo 7</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v5_pQX_sVMuAQFDswtlBTEG6KSmls1SCL_kCwQWsAFZ2M3mRD_w9VZ5DZh8U-Jo185miPtXbnsZvX_H3_hGLPNiaW0Mzj3I2xWV2-IdZrHgJtjn8nmWI4cUFWIag04NwfTGfNAWCwgiCS6nUzuG1n1GcXxjraIXupMp-sOpBRfnOFobCQhuQnt21F16Q3_6BwudA7OUmUlg7_BlDGoQFMGGlX0LifTatLPM3QDmqG3c3OR1PpLxD4ddZerXtthVC2slpULnqGNVjMi6M6IOQJ-NCcd1L-LbQq3D0BsinNK07G09THLs4Q8kdh2uIZQZ25NXRSCjmLLBluscXcgVpE4b8QEjSL6o5BzNPuJ9nYkbkOBpG35pGxFkiKyuPH3xSo7W-UM8lupafs8jHQK72P6PRo33VV4KMACk9_8MRrCDqB2I4mcWIe2MA8lpgW14KlnmOD93um8dvng4FpTbg743s1tJ8HGQU5HNqeYXEt1rtGqNI7eEkOuN_Jiu5jXmokgF1AmRcgo2hf9ceINY2cW0N09OYMgsO-CU5YMqcHnFcRG-vCF5hormP4LOyHWzB6GDFPEg9hyK08ayzyMPIycKwmo2gw1f7CE4Ca_n2PrmkHbmlc6F3Pj3-yKYFs8WuWlDgPXqLjkAp2kpLW1pDbo87CQm2d_2aZ5XDvueWJLvDWlrJc1cNIzx45OpX_bY1-DY_uqC4K_YshNcW970uxpT8HgE</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.55362,14.563524,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 2</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v6H23QsduPKE-NtgFj0TflSLvhOGSidZib0opgMCVWbVxaiw4rPe20LMgn9i5npyg_c0o9_XM1jhj_K9txZ1Yr4QjC5CJYleWHRKHTqManIP2vF07AOgHQdfy-YbtTYX2mEUBdqrfLMr3ry-zOGU-xRjdaB9G9FHWtjBtV1NG2wouR1WsKVOOpmTWiVYZ3usRxq5Vcs50TVsoVB0XHnL-bfIDz4BS0slRa8x_VmHxA8GvXIdiLZrkrx4xdhvLmKc3QLVXsTohkXWJgS-skz-qzhfzV0ZNiqtOwEWP8IaMiat0Nn5fyS60VDmbS3delMYr3wnecfJGxOYqDvFsLzIyE56BhQzgyuQNc_pO_aLMRADDl1D6dyw6ROOqgd47aeNFiDoeqwpCUPLVQIpbTanJLvvpz63LrMZQ4hnmZAUmDtSmoQYWdYQtCoxW7iudQCqNeIImtadWjkCiZxANE2b3ypKhJpIBA5FP6_eFI9Npil_paOxMigpqD0SqTiOe96y6kT_qrP6Me5AyPkN38r1cyf81D5xO-4E3lIH8u9n4pBh1zdNpZRvUcLFB9iguZFAoNG7p4royChu2bdHN9B1uxOLIKlAoJ5ClW7XL8AAIoAnh4L-eYNM3GgUh6bScFqfFmMhNSyv2bGNzm593rGLM3nUZ250nkcZfYxhUJqYuDvvAhlVF9f4MaSVg3wGHovUKfMxCWbsA2I_3jACzyHagEMTmG3SQ" height="200" width="auto" /><br><br>metraje de cable: 1146 mts<br>distancia a siguiente pozo/poste: 64 mts<br>descripción: pozo tipo 7 aun costado de subestación eléctrica petapa]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>1146 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>64 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 7 aun costado de subestación eléctrica petapa</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v6H23QsduPKE-NtgFj0TflSLvhOGSidZib0opgMCVWbVxaiw4rPe20LMgn9i5npyg_c0o9_XM1jhj_K9txZ1Yr4QjC5CJYleWHRKHTqManIP2vF07AOgHQdfy-YbtTYX2mEUBdqrfLMr3ry-zOGU-xRjdaB9G9FHWtjBtV1NG2wouR1WsKVOOpmTWiVYZ3usRxq5Vcs50TVsoVB0XHnL-bfIDz4BS0slRa8x_VmHxA8GvXIdiLZrkrx4xdhvLmKc3QLVXsTohkXWJgS-skz-qzhfzV0ZNiqtOwEWP8IaMiat0Nn5fyS60VDmbS3delMYr3wnecfJGxOYqDvFsLzIyE56BhQzgyuQNc_pO_aLMRADDl1D6dyw6ROOqgd47aeNFiDoeqwpCUPLVQIpbTanJLvvpz63LrMZQ4hnmZAUmDtSmoQYWdYQtCoxW7iudQCqNeIImtadWjkCiZxANE2b3ypKhJpIBA5FP6_eFI9Npil_paOxMigpqD0SqTiOe96y6kT_qrP6Me5AyPkN38r1cyf81D5xO-4E3lIH8u9n4pBh1zdNpZRvUcLFB9iguZFAoNG7p4royChu2bdHN9B1uxOLIKlAoJ5ClW7XL8AAIoAnh4L-eYNM3GgUh6bScFqfFmMhNSyv2bGNzm593rGLM3nUZ250nkcZfYxhUJqYuDvvAhlVF9f4MaSVg3wGHovUKfMxCWbsA2I_3jACzyHagEMTmG3SQ</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.55322,14.563405,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 3</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4_3Jay8im6PN_6fPDgNos2gMHyuvIKv_tNek8ys55HzcADVWYdxWvT4cUJ-W_2Br7TY0Osw3pvairsiQ9-ph1Xz_FbQp7BWGDblGeZJYcsm3pgXuBcY3zphJ2LrWtoAfe_68LoJemSU946lln0bi-JPFEmz-KpjAGwkJzTgg28CPUWR0SsEo5-wgqUjeSxtO_tA9ftO_-r-3GndS2yZPob8runtlUq13te_XQRnpfP_GKnwmPlezEL-3tmAoWbFXEbBQOXQ9zCtsrbw6FvQXphX7pxYylwSs-eoKVX8F6Gh6rNzgoZ1xj2yYYpoJ34oGYhjubE18mL-8yU9GQULu25PsBUR2EmDVeHQMalELuJlgENSqGwaxxpdYn-4RpYOSOQvy1NcpY2yEWGTGr03VcRm25dS2_yE_T3jo3gqs-HZ0ALWgrS--3SpNie_Hsn7sOyOB3uFkJFNv89dudgpKaFRQrOG8_jlCXYWPzineA5BYv3qTH--ZdIh6lVwxOp-FygQnWA1bq7zqCq7iFDeMr8pz3hfjjQmRfTnbKtRVbVdUDdr3WD1CSbju7o0CiOD1tBmcLKhSIRdUwfpA6XmWbHX8ABSXzujp_WOsoKlenXljAjF7ty3B0YgZExP8w9CyOPcivtKqz8LPBNyUO8HKNFcgXlOAdvpIU8-8SbyBpXVVRt_cUaGMqS8pPltgeUl9lkpTOO771hg0N_Zm_FQNVXpFw3KA" height="200" width="auto" /><br><br>metraje de cable: 1080 mts<br>distancia a siguiente pozo/poste: 163 mts<br>descripción: pozo tipo 7 en esquina]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>1080 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>163 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 7 en esquina</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4_3Jay8im6PN_6fPDgNos2gMHyuvIKv_tNek8ys55HzcADVWYdxWvT4cUJ-W_2Br7TY0Osw3pvairsiQ9-ph1Xz_FbQp7BWGDblGeZJYcsm3pgXuBcY3zphJ2LrWtoAfe_68LoJemSU946lln0bi-JPFEmz-KpjAGwkJzTgg28CPUWR0SsEo5-wgqUjeSxtO_tA9ftO_-r-3GndS2yZPob8runtlUq13te_XQRnpfP_GKnwmPlezEL-3tmAoWbFXEbBQOXQ9zCtsrbw6FvQXphX7pxYylwSs-eoKVX8F6Gh6rNzgoZ1xj2yYYpoJ34oGYhjubE18mL-8yU9GQULu25PsBUR2EmDVeHQMalELuJlgENSqGwaxxpdYn-4RpYOSOQvy1NcpY2yEWGTGr03VcRm25dS2_yE_T3jo3gqs-HZ0ALWgrS--3SpNie_Hsn7sOyOB3uFkJFNv89dudgpKaFRQrOG8_jlCXYWPzineA5BYv3qTH--ZdIh6lVwxOp-FygQnWA1bq7zqCq7iFDeMr8pz3hfjjQmRfTnbKtRVbVdUDdr3WD1CSbju7o0CiOD1tBmcLKhSIRdUwfpA6XmWbHX8ABSXzujp_WOsoKlenXljAjF7ty3B0YgZExP8w9CyOPcivtKqz8LPBNyUO8HKNFcgXlOAdvpIU8-8SbyBpXVVRt_cUaGMqS8pPltgeUl9lkpTOO771hg0N_Zm_FQNVXpFw3KA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.552684,14.563261,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 4</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4Ff_sPHhLrUQgIt65JKCwAN0GAt7A0vgAJpWRWF--Uuyimj7uiMmsUQfCWv_GTpK3aNvVOtNouiqumjFMq4QL12I3F8lysnkBzu2SsXh5JITkVqn3iW0tIoLeh2dhRtKyRXkYRfRmARpskjTymWSdTC4VpQHdcMwq_RaNhewuByspEW9U1v1aNL_vb3VAA8UdbuBZ42cXR29gvaKjK3HUhmRy9V9H2-1duFZL9_SiD5wYL2v26j7TbSHD1jOGhr01pMlTLvo8vxvmwcdUh1Z_FWDmrAVObDFoJac9rkswXBum_QQUFCgF5DXCelReCFkNVbe09WFleSQpRfrRJp_llmsFmI_AFUNo0_9qk1mIIQkLn6-GhekUkInayyMeyokpQKzrjMFUNXGPbZckFcX3jb3ftPOn0AR8MCE5RoaVzW0nqpBd2gNDIiEPiwZ85bHwf72xKSvuR_cRrK8p30P48fRqp0hx_gyFxs3tUzaZl2rwDthdoO4p7dFvoaVRC9lg4RUDujDXacMsjN7X1NhIKn6olPhzj-sLmZy6bmQNJjEciuIoSUVYPfgYZVhHfTfbi4D1Lf3TV3aVZjebwnRYqANDvKOEdVsS2eB54WhfrmhgUarzmWrnWshWquqlip-dxK2pmFgzVi_pydGqUQ5cgx2HrtXY80PeuBEfNsjhkXmEesHP9uWlEz_aL5uAee1W5VW200vsCzcfrzRM-8ZClvWRfOA" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 35 mts<br>descripción: pozo tipo 7 frente a sion print numeral 18-37]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>35 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 7 frente a sion print numeral 18-37</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4Ff_sPHhLrUQgIt65JKCwAN0GAt7A0vgAJpWRWF--Uuyimj7uiMmsUQfCWv_GTpK3aNvVOtNouiqumjFMq4QL12I3F8lysnkBzu2SsXh5JITkVqn3iW0tIoLeh2dhRtKyRXkYRfRmARpskjTymWSdTC4VpQHdcMwq_RaNhewuByspEW9U1v1aNL_vb3VAA8UdbuBZ42cXR29gvaKjK3HUhmRy9V9H2-1duFZL9_SiD5wYL2v26j7TbSHD1jOGhr01pMlTLvo8vxvmwcdUh1Z_FWDmrAVObDFoJac9rkswXBum_QQUFCgF5DXCelReCFkNVbe09WFleSQpRfrRJp_llmsFmI_AFUNo0_9qk1mIIQkLn6-GhekUkInayyMeyokpQKzrjMFUNXGPbZckFcX3jb3ftPOn0AR8MCE5RoaVzW0nqpBd2gNDIiEPiwZ85bHwf72xKSvuR_cRrK8p30P48fRqp0hx_gyFxs3tUzaZl2rwDthdoO4p7dFvoaVRC9lg4RUDujDXacMsjN7X1NhIKn6olPhzj-sLmZy6bmQNJjEciuIoSUVYPfgYZVhHfTfbi4D1Lf3TV3aVZjebwnRYqANDvKOEdVsS2eB54WhfrmhgUarzmWrnWshWquqlip-dxK2pmFgzVi_pydGqUQ5cgx2HrtXY80PeuBEfNsjhkXmEesHP9uWlEz_aL5uAee1W5VW200vsCzcfrzRM-8ZClvWRfOA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.551272,14.562827,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 5</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4OF-q6EXtdyG4neKRAngXP_cUGI-RbLH6IMtt5p7t-uL3dNmpRz1XFSpi7OM_9A5EsvTe6GnGEyfITQPNLJvabWkrzI4cI6Q_Lj9TJLR6OE0Y_D2L3qGOIA3W75R6o_7J_8uFDa8A5ykRsQSQmrbfn3g4fFF1qEH9KgZ1e3U27pk1ut2aQua7-m1oRX5KKzH_m8MyELnzYYVTUyJE8JeRLNyYqWgMMrJ5RKBVQm-sRIuUJT-AZ9Zcn83om16vfu2yGNUb7cFvqf5JT2k56sY5Lq-oMRA4sv7J6cu1fRzQDrFHqU6ovjkj8F6LQ5rgp1FkQy-CLHvW5SUifEN_dfN3slUmr5K8BkELrl-1MlSGhtinTVaiR4vVLyCpFGlpYs1wo_XNqKHQhbw26Rjheq8QNTs-U-2FIjTDNOxMgQH2xrgoxrL4UVziVK_hYhb_Oyg7QjJc8jPvAlE2tODWgTg2QJQgBGe6kQKdQBL__supgSSWwiM4mU--jP9R2SNFo2iP7xnIeflf8tWMzy3C5QHtV2L_Lig9PYuHwnK28GHuiwH5bf5DL3k4Raiyj-PJbDAr8SWOkHfKaU-67MkCKQPMVgLXNp1F8vmoQ5zcEVnI99rI31IiDNRYFvXk_Mj6DThub_BsZpRML8c72kbzYB0uC0LmkSqPnjbgqh2vUrB4jwcXpfS-b3ZxutW1dpKvKcK94sfXWthxFBUjkI5LJQp4i_Fu9bw" height="200" width="auto" /><br><br>metraje de cable: 881 mts<br>distancia a siguiente pozo/poste: 52 mts<br>descripción: pozo tipo 7 frente a numeral 18-71]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>881 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>52 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 7 frente a numeral 18-71</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4OF-q6EXtdyG4neKRAngXP_cUGI-RbLH6IMtt5p7t-uL3dNmpRz1XFSpi7OM_9A5EsvTe6GnGEyfITQPNLJvabWkrzI4cI6Q_Lj9TJLR6OE0Y_D2L3qGOIA3W75R6o_7J_8uFDa8A5ykRsQSQmrbfn3g4fFF1qEH9KgZ1e3U27pk1ut2aQua7-m1oRX5KKzH_m8MyELnzYYVTUyJE8JeRLNyYqWgMMrJ5RKBVQm-sRIuUJT-AZ9Zcn83om16vfu2yGNUb7cFvqf5JT2k56sY5Lq-oMRA4sv7J6cu1fRzQDrFHqU6ovjkj8F6LQ5rgp1FkQy-CLHvW5SUifEN_dfN3slUmr5K8BkELrl-1MlSGhtinTVaiR4vVLyCpFGlpYs1wo_XNqKHQhbw26Rjheq8QNTs-U-2FIjTDNOxMgQH2xrgoxrL4UVziVK_hYhb_Oyg7QjJc8jPvAlE2tODWgTg2QJQgBGe6kQKdQBL__supgSSWwiM4mU--jP9R2SNFo2iP7xnIeflf8tWMzy3C5QHtV2L_Lig9PYuHwnK28GHuiwH5bf5DL3k4Raiyj-PJbDAr8SWOkHfKaU-67MkCKQPMVgLXNp1F8vmoQ5zcEVnI99rI31IiDNRYFvXk_Mj6DThub_BsZpRML8c72kbzYB0uC0LmkSqPnjbgqh2vUrB4jwcXpfS-b3ZxutW1dpKvKcK94sfXWthxFBUjkI5LJQp4i_Fu9bw</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.550918,14.562732,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 6</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4L2gR1UvrUjIJYLsfloXNqNO2t0Db2XK521F-gSGPu89MfecaM1xlX2zFNgedqlXQ72J_VEL81E2odu3k4e7tLjZebrI2W5giVIl1PzqeSVWVOSB9CWn80zI0y-bpemvA3nOsaudG7lSX-ocO4tzPiizfyHC_zbhAsc2o8ZhJgiwl8yAiWRT_G_U9cosojuWhuufEtHE9P6A_MrWeVEldwf8Xq_hERGYzVIIBzo9KVLVUBX5WCSqHSg98FWKokPRHfEcKZwCy5nbov-Aa1r_7yzvcAA-8LJfs7r-oLSllb2rwkJuviKPMtv5YM439QROeIPH9iiVE3IGqoyDeU_b3ZrY2izP2ixdVeLfHe0GHRVtp3FXIHEpjpMA74Tt6fVtDa3vF4AI8tW2CfetAWwDheR7UhuJdh-y7R7AY0CmnVpyEN3lUMsE82XzbzOlD14XygTJxRnXKyPxU3v-Hv2wJE78WPoly3o4qaE-1JXz5NuDhd1MFVzkL3sa6WYIy8a2MVG8Q6zA9lSIgXKrWNe9vZ7l3lHuryh0iHaDM191HPA5aEQTNzenuM38qugxdbrqxuDE0jkqJYQl-VE4R8omI83FqkRF07sWQdKoTQPeiGnY2joYz10lHGALcoJbkGL1HDyt0zQyhJsFsO8zHJ3ktdb1FImFzlWCc58A0oAGqmnEq3OckGcqCzDOqgoMykcy86yvl95_qu0gzGmc7iLXa1u2Imhg" height="200" width="auto" /><br><br>metraje de cable: 828 mts<br>distancia a siguiente pozo/poste: 7 mts<br>descripción: pozo tipo 7 en equina de  pinchazo]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>828 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>7 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 7 en equina de  pinchazo</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4L2gR1UvrUjIJYLsfloXNqNO2t0Db2XK521F-gSGPu89MfecaM1xlX2zFNgedqlXQ72J_VEL81E2odu3k4e7tLjZebrI2W5giVIl1PzqeSVWVOSB9CWn80zI0y-bpemvA3nOsaudG7lSX-ocO4tzPiizfyHC_zbhAsc2o8ZhJgiwl8yAiWRT_G_U9cosojuWhuufEtHE9P6A_MrWeVEldwf8Xq_hERGYzVIIBzo9KVLVUBX5WCSqHSg98FWKokPRHfEcKZwCy5nbov-Aa1r_7yzvcAA-8LJfs7r-oLSllb2rwkJuviKPMtv5YM439QROeIPH9iiVE3IGqoyDeU_b3ZrY2izP2ixdVeLfHe0GHRVtp3FXIHEpjpMA74Tt6fVtDa3vF4AI8tW2CfetAWwDheR7UhuJdh-y7R7AY0CmnVpyEN3lUMsE82XzbzOlD14XygTJxRnXKyPxU3v-Hv2wJE78WPoly3o4qaE-1JXz5NuDhd1MFVzkL3sa6WYIy8a2MVG8Q6zA9lSIgXKrWNe9vZ7l3lHuryh0iHaDM191HPA5aEQTNzenuM38qugxdbrqxuDE0jkqJYQl-VE4R8omI83FqkRF07sWQdKoTQPeiGnY2joYz10lHGALcoJbkGL1HDyt0zQyhJsFsO8zHJ3ktdb1FImFzlWCc58A0oAGqmnEq3OckGcqCzDOqgoMykcy86yvl95_qu0gzGmc7iLXa1u2Imhg</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.550483,14.562617,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 7</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v4vhXDdJVYGtBLFl2RuUvpg3nZepRcRr23FqRh6SsjOYv1h86jLGtDlVi-JWcKi77Y9hrKB8WbN2ky3HkFvVtX15AE7hHN4jj3pXU3zv9siogbdzxg2zRFTt3ms5ikP-kZ6SJyVne_WGlYdiPtYZiKlsIKz8DR7PTIUEHDewpWLmHd5X3Rw0YuEdDdIDfjAlPFLp1Zcg5VMn9UymQoome-xA3AQvcMkijbcITTtdzPPMG2BTNwCqpO8fJzoy_6ygDVxoYvfqGV7CzutvOnyLss0FY8-wKlKyv1aPhM7UT-Ap1YC6fp2mGcQ5oFir2Z0FiD5NKeGNhQ6PyOEyulqkAJQstpzZIZemo41kFXdiZ8-uI-Op5xaG4Gre0QZJxhbWW8QV3kAl4nSbd355jfOrpt8f9ac97T8VrW52x72zBU0sN2Ds_ov3gaOPCk1P_jz0fQMB59J7GLVTsVcdUcNXt2mvzOu0HKsNEQF_A78_lKaLfdzYXZLIuLNkpM4_T9_KbWLckLdE8B_pgVHiznAMOlC9XKy8o9Fl4zqB3QQjA0YM5ScLZWpzERrd-Xp53nTpo9bIr3IUgBWKdiPX7rqlK-0MjB0NygRKF2r5zFdCb5nVlI2CUaJkTkYoky942guYW-tL1gSm-wU6gajh2jsiCAuK6_tvID3Ga4WuhNvr0hKIrASwQmcPDJGYgwKY9o8gE-CmmRcY1O-auhgf1gJXuvpZEDkCA" height="200" width="auto" /><br><br>metraje de cable: 787 mts<br>distancia a siguiente pozo/poste: 100 mts<br>descripción: pozo tipo 4,con reserva de 30 mts,  frente a cd ]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>787 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>100 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4,con reserva de 30 mts,  frente a cd </value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v4vhXDdJVYGtBLFl2RuUvpg3nZepRcRr23FqRh6SsjOYv1h86jLGtDlVi-JWcKi77Y9hrKB8WbN2ky3HkFvVtX15AE7hHN4jj3pXU3zv9siogbdzxg2zRFTt3ms5ikP-kZ6SJyVne_WGlYdiPtYZiKlsIKz8DR7PTIUEHDewpWLmHd5X3Rw0YuEdDdIDfjAlPFLp1Zcg5VMn9UymQoome-xA3AQvcMkijbcITTtdzPPMG2BTNwCqpO8fJzoy_6ygDVxoYvfqGV7CzutvOnyLss0FY8-wKlKyv1aPhM7UT-Ap1YC6fp2mGcQ5oFir2Z0FiD5NKeGNhQ6PyOEyulqkAJQstpzZIZemo41kFXdiZ8-uI-Op5xaG4Gre0QZJxhbWW8QV3kAl4nSbd355jfOrpt8f9ac97T8VrW52x72zBU0sN2Ds_ov3gaOPCk1P_jz0fQMB59J7GLVTsVcdUcNXt2mvzOu0HKsNEQF_A78_lKaLfdzYXZLIuLNkpM4_T9_KbWLckLdE8B_pgVHiznAMOlC9XKy8o9Fl4zqB3QQjA0YM5ScLZWpzERrd-Xp53nTpo9bIr3IUgBWKdiPX7rqlK-0MjB0NygRKF2r5zFdCb5nVlI2CUaJkTkYoky942guYW-tL1gSm-wU6gajh2jsiCAuK6_tvID3Ga4WuhNvr0hKIrASwQmcPDJGYgwKY9o8gE-CmmRcY1O-auhgf1gJXuvpZEDkCA</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.550404,14.562676,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Condumex Cable Optico 12FO TM6 Propiedad de Telgua 02/2005</name>
+      <description><![CDATA[metraje de cable: <br>distancia a siguiente pozo/poste: <br>descripción: ]]></description>
+      <styleUrl>#line-1A237E-7000</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          -90.55564,14.562365,0
+          -90.55572,14.562319,0
+          -90.55574,14.562318,0
+          -90.555509,14.56255,0
+          -90.555353,14.562719,0
+          -90.555182,14.562885,0
+          -90.554945,14.563108,0
+          -90.554794,14.563289,0
+          -90.554703,14.563388,0
+          -90.554419,14.563694,0
+          -90.554443,14.563758,0
+          -90.554073,14.563665,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>pozo 8</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqrDIjbalP81-rPadWeMytNs8FFrOUfW3yWdzF1Db04yiOXm8opQ7wgR9wJlfwWYBgyxVUjwjhuA_agu5odYz3KTuWAhqZs789bWHgEzYh2BNRWmeo-9HPApVbEr4fq8vlIAX3CifTwB8EMF3u__tiLOMAe_lC8P-OVqf0myKwddhASceJY-zZSFWAMrl9BZbQ0XuYvxF30-xjsMrGfMqpRsvG9DTi47IMB1-r8QB2xTpgLe6cJBGBnAXA?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 100 mts<br>descripción: pozo en salida de paso a desnivel  50 calle]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>100 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo en salida de paso a desnivel  50 calle</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqrDIjbalP81-rPadWeMytNs8FFrOUfW3yWdzF1Db04yiOXm8opQ7wgR9wJlfwWYBgyxVUjwjhuA_agu5odYz3KTuWAhqZs789bWHgEzYh2BNRWmeo-9HPApVbEr4fq8vlIAX3CifTwB8EMF3u__tiLOMAe_lC8P-OVqf0myKwddhASceJY-zZSFWAMrl9BZbQ0XuYvxF30-xjsMrGfMqpRsvG9DTi47IMB1-r8QB2xTpgLe6cJBGBnAXA?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5501921,14.5626581,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 9</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopyy520zDkkUelsFPO3h3XEfeClLbtYlV5fh0h1wVX5x3a1kB4OTvxCZCCUW7hyJYzpVsTguZ1ya63XzAuVl2PymQJl_QrcOMZ_9EVfUB-ToemeTDKSvRTGZRi-ByOx5aIN7TRvOnVUusHAQI9cXPHa67aIdVVMN3hpyj_KO_N0Hg1KNo2ab8JFyRhgZkxg3T7qo9arrUTVDgobqXR4Ppictswqstu1uDMWPatStFG9c3RvdqmJvJSvMa8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 2577 mts<br>distancia a siguiente pozo/poste: 92 mts<br>descripción: pozo tipo 4 ubicado frente a texaco]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>2577 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>92 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 ubicado frente a texaco</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopyy520zDkkUelsFPO3h3XEfeClLbtYlV5fh0h1wVX5x3a1kB4OTvxCZCCUW7hyJYzpVsTguZ1ya63XzAuVl2PymQJl_QrcOMZ_9EVfUB-ToemeTDKSvRTGZRi-ByOx5aIN7TRvOnVUusHAQI9cXPHa67aIdVVMN3hpyj_KO_N0Hg1KNo2ab8JFyRhgZkxg3T7qo9arrUTVDgobqXR4Ppictswqstu1uDMWPatStFG9c3RvdqmJvJSvMa8?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5500086,14.563366,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 10</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopO5byG5pdvjUT5SsoOnDLjZ19FPbuzi43OTfP9tAkLEUd22_-p7Q7CcB1F6SGzvPf8RUI2vuMeECT4IKQd9bMrzmu2U1Mk6doolEug9-TbBLIGyb6Tuwqagh2Y0k2xmhiBwo4KPzZQlvQY1VPJODxS0vg7yraC4AuUDYSSM8-BBN5Nk__mFRawyIuCQcV9-aUTFqhV4s9TnyYFi_zPXSiSwmlKutX10c7ob_HWAg_xfv_DVsllvQuHTV0?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 2669 mts<br>distancia a siguiente pozo/poste: 89 mts<br>descripción: pozo tipo 4 frente a ingreso  de camiones]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>2669 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>89 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a ingreso  de camiones</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopO5byG5pdvjUT5SsoOnDLjZ19FPbuzi43OTfP9tAkLEUd22_-p7Q7CcB1F6SGzvPf8RUI2vuMeECT4IKQd9bMrzmu2U1Mk6doolEug9-TbBLIGyb6Tuwqagh2Y0k2xmhiBwo4KPzZQlvQY1VPJODxS0vg7yraC4AuUDYSSM8-BBN5Nk__mFRawyIuCQcV9-aUTFqhV4s9TnyYFi_zPXSiSwmlKutX10c7ob_HWAg_xfv_DVsllvQuHTV0?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5498274,14.5642216,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 11</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBooZJLcaEMmaRw8iKfYq4dsvvVp-kewfdiW_upQRB6mOKRPWVVdX-rxHZt8QbC3ykoJMdaE9MOXG98toZXANx_3tgijdp1lNP5q75ju2hdmH9TVcVOrd5_ZCNLq1gPOo4O-oNyIfXfBIK70KWFuQNGQhTB8OCzw4qX4F7XmmGykCk1ZmWbUxQdVIBzlTYhq-Trh49cpN8-MWauQoYmcB88WnHeAyRXqNLa6ehDzTHrTUJ4T9GPdOrTojJrU?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 2756 mts<br>distancia a siguiente pozo/poste: 73 mts<br>descripción: pozo tipo 4 frente a petapolis]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>2756 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>73 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 frente a petapolis</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBooZJLcaEMmaRw8iKfYq4dsvvVp-kewfdiW_upQRB6mOKRPWVVdX-rxHZt8QbC3ykoJMdaE9MOXG98toZXANx_3tgijdp1lNP5q75ju2hdmH9TVcVOrd5_ZCNLq1gPOo4O-oNyIfXfBIK70KWFuQNGQhTB8OCzw4qX4F7XmmGykCk1ZmWbUxQdVIBzlTYhq-Trh49cpN8-MWauQoYmcB88WnHeAyRXqNLa6ehDzTHrTUJ4T9GPdOrTojJrU?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5496815,14.5649551,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 12</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopG4eVzj63zVR8-_1ljuky98y4RTd5Nf__VuZp7mY-23uHUEnwcNYg4Xwv2FKBYtZwLVq4zu4vXlThjl0UMO3gnPyR8w_uULxVnPjaA6NEDDgBSHP1EOveuRU9gpDwORO3lVPV0p0EvzvTML9Ke0AKMtQPMYP0nSUkL3xSBYqolS25umfTOLpb6kNrii1Q4rapXV-IS9ygjXA6Yq3f4jnMv-c3qzqL3kLy_lmwHaKJ7VNCP2LeoiJMttus?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 2876 mts<br>distancia a siguiente pozo/poste: 25 mts<br>descripción: pozo tipo 4 ubicado en esquina de semaforo 48 calle con reserva de 50 mts]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>2876 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>25 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 ubicado en esquina de semaforo 48 calle con reserva de 50 mts</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBopG4eVzj63zVR8-_1ljuky98y4RTd5Nf__VuZp7mY-23uHUEnwcNYg4Xwv2FKBYtZwLVq4zu4vXlThjl0UMO3gnPyR8w_uULxVnPjaA6NEDDgBSHP1EOveuRU9gpDwORO3lVPV0p0EvzvTML9Ke0AKMtQPMYP0nSUkL3xSBYqolS25umfTOLpb6kNrii1Q4rapXV-IS9ygjXA6Yq3f4jnMv-c3qzqL3kLy_lmwHaKJ7VNCP2LeoiJMttus?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5495255,14.5655726,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 13</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqmHvanuZ2wEcFGaPUoD1rI50jDb4SpkCp7Rdc5m8WBQUrPv4rPpJv4GVE3zsfawFOYMQtYpFqRqm7tWlQy8ZaCDDEZUkQwfdRU7rhhLPJNxSyupbhmCXSDMfBHye0OMZXyYUF70_GrRYkrFY_dZQEBDWAh33xj6Ya_dVtlrXuMkIFqdQ-svkhrryp1GG-QOF_KpIrvLw19fMTBoKtCJRZwopjvc3dSIALUPl8SuNQrhQx9M5mfAyJgQNE?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 2905 mts<br>distancia a siguiente pozo/poste: 178 mts<br>descripción: pozo tipo 4 ubicado  frente a cede 19 GIP ]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>2905 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>178 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 4 ubicado  frente a cede 19 GIP </value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqmHvanuZ2wEcFGaPUoD1rI50jDb4SpkCp7Rdc5m8WBQUrPv4rPpJv4GVE3zsfawFOYMQtYpFqRqm7tWlQy8ZaCDDEZUkQwfdRU7rhhLPJNxSyupbhmCXSDMfBHye0OMZXyYUF70_GrRYkrFY_dZQEBDWAh33xj6Ya_dVtlrXuMkIFqdQ-svkhrryp1GG-QOF_KpIrvLw19fMTBoKtCJRZwopjvc3dSIALUPl8SuNQrhQx9M5mfAyJgQNE?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5495023,14.5656861,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 14</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorPOwVe92wgtRXjrYKgbcdZpfyYqRC_ArzJrX02xDYcHA9iwrqG8QNrsWfameVWEd8yM6tNZJwioN6xZKwzoOlGtHTr2PLRE7cnudvDRQ-F780LniUIM83FwdNvcmVxPxKxQ1QFw05R9t9jsoveghSp49iPnpABToWP01WpzVOoUDeWKd1EpGJxFXHsT7XPC-I-HqOyzhc8JD9WVvz3k4z_e3YGyFSBPRBDLC0z0_VpRPxK5QCdgtTE6lQ?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 425 mts<br>distancia a siguiente pozo/poste: 33 mts<br>descripción: poste ubicado  fremte a pozo de celasa]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>425 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>33 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado  fremte a pozo de celasa</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorPOwVe92wgtRXjrYKgbcdZpfyYqRC_ArzJrX02xDYcHA9iwrqG8QNrsWfameVWEd8yM6tNZJwioN6xZKwzoOlGtHTr2PLRE7cnudvDRQ-F780LniUIM83FwdNvcmVxPxKxQ1QFw05R9t9jsoveghSp49iPnpABToWP01WpzVOoUDeWKd1EpGJxFXHsT7XPC-I-HqOyzhc8JD9WVvz3k4z_e3YGyFSBPRBDLC0z0_VpRPxK5QCdgtTE6lQ?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5458631,14.5781534,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 15</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorKA_PYbLn0aIsqdQV1bwXREhIbIjTtucGLSqvyCrCkVkus6_Lk9nCdtpJjdZZoGgSDfVpjZmFjgG6ENiX8B_VS9cNPHUk3AjqUfnpxWKQEcsQ8QpVZpBv0GS9ZiV8jGyi_wth9sIILh2eAnOJr_e8O8NeLItGwlyY1ykcRnFJthRCVbcNr4DrrgbKhNRfZ-J5-kADEJIisNmr0Qc7KEnEkt-6xa_5-eeXwHPHBkMSJLhSt3AyKQ9zLYMY?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 33 mts<br>descripción: poste ubicado frente a volanti<br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqovFaaEUNoktXBO7gMLI1xZcj1kWdJKFBr8so4Dha69F8-365WKlenCePMubz7_RUuOUtShQJqz_wc2LXEuSUUnGaoMZ_6BASWtrjuNgB7gOvrXs4XVQIpMXAwZgkHOG8yi5sJt25GmH16t6LtvfKvR1vZdXZG7fluBw79SPwfACmINqQBLBS4I7msWDpwL1FYUWd6W2tN6Za0F-uqyLrtbNYNJJd9PISzFNnwGZ6RV-kyBfN-pGm2Vww?authuser=0&fife=s16383" height="200" width="auto" /><br><br><img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor5CiflOoCauzF-AQlG_CrV_rMx1o-jpjnVNLiawLdfwrSjX-sO42VY4mjOlBO2KaQy0F6Bsh0TXKmQtRz-7gJwH0jS0567gU7eLUtUxf0048br6Nc0-E7t1mz1Ke-EJtNRaYi6nTuPhKExAUoQUyaVvQVWajp02edgXLiBqPGpxlODeFmZDPT8ebSCgJbVTOfR0iJWjEtDZmTbXlbtJZvsXmC1UkZNHeh9ZPqycCVkppMhApS_DNtFtDg?authuser=0&fife=s16383" height="200" width="auto" />]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>33 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado frente a volanti</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBorKA_PYbLn0aIsqdQV1bwXREhIbIjTtucGLSqvyCrCkVkus6_Lk9nCdtpJjdZZoGgSDfVpjZmFjgG6ENiX8B_VS9cNPHUk3AjqUfnpxWKQEcsQ8QpVZpBv0GS9ZiV8jGyi_wth9sIILh2eAnOJr_e8O8NeLItGwlyY1ykcRnFJthRCVbcNr4DrrgbKhNRfZ-J5-kADEJIisNmr0Qc7KEnEkt-6xa_5-eeXwHPHBkMSJLhSt3AyKQ9zLYMY?authuser=0&fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqovFaaEUNoktXBO7gMLI1xZcj1kWdJKFBr8so4Dha69F8-365WKlenCePMubz7_RUuOUtShQJqz_wc2LXEuSUUnGaoMZ_6BASWtrjuNgB7gOvrXs4XVQIpMXAwZgkHOG8yi5sJt25GmH16t6LtvfKvR1vZdXZG7fluBw79SPwfACmINqQBLBS4I7msWDpwL1FYUWd6W2tN6Za0F-uqyLrtbNYNJJd9PISzFNnwGZ6RV-kyBfN-pGm2Vww?authuser=0&fife=s16383 https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor5CiflOoCauzF-AQlG_CrV_rMx1o-jpjnVNLiawLdfwrSjX-sO42VY4mjOlBO2KaQy0F6Bsh0TXKmQtRz-7gJwH0jS0567gU7eLUtUxf0048br6Nc0-E7t1mz1Ke-EJtNRaYi6nTuPhKExAUoQUyaVvQVWajp02edgXLiBqPGpxlODeFmZDPT8ebSCgJbVTOfR0iJWjEtDZmTbXlbtJZvsXmC1UkZNHeh9ZPqycCVkppMhApS_DNtFtDg?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5455445,14.5781379,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 16</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqlFanO22uMZJKdAmZFVZRAzYdEeFapu3NMtoacuRqJlxHbIwKajj8psgMMYOirxUycxwvCcFT4C0SvqLxT83nw1SOxLTtPTuk9p5m3dFK7BeKdBpWtfZ82sIBNMGKtY_xJ83jQCS69-447T56xmrJ7qDs8CawjYfwwcKBVYmA030q3wM1dpmygirkdXe6V0SZ08XyT9catUd290h5e-E3rLkelyBKcdesIZIXSO4mY6hBF6AYOHgZUI6w?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 25 mts<br>descripción: poste a un costado de singer]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>25 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste a un costado de singer</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqlFanO22uMZJKdAmZFVZRAzYdEeFapu3NMtoacuRqJlxHbIwKajj8psgMMYOirxUycxwvCcFT4C0SvqLxT83nw1SOxLTtPTuk9p5m3dFK7BeKdBpWtfZ82sIBNMGKtY_xJ83jQCS69-447T56xmrJ7qDs8CawjYfwwcKBVYmA030q3wM1dpmygirkdXe6V0SZ08XyT9catUd290h5e-E3rLkelyBKcdesIZIXSO4mY6hBF6AYOHgZUI6w?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5453396,14.5781188,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 17</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoo4IJdi_YqGV1d8JpXZdZDrov7pzZv5IfxxZvjl4i6Igal5dwJM3epadMclX_4QfuPr_fXlpQSWR91pMTGLfYInKMSiqyZj6_U9j3evIkhZBGoTv0m38NdUgTnxV_XM-kvwUz-pjrOxj8y-nR3YKFfzRWq5fjr2i3WUJgM8msVWVjCP38JkDGLIYUaPkEeWMXC3a2LemYyliVKVIrU6VLJBjbbfNDachMwH2j5e2Efm5QhlN67WC1xnKas?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 499<br>distancia a siguiente pozo/poste: 26 mts<br>descripción: poste ubicado a  un costado de telefono publico]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>499</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>26 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado a  un costado de telefono publico</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoo4IJdi_YqGV1d8JpXZdZDrov7pzZv5IfxxZvjl4i6Igal5dwJM3epadMclX_4QfuPr_fXlpQSWR91pMTGLfYInKMSiqyZj6_U9j3evIkhZBGoTv0m38NdUgTnxV_XM-kvwUz-pjrOxj8y-nR3YKFfzRWq5fjr2i3WUJgM8msVWVjCP38JkDGLIYUaPkEeWMXC3a2LemYyliVKVIrU6VLJBjbbfNDachMwH2j5e2Efm5QhlN67WC1xnKas?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5451776,14.578102,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 18</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqe75BPj7hsVpVT9uCXTk5J6OR5ewgB4-C-uCDPN9sXjFYvtijdRYjPWtIChlBUTrIESgG9UOaTwm0nyqtElbDbdWabCjh5eTZ7-Xvkc145VA8Yqxz-BDL9287P4rLrPwHKGSUQVHRTZ0zhUVwtnBigLP0hh_TQwKhs257j03UW7mpp7fCjtXCXZjxHBMnXMmcHpw8UdfJJl0mhICjlFJ8LhP8YX4cQNpQS04U5Rcdoewxyne9d2KHJ2FU?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 16 mts<br>descripción: poste ubicado sobre jardin]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>16 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado sobre jardin</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqe75BPj7hsVpVT9uCXTk5J6OR5ewgB4-C-uCDPN9sXjFYvtijdRYjPWtIChlBUTrIESgG9UOaTwm0nyqtElbDbdWabCjh5eTZ7-Xvkc145VA8Yqxz-BDL9287P4rLrPwHKGSUQVHRTZ0zhUVwtnBigLP0hh_TQwKhs257j03UW7mpp7fCjtXCXZjxHBMnXMmcHpw8UdfJJl0mhICjlFJ8LhP8YX4cQNpQS04U5Rcdoewxyne9d2KHJ2FU?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5449713,14.5780725,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 19</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBooUWxcBguzF9zoHoV5Ul-DHdXQB9tiI3b4RijcTaS5SBqqWBdxwXfKtk_QMK3Z1Q93V_7POn_N4KrA7qjQCEPUTF1PgxPY62gBrUzqZ0N_jR2A1lxPkd0jdsDnjP2WO8L9w5RPWWULWa3AlA6R5Xh1u585hnLz_HgZCOZeHM2I9qYCJzrkkVdNIBsqZ2HAG20NXadI7aq9p-lizu8ONSU025orIU_ggzO1vRk7fogHZhMOB872nDQ0nLno?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 35 mts<br>descripción: poste ubicado sobre jardin frente a numeral 22-34]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>35 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado sobre jardin frente a numeral 22-34</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBooUWxcBguzF9zoHoV5Ul-DHdXQB9tiI3b4RijcTaS5SBqqWBdxwXfKtk_QMK3Z1Q93V_7POn_N4KrA7qjQCEPUTF1PgxPY62gBrUzqZ0N_jR2A1lxPkd0jdsDnjP2WO8L9w5RPWWULWa3AlA6R5Xh1u585hnLz_HgZCOZeHM2I9qYCJzrkkVdNIBsqZ2HAG20NXadI7aq9p-lizu8ONSU025orIU_ggzO1vRk7fogHZhMOB872nDQ0nLno?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5446305,14.578009,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 20</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor3nsaHAEWuIz07o5zVwNXCHGqM2N82MgD2GndDI1uLtmdN4l9p93J09Dgfgs_NNXVOxUizm9FLouTqoPlxOBcxManTmDDMQWapFxSORy3SY4eUPjs3E8twbvFMsXoKybzgEx6EKG2UoayRBT-g6RWx6mDqtBmxqEs45QqmumSM-ptCERpj9OLUmxAFVbzb8eZomD8kHTieOeN6ZqxIM_KOCxOFoSbybHdK2AYCbyjXt8ijTBsXS0rJr0Y?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 575 mts<br>distancia a siguiente pozo/poste: 48 mts<br>descripción: poste ubicado frente a numeral 22 -46]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>575 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>48 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado frente a numeral 22 -46</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBor3nsaHAEWuIz07o5zVwNXCHGqM2N82MgD2GndDI1uLtmdN4l9p93J09Dgfgs_NNXVOxUizm9FLouTqoPlxOBcxManTmDDMQWapFxSORy3SY4eUPjs3E8twbvFMsXoKybzgEx6EKG2UoayRBT-g6RWx6mDqtBmxqEs45QqmumSM-ptCERpj9OLUmxAFVbzb8eZomD8kHTieOeN6ZqxIM_KOCxOFoSbybHdK2AYCbyjXt8ijTBsXS0rJr0Y?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5440944,14.5779489,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 21</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop-kKXweEyBbHsm7ky4hX_SP53kvM82wAyR-6DmeEi-2nNdX66xbR2kmSacONBqwlfVx4BRIPjx0u8bRtwinaisqaf7EpBx2ShvjIyvb5s463rDF1Nmkun3jR-bOdbk62rHz9pPP4-sAdkkGP6rVgCpN3EYLvq5HOx3Dkhy8VeDbNIDe-mdnule5780Kl6ohaE9rECHJ7hGnvThEl1xrhKLZlWInSHZ_Spcrx3WTOY54QZHbt49jx2_SqQ?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 48 mts<br>descripción: poste fremte a numeral 22-55]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>48 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste fremte a numeral 22-55</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBop-kKXweEyBbHsm7ky4hX_SP53kvM82wAyR-6DmeEi-2nNdX66xbR2kmSacONBqwlfVx4BRIPjx0u8bRtwinaisqaf7EpBx2ShvjIyvb5s463rDF1Nmkun3jR-bOdbk62rHz9pPP4-sAdkkGP6rVgCpN3EYLvq5HOx3Dkhy8VeDbNIDe-mdnule5780Kl6ohaE9rECHJ7hGnvThEl1xrhKLZlWInSHZ_Spcrx3WTOY54QZHbt49jx2_SqQ?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5437931,14.5779157,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 22</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoq5kWqEHYSqda6RBtcWN7XDDWaRy7U90XRDmOhv5T8icfP8XG8srGwzgevkjsMQqJpTuY3Nc-hAUaZC6pEECJ7JTRcMZlO5p_k-MSDCVFgXXILxI5gp2CbQRWx_fsABk8Zb5Yd9B7AlUjCKH18KufRAwrTo3KRhz64sWAPgxZE0p1UHsFrE3la8MjxDXbzPeh7RFduxv0DoVPEsFu8E-xrq3gg4gdD-DDDqiLr29WIz8R1-lXR0CM4Dit8?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: <br>distancia a siguiente pozo/poste: 11 mts<br>descripción: poste ubicado en esquina frente a numeral 22- 75a]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>11 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado en esquina frente a numeral 22- 75a</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoq5kWqEHYSqda6RBtcWN7XDDWaRy7U90XRDmOhv5T8icfP8XG8srGwzgevkjsMQqJpTuY3Nc-hAUaZC6pEECJ7JTRcMZlO5p_k-MSDCVFgXXILxI5gp2CbQRWx_fsABk8Zb5Yd9B7AlUjCKH18KufRAwrTo3KRhz64sWAPgxZE0p1UHsFrE3la8MjxDXbzPeh7RFduxv0DoVPEsFu8E-xrq3gg4gdD-DDDqiLr29WIz8R1-lXR0CM4Dit8?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5435735,14.5778576,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 23</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqD1t6L-ZKW2Y0c9lCE-2GBrBzppC3SrBdnfruOvwW_yil12HtOttvLZXhzK_81KTpI3K4wcPgoiUqefNdPvRX0m_jZ0DeHOqrbz8hGw73JcWBxJ6F3DhtgKUUj7dKTuExAtFGBxjhzyujGrfEh2FJxDB-nBvDt4juMSqMMZ8Fu3mmhc8B1sgw8m8yh7mY-ITAohBcQO7HahSXx_f0TDTCRi9Wmd-i9AYtXOTzCG70Rco8mFYnGM5d8tCU?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 710 mts<br>distancia a siguiente pozo/poste: 20 mts<br>descripción: poste ubicado a un costado de telefono publico  con reserva de 25 mts]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>710 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>20 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>poste ubicado a un costado de telefono publico  con reserva de 25 mts</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqD1t6L-ZKW2Y0c9lCE-2GBrBzppC3SrBdnfruOvwW_yil12HtOttvLZXhzK_81KTpI3K4wcPgoiUqefNdPvRX0m_jZ0DeHOqrbz8hGw73JcWBxJ6F3DhtgKUUj7dKTuExAtFGBxjhzyujGrfEh2FJxDB-nBvDt4juMSqMMZ8Fu3mmhc8B1sgw8m8yh7mY-ITAohBcQO7HahSXx_f0TDTCRi9Wmd-i9AYtXOTzCG70Rco8mFYnGM5d8tCU?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5434931,14.5777239,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>poste 24</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqua0frIoALa8XQ1c82r6tDUryrd-0u1DCFxgTfZ4l4D2CGPx7hd1rBl30UYcihDp4ERmKcclkmDwBWavia3m22EIzRmBQHvFCede250hkdzei5Mgj4yOSPoKWaz0qG2LtetUB5oqLG_Hw3Wmh3e0LT2fmcAm5mx3TvfhKAxEK8s3q4MkDZ097E43YH2goxgvZwyRO3bkBms4rOQoXKa0RvdPka7YYRHlocxfmtPWVlW72XfHLwIgj5PnI?authuser=0&fife=s16383" height="200" width="auto" /><br><br>metraje de cable: 730 mts<br>distancia a siguiente pozo/poste: <br>descripción: poste final ubicado frente a brentag, ingreso a cliente]]></description>
+      <styleUrl>#icon-1610-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>730 mts</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value>poste final ubicado frente a brentag, ingreso a cliente</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ALCsBoqua0frIoALa8XQ1c82r6tDUryrd-0u1DCFxgTfZ4l4D2CGPx7hd1rBl30UYcihDp4ERmKcclkmDwBWavia3m22EIzRmBQHvFCede250hkdzei5Mgj4yOSPoKWaz0qG2LtetUB5oqLG_Hw3Wmh3e0LT2fmcAm5mx3TvfhKAxEK8s3q4MkDZ097E43YH2goxgvZwyRO3bkBms4rOQoXKa0RvdPka7YYRHlocxfmtPWVlW72XfHLwIgj5PnI?authuser=0&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5433445,14.5777227,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>brentag</name>
+      <description><![CDATA[metraje de cable: <br>distancia a siguiente pozo/poste: <br>descripción: distancia total según maps : 2.85 km<br>distancia total fisica: 2.959 km]]></description>
+      <styleUrl>#icon-1826-1A237E</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value>distancia total según maps : 2.85 km
+distancia total fisica: 2.959 km</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5431192,14.5778174,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>condumex cable optico 24FO tm1 propiedad de telgua 06/2007</name>
+      <description><![CDATA[metraje de cable: <br>distancia a siguiente pozo/poste: <br>descripción: ]]></description>
+      <styleUrl>#line-7CB342-5263</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          -90.5540729,14.5636646,0
+          -90.5536196,14.5635238,0
+          -90.5536009,14.5635114,0
+          -90.5532198,14.5634049,0
+          -90.5526842,14.5632607,0
+          -90.5512723,14.5628266,0
+          -90.5509184,14.5627317,0
+          -90.5504829,14.5626167,0
+          -90.5504038,14.5626762,0
+          -90.5501921,14.5626581,0
+          -90.5500086,14.563366,0
+          -90.5498274,14.5642216,0
+          -90.5496815,14.5649551,0
+          -90.5495255,14.5655726,0
+          -90.5495023,14.5656861,0
+          -90.5493274,14.5664934,0
+          -90.5491205,14.5672561,0
+          -90.5492306,14.5672602,0
+          -90.5490462,14.5681673,0
+          -90.5488712,14.5689548,0
+          -90.5488262,14.569075,0
+          -90.5485477,14.5697695,0
+          -90.5483116,14.5704262,0
+          -90.5480714,14.5711917,0
+          -90.5477804,14.5719601,0
+          -90.5474424,14.5727459,0
+          -90.5472423,14.573256,0
+          -90.54692,14.5737647,0
+          -90.5466962,14.574206,0
+          -90.5466276,14.5742891,0
+          -90.5465742,14.5750712,0
+          -90.5465738,14.575203,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>cable optioco  UM propiedad de telgua 09/2006</name>
+      <description><![CDATA[metraje de cable: <br>distancia a siguiente pozo/poste: <br>descripción: ]]></description>
+      <styleUrl>#line-1A237E-6425</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          -90.5465738,14.575203,0
+          -90.5465197,14.5757051,0
+          -90.546495,14.5759443,0
+          -90.5464544,14.5761981,0
+          -90.5464404,14.576606,0
+          -90.5464054,14.5768507,0
+          -90.546326,14.5776412,0
+          -90.5462592,14.5781945,0
+          -90.5461672,14.5782119,0
+          -90.5458631,14.5781534,0
+          -90.5455445,14.5781379,0
+          -90.5453396,14.5781188,0
+          -90.5451776,14.578102,0
+          -90.5449713,14.5780725,0
+          -90.5446305,14.578009,0
+          -90.5440944,14.5779489,0
+          -90.5437931,14.5779157,0
+          -90.5435735,14.5778576,0
+          -90.5435041,14.5778177,0
+          -90.5434931,14.5777239,0
+          -90.5433445,14.5777227,0
+          -90.5431179,14.5778436,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>mufa 2</name>
+      <description><![CDATA[metraje de cable: <br>distancia a siguiente pozo/poste: <br>descripción: entra cable de 24 fo y sale cable de 12 fo, empalme corrido 12 fibras fusionadas]]></description>
+      <styleUrl>#icon-1899-DB4436</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value>entra cable de 24 fo y sale cable de 12 fo, empalme corrido 12 fibras fusionadas</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.5466326,14.5751832,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>mufa 1</name>
+      <description><![CDATA[metraje de cable: <br>distancia a siguiente pozo/poste: <br>descripción: Condumex 12FOTelgua02/2005<br>T blan/F ama ----------- Tblan/ trans(condumex 24FO  06/2007)<br>T blan/F rojo ------------ T blan/ F azul (condumex 24FO 06/2007)<br>T blan/ F verd -------------- T blan/F ama (condumex 24FO 06/2007)<br>T blan/F naran -----------T blan /F cafe (condumex 24FO 06/2007)<br><br>]]></description>
+      <styleUrl>#icon-1899-DB4436</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value/>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value/>
+        </Data>
+        <Data name="descripción">
+          <value>Condumex 12FOTelgua02/2005
+T blan/F ama ----------- Tblan/ trans(condumex 24FO  06/2007)
+T blan/F rojo ------------ T blan/ F azul (condumex 24FO 06/2007)
+T blan/ F verd -------------- T blan/F ama (condumex 24FO 06/2007)
+T blan/F naran -----------T blan /F cafe (condumex 24FO 06/2007)
+
+</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.554085,14.5636443,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>pozo 1</name>
+      <description><![CDATA[<img src="https://lh3.googleusercontent.com/umsh/AN6v0v73CMmkzAvB5ZeuPtwm8Vy_rem2AEGiwWD4b5h3vI27bEx-DhjtPi1oHo-ovKTPL8plNFhxgfCr_CbSQ7bqwDPD28QJc6nxYPbSRe4YN-ycweflMnJ2SCh2CX-MmNzgwql8VZvoj-V8ky7XHsSDxV_u5cJdXHZI7CDqg5rbYiMxYBIwfpAbJRoAPUrIeGjXhlYfxRhowjJrt6_Y1cTsPtVHn07qq71nohYd3CdI7Z_s7vtVgReb5sFbjUWLYnr-BGZ6O9Pwq6L_lxt_rcXtd5OBj0FMBs_h2gySI7JjXgLVBnc4XAiD40WnhivUGHCwr1TOMxqmNThkl1zjl_A7E-6TdrAmSJUCSYe2_LQP8Rvt8Zb0Jxp8rVOtrLDwKIIh_2E-KIReOffhgLalHHPq_B1k_POrUs0NwX1NneT4DWigw0bTLrfLuYY7-fmRMPnHcTOvMwebGM3YPT5HGJ9rIS0XOV1i7CklqJbws_lXk2BBFZ4QIdvpU2ejQEKiay3ZX7NeacM7s1Oa62eo9zFam2xbc5ls6Lyq5yMtaGI154lTdOjfSIVOCMMT47GVC4eGJA4O7s6qU6gVwBChVa1zBlFlPX48TaHSTlT7FcXL5YHAXujGnsKNMflJD_zKNWFZgeIn7f7DZ23BxkFH9XkSuKO900FPZJDhLtmw3VPGA76CsnxxycDHA1sQpfJdtNUXetA59ma45gJQ8rPxIr8niHaGx7Rm" height="200" width="auto" /><br><br>metraje de cable: 1187<br>distancia a siguiente pozo/poste: 41 mts<br>descripción: pozo tipo 7 aun costado de numeral 16-25 a un costado de taller miller]]></description>
+      <styleUrl>#icon-1729-0288D1</styleUrl>
+      <ExtendedData>
+        <Data name="metraje de cable">
+          <value>1187</value>
+        </Data>
+        <Data name="distancia a siguiente pozo/poste">
+          <value>41 mts</value>
+        </Data>
+        <Data name="descripción">
+          <value>pozo tipo 7 aun costado de numeral 16-25 a un costado de taller miller</value>
+        </Data>
+        <Data name="gx_media_links">
+          <value>https://lh3.googleusercontent.com/umsh/AN6v0v73CMmkzAvB5ZeuPtwm8Vy_rem2AEGiwWD4b5h3vI27bEx-DhjtPi1oHo-ovKTPL8plNFhxgfCr_CbSQ7bqwDPD28QJc6nxYPbSRe4YN-ycweflMnJ2SCh2CX-MmNzgwql8VZvoj-V8ky7XHsSDxV_u5cJdXHZI7CDqg5rbYiMxYBIwfpAbJRoAPUrIeGjXhlYfxRhowjJrt6_Y1cTsPtVHn07qq71nohYd3CdI7Z_s7vtVgReb5sFbjUWLYnr-BGZ6O9Pwq6L_lxt_rcXtd5OBj0FMBs_h2gySI7JjXgLVBnc4XAiD40WnhivUGHCwr1TOMxqmNThkl1zjl_A7E-6TdrAmSJUCSYe2_LQP8Rvt8Zb0Jxp8rVOtrLDwKIIh_2E-KIReOffhgLalHHPq_B1k_POrUs0NwX1NneT4DWigw0bTLrfLuYY7-fmRMPnHcTOvMwebGM3YPT5HGJ9rIS0XOV1i7CklqJbws_lXk2BBFZ4QIdvpU2ejQEKiay3ZX7NeacM7s1Oa62eo9zFam2xbc5ls6Lyq5yMtaGI154lTdOjfSIVOCMMT47GVC4eGJA4O7s6qU6gVwBChVa1zBlFlPX48TaHSTlT7FcXL5YHAXujGnsKNMflJD_zKNWFZgeIn7f7DZ23BxkFH9XkSuKO900FPZJDhLtmw3VPGA76CsnxxycDHA1sQpfJdtNUXetA59ma45gJQ8rPxIr8niHaGx7Rm</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -90.553601,14.563511,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
+

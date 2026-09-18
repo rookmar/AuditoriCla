@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ruta</title>
+
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; color:#222; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .col { display: flex; flex-direction: column; gap: 8px; }
+    label { font-weight: 600; }
+    input, select, textarea {
+      padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;
+    }
+    .actions { margin-top: 18px; display:flex; align-items:center; gap: 12px; }
+    .btn { padding: 10px 16px; border-radius: 8px; border: 1px solid transparent; font-weight: 600; cursor: pointer; }
+    .btn-primary { background:#0d6efd; color:#fff; border-color:#0d6efd; }
+    .btn-ghost { background:#fff; color:#333; border-color:#bbb; }
+    .msg { font-size:14px; color: #22a06b; display:none }
+    .section { margin-bottom: 22px; }
+    .w100 { width: 100%; }
+    .muted { color:#666; }
+  </style>
+</head>
+<body>
+
+  <h1>Ruta</h1>
+
+  <!-- Puedes ocultar id_ruta si lo deseas -->
+  <input id="id_ruta" type="hidden" />
+
+  <!-- CENTRAL (se conserva tras guardar para altas repetidas en la misma central) -->
+  <div class="section">
+    <h3>Central <span class="muted">(se conserva al guardar)</span></h3>
+    <div class="row">
+      <div class="col">
+        <label for="ID_central">ID Central</label>
+        <input id="ID_central" placeholder="ID de central (obligatorio)" />
+      </div>
+      <div class="col">
+        <label for="nombre_central">Nombre Central</label>
+        <input id="nombre_central" placeholder="Nombre de central (obligatorio)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENTE -->
+  <div class="section">
+    <h3>Cliente</h3>
+    <div class="row">
+      <div class="col">
+        <label for="nombre_cliente">Nombre Cliente</label>
+        <input id="nombre_cliente" placeholder="Nombre del cliente" />
+      </div>
+      <div class="col">
+        <label for="tarea">Tarea</label>
+        <input id="tarea" placeholder="Número de tarea (opcional)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ODF -->
+  <div class="section">
+    <h3>ODF</h3>
+    <div class="row">
+      <div class="col">
+        <label for="nombre_odf">Nombre ODF</label>
+        <input id="nombre_odf" placeholder="Nombre del ODF" />
+      </div>
+      <div class="col">
+        <label for="nemonico_odf">Nemonico ODF</label>
+        <input id="nemonico_odf" placeholder="Nemonico del ODF" />
+      </div>
+      <div class="col">
+        <label for="odf_puerto">Puerto ODF</label>
+        <input id="odf_puerto" placeholder="Puerto (número)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- PATCHEO -->
+  <div class="section">
+    <h3>Patcheo</h3>
+    <div class="row">
+      <div class="col">
+        <label for="nemonico_patcheo">Nemonico Patcheo</label>
+        <input id="nemonico_patcheo" placeholder="Nemonico patcheo" />
+      </div>
+      <div class="col">
+        <label for="puerto_patcheo">Puerto (patcheo)</label>
+        <input id="puerto_patcheo" placeholder="Puerto (número)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- EQUIPO -->
+  <div class="section">
+    <h3>Equipo</h3>
+    <div class="row">
+      <div class="col">
+        <label for="nemonico_equipo">Nemonico Equipo</label>
+        <input id="nemonico_equipo" placeholder="Nemonico del equipo" />
+      </div>
+      <div class="col">
+        <label for="marca">Marca</label>
+        <input id="marca" placeholder="Marca del equipo" />
+      </div>
+      <div class="col">
+        <label for="slot">Slot</label>
+        <input id="slot" placeholder="Slot (número)" />
+      </div>
+      <div class="col">
+        <label for="posicion">Posición</label>
+        <input id="posicion" placeholder="Posición (texto o número)" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Coordenadas -->
+  <div class="section">
+    <h3>Coordenadas</h3>
+    <textarea id="coordenadas" class="w100" rows="2" placeholder="Coordenadas (opcional)"></textarea>
+  </div>
+
+  <div class="actions">
+    <button id="btnGuardar" class="btn btn-primary">Guardar</button>
+    <button id="btnNuevo" class="btn btn-ghost" type="button">Nuevo</button>
+    <span id="saveMsg" class="msg">Guardado ✓</span>
+  </div>
+
+  <script>
+    // ============= Utilidades =============
+    function $field(nameOrId) {
+      return document.getElementById(nameOrId) || document.querySelector(\`[name="\${nameOrId}"]\`);
+    }
+
+    function showSaved() {
+      const msg = document.getElementById('saveMsg');
+      if (!msg) return;
+      msg.style.display = 'inline';
+      setTimeout(() => msg.style.display = 'none', 2000);
+    }
+
+    // Limpia TODO menos la central (se conserva para altas repetidas)
+    function resetRutaForm() {
+      const campos = [
+        'id_ruta','coordenadas',
+        'nombre_cliente','tarea',
+        'nombre_odf','nemonico_odf','odf_puerto',
+        'nemonico_patcheo','puerto_patcheo',
+        'nemonico_equipo','marca','slot','posicion'
+      ];
+      campos.forEach(k => {
+        const el = $field(k);
+        if (!el) return;
+        if (el.tagName === 'SELECT') el.selectedIndex = 0;
+        else el.value = '';
+      });
+
+      ($field('nombre_cliente') || $field('cliente'))?.focus();
+
+      const msg = document.getElementById('saveMsg');
+      if (msg) msg.style.display = 'none';
+    }
+
+    // ============= Guardar =============
+    async function guardarRuta() {
+      const payload = {
+        id_ruta:             $field('id_ruta')?.value || null,
+        coordenadas:         $field('coordenadas')?.value || null,
+
+        // Central (OBLIGATORIO) — no se limpia
+        ID_central:          $field('ID_central')?.value,
+        nombre_central:      $field('nombre_central')?.value,
+
+        nombre_cliente:      $field('nombre_cliente')?.value,
+        tarea:               $field('tarea')?.value,
+
+        nombre_odf:          $field('nombre_odf')?.value,
+        nemonico_odf:        $field('nemonico_odf')?.value,
+        odf_puerto:          $field('odf_puerto')?.value,
+
+        nemonico_patcheo:    $field('nemonico_patcheo')?.value,
+        puerto_patcheo:      $field('puerto_patcheo')?.value,
+
+        nemonico_equipo:     $field('nemonico_equipo')?.value,
+        marca:               $field('marca')?.value,
+        slot:                $field('slot')?.value,
+        posicion:            $field('posicion')?.value
+      };
+
+      // Validación mínima para Central
+      if (!payload.ID_central || !payload.nombre_central) {
+        alert('Debes indicar ID Central y Nombre Central');
+        return;
+      }
+      if (!payload.nombre_cliente) {
+        alert('Debes indicar el Nombre Cliente');
+        return;
+      }
+
+      try {
+        const resp = await fetch('/api/ruta/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await resp.json();
+        if (data.ok) {
+          showSaved();
+          resetRutaForm(); // ✅ listo para nuevo ingreso
+        } else {
+          alert(data.error || 'Error al guardar');
+        }
+      } catch (e) {
+        alert(e.message || e);
+      }
+    }
+
+    // Botón Guardar
+    document.getElementById('btnGuardar')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      guardarRuta();
+    });
+
+    // Botón Nuevo
+    document.getElementById('btnNuevo')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      resetRutaForm();
+    });
+
+    // Atajo: Ctrl+N
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && (e.key === 'n' || e.key === 'N')) {
+        e.preventDefault();
+        resetRutaForm();
+      }
+    });
+  </script>
+
+</body>
+</html>
