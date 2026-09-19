@@ -129,6 +129,7 @@ function applyAuth(app) {
 
       if (isAdmin(req)) return next(); // Admin entra a todo el HTML
       if (req.path === "/menu.html") return next(); // TODOS tienen derecho a ver el menú (aunque esté vacío)
+      if (req.path === "/dashboard.html") return next(); // Dashboard es accesible para todos (la validación se hace por sección)
 
       const modulos = getActiveModules(req);
       const reqMod = getRequiredModule(req.path, MODULE_MAP_HTML);
