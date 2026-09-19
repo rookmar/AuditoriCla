@@ -691,12 +691,209 @@
         <div class="alert alert-info">Contenido del módulo de ruta</div>
       </section>
       
+      <!-- Módulo: Usuarios -->
       <section id="module-usuarios" class="module-section">
-        <div class="d-flex align-items-center mb-4">
-          <i class="bi bi-people me-2" style="font-size: 24px; color: var(--brand);"></i>
-          <h2 class="mb-0">Usuarios</h2>
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-people me-2" style="font-size: 28px; color: var(--brand);"></i>
+            <div>
+              <h2 class="mb-0 fw-bold">Gestión de Usuarios</h2>
+              <small class="text-muted">Administra usuarios, permisos y accesos al sistema</small>
+            </div>
+          </div>
         </div>
-        <div class="alert alert-info">Contenido del módulo de usuarios</div>
+        
+        <!-- Formulario de Usuario -->
+        <div class="card-custom shadow-sm">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-person-plus me-2" style="color: var(--brand);"></i>
+              Nuevo/Editar Usuario
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <input type="hidden" id="id" />
+            <div class="row g-3">
+              <!-- Columna Izquierda -->
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label for="usuario" class="form-label fw-semibold">
+                    <i class="bi bi-person-badge me-1 text-muted"></i>
+                    Usuario <span class="text-danger">*</span>
+                  </label>
+                  <input id="usuario" class="form-control form-control-lg" type="text" placeholder="usuario" autocomplete="username" autocapitalize="off" spellcheck="false" />
+                </div>
+                
+                <div class="mb-3">
+                  <label for="nombre" class="form-label fw-semibold">
+                    <i class="bi bi-person me-1 text-muted"></i>
+                    Nombre Completo <span class="text-danger">*</span>
+                  </label>
+                  <input id="nombre" class="form-control form-control-lg" type="text" placeholder="Nombre completo" autocomplete="name" />
+                </div>
+                
+                <div class="mb-3">
+                  <label for="password" class="form-label fw-semibold">
+                    <i class="bi bi-key me-1 text-muted"></i>
+                    Contraseña
+                  </label>
+                  <div class="input-group input-group-lg">
+                    <input id="password" class="form-control" type="password" placeholder="••••••" autocomplete="new-password" />
+                    <button id="togglePwd" class="btn btn-outline-secondary" type="button">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
+                  <div class="form-text">Se actualizará solo si ingresas una nueva.</div>
+                </div>
+                
+                <div class="form-check mb-3 p-3 border rounded" style="background: #fff5f5; border-color: var(--brand) !important;">
+                  <input id="activo" class="form-check-input" type="checkbox" checked />
+                  <label for="activo" class="form-check-label fw-bold" style="user-select:none; font-size: 1.1rem;">
+                    ✅ Cuenta Activa en el Sistema
+                  </label>
+                </div>
+                
+                <div class="form-check mb-3 p-3 border rounded" style="background: #fff5f5; border-color: var(--brand) !important;">
+                  <input id="isAdmin" class="form-check-input" type="checkbox" />
+                  <label for="isAdmin" class="form-check-label fw-bold" style="user-select:none; color: var(--brand);">
+                    👑 Es Administrador (Gestión total)
+                  </label>
+                </div>
+              </div>
+              
+              <!-- Columna Derecha -->
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label fw-semibold" style="color:var(--brand);">
+                    <i class="bi bi-shield-check me-1"></i>
+                    Permisos de Acceso (Módulos)
+                  </label>
+                  <div id="modulosBox" class="p-3 border rounded" style="background:#fdf2f2; border-color:#fca5a5;">
+                    <div class="row g-2">
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="buscar" class="form-check-input" /> Buscar
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="infra_movil" class="form-check-input" /> Infra Móvil
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="incidencia" class="form-check-input" /> Incidencias
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="ruta" class="form-check-input" /> Ruta
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="infraestructura" class="form-check-input" /> Infraestructura
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="carga" class="form-check-input" /> Carga Masiva
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="reportes" class="form-check-input" /> Rep. Capacidad
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="reportes_incidencias" class="form-check-input" /> Dash. Averías
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="recepciones" class="form-check-input" /> Recepciones GPON
+                        </label>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-check-label d-flex align-items-center gap-2">
+                          <input type="checkbox" value="dashboard_gpon" class="form-check-input" /> Dashboard GPON
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-text">Asigna las herramientas específicas. Nota: Los administradores ignoran esta lista, ya que tienen acceso exclusivo a Bitácora y Usuarios.</div>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="activoHasta" class="form-label fw-semibold">
+                    <i class="bi bi-calendar-event me-1 text-muted"></i>
+                    Activo hasta (opcional)
+                  </label>
+                  <input id="activoHasta" class="form-control form-control-lg" type="datetime-local" />
+                  <div class="form-text">Si lo dejas vacío, el usuario queda activo permanente.</div>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">
+                    <i class="bi bi-clock-history me-1 text-muted"></i>
+                    Activación temporal
+                  </label>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <input id="horasTemp" class="form-control" type="number" step="1" min="1" placeholder="Horas (ej. 6)" style="max-width:200px" />
+                    <button id="btnActivarTemp" class="btn btn-outline-secondary" type="button">
+                      <i class="bi bi-lightning-charge me-1"></i>
+                      Activar por horas
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Botones de Acción -->
+            <div class="mt-4 d-flex gap-2 flex-wrap">
+              <button id="btnGuardar" class="btn btn-primary btn-lg px-4" type="button" style="background: var(--brand); border-color: var(--brand);">
+                <i class="bi bi-save me-2"></i>
+                Guardar
+              </button>
+              <button id="btnNuevo" class="btn btn-outline-secondary btn-lg px-4" type="button">
+                <i class="bi bi-file-earmark-plus me-2"></i>
+                Nuevo
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tabla de Usuarios -->
+        <div class="card-custom shadow-sm mt-4">
+          <div class="card-header-custom bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-table me-2" style="color: var(--brand);"></i>
+              Usuarios Existentes
+            </h5>
+            <span class="badge bg-secondary" id="totalUsuariosBadge">0 usuarios</span>
+          </div>
+          <div class="card-body-custom p-0">
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                  <tr>
+                    <th class="fw-semibold py-3 px-3">ID</th>
+                    <th class="fw-semibold py-3 px-3">Usuario</th>
+                    <th class="fw-semibold py-3 px-3">Nombre</th>
+                    <th class="fw-semibold py-3 px-3">Sistema de Permisos</th>
+                    <th class="fw-semibold py-3 px-3 text-center">Activo</th>
+                    <th class="fw-semibold py-3 px-3">Vence</th>
+                    <th class="fw-semibold py-3 px-3 text-end">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="usuariosBody">
+                  <tr><td colspan="7" class="text-center py-4">Cargando…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </section>
       
       <section id="module-carga" class="module-section">
@@ -762,6 +959,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <script src="/js/buscar-dashboard.js?v=1" defer></script>
+  <script src="/js/usuarios-dashboard.js?v=1" defer></script>
   <script src="/js/menu-nuevo.js?v=2" defer></script>
   
 </body>

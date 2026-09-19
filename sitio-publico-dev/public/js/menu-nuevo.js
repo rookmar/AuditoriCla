@@ -219,6 +219,8 @@
       // Inicializar módulo si tiene función de inicialización
       if (moduleId === 'buscar' && typeof window.initBuscarModule === 'function') {
         setTimeout(() => window.initBuscarModule(), 100);
+      } else if (moduleId === 'usuarios' && typeof window.initUsuariosModule === 'function') {
+        setTimeout(() => window.initUsuariosModule(), 100);
       }
       
       // Si hay submódulo, manejar lógica específica
