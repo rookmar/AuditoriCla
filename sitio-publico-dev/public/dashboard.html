@@ -376,131 +376,287 @@
     <div class="content-area">
       
       <!-- Módulo: Buscar -->
-      <section id="module-buscar" class="module-section">
-        <div class="d-flex align-items-center mb-4">
-          <i class="bi bi-search me-2" style="font-size: 24px; color: var(--brand);"></i>
-          <h2 class="mb-0">Centro de Consultas</h2>
+      <section id="module-buscar" class="module-section active">
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-search me-2" style="font-size: 28px; color: var(--brand);"></i>
+            <div>
+              <h2 class="mb-0 fw-bold">Centro de Consultas</h2>
+              <small class="text-muted">Expediente 360° y Recepciones GPON</small>
+            </div>
+          </div>
         </div>
         
-        <div class="row">
-          <div class="col-12">
-            <div class="card-custom">
-              <div class="card-header-custom">
-                <ul class="nav nav-tabs card-header-tabs" id="buscarTabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tab-general-btn" data-bs-toggle="tab" data-bs-target="#tab-general" type="button" role="tab">
-                      <i class="bi bi-folder2-open me-1"></i>
-                      Expediente 360 (General)
+        <!-- Tarjeta de Búsqueda con Tabs -->
+        <div class="card-custom shadow-sm">
+          <div class="card-header-custom bg-white border-bottom-0 pt-3 pb-0">
+            <ul class="nav nav-tabs card-header-tabs" id="buscarTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active d-flex align-items-center gap-2 px-3 py-2" id="tab-general-btn" data-bs-toggle="tab" data-bs-target="#tab-general" type="button" role="tab" aria-selected="true">
+                  <i class="bi bi-folder2-open" style="color: var(--brand);"></i>
+                  <span class="fw-semibold">Expediente 360°</span>
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link d-flex align-items-center gap-2 px-3 py-2" id="tab-gpon-btn" data-bs-toggle="tab" data-bs-target="#tab-gpon" type="button" role="tab" aria-selected="false">
+                  <i class="bi bi-reception-4" style="color: #16a34a;"></i>
+                  <span class="fw-semibold">Recepciones GPON</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card-body-custom pt-4">
+            <div class="tab-content" id="buscarTabsContent">
+              
+              <!-- Tab: Búsqueda General -->
+              <div class="tab-pane fade show active" id="tab-general" role="tabpanel" aria-labelledby="tab-general-btn">
+                <form id="formBusquedaGeneral" onsubmit="return false;">
+                  <div class="alert alert-light border d-flex align-items-center gap-2 mb-3" role="alert">
+                    <i class="bi bi-info-circle-fill text-primary"></i>
+                    <small class="text-muted">Busca por cliente, tarea, ODF, equipo o número de ruta</small>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-lg-4 col-md-6">
+                      <label for="q" class="form-label fw-semibold">
+                        <i class="bi bi-search me-1 text-muted"></i>
+                        Término de búsqueda
+                      </label>
+                      <input type="text" class="form-control form-control-lg" id="q" placeholder="Ej. Cliente X, ID central, ODF..." autocomplete="off">
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <label for="central" class="form-label fw-semibold">
+                        <i class="bi bi-buildings me-1 text-muted"></i>
+                        Central
+                      </label>
+                      <select class="form-select form-select-lg" id="central">
+                        <option value="">(Todas las centrales)</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                      <label for="odf" class="form-label fw-semibold">
+                        <i class="bi bi-hdd-rack me-1 text-muted"></i>
+                        ODF
+                      </label>
+                      <select class="form-select form-select-lg" id="odf">
+                        <option value="">(Todos los ODFs)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mt-4 d-flex gap-2 flex-wrap">
+                    <button type="submit" class="btn btn-primary btn-lg px-4" id="btnBuscarGeneral" style="background: var(--brand); border-color: var(--brand);">
+                      <i class="bi bi-search me-2"></i>
+                      Buscar Expediente
                     </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab-gpon-btn" data-bs-toggle="tab" data-bs-target="#tab-gpon" type="button" role="tab">
-                      <i class="bi bi-reception-4 me-1"></i>
-                      Recepciones GPON
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="btnLimpiarGeneral">
+                      <i class="bi bi-eraser me-2"></i>
+                      Limpiar Filtros
                     </button>
-                  </li>
-                </ul>
+                  </div>
+                </form>
               </div>
               
-              <div class="card-body-custom">
-                <div class="tab-content" id="buscarTabsContent">
-                  
-                  <!-- Tab: Búsqueda General -->
-                  <div class="tab-pane fade show active" id="tab-general" role="tabpanel">
-                    <form id="formBusquedaGeneral" onsubmit="return false;">
-                      <div class="row g-3">
-                        <div class="col-md-4">
-                          <label for="q" class="form-label">Cliente / Tarea / ODF / Equipo</label>
-                          <input type="text" class="form-control" id="q" placeholder="Ej. Cliente X o ID central">
-                        </div>
-                        <div class="col-md-4">
-                          <label for="central" class="form-label">Central</label>
-                          <select class="form-select" id="central">
-                            <option value="">(Todas)</option>
-                          </select>
-                        </div>
-                        <div class="col-md-4">
-                          <label for="odf" class="form-label">ODF</label>
-                          <select class="form-select" id="odf">
-                            <option value="">(Todos)</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="mt-3">
-                        <button type="submit" class="btn btn-primary" id="btnBuscarGeneral" style="background: var(--brand); border-color: var(--brand);">
-                          <i class="bi bi-search me-1"></i>
-                          Buscar
-                        </button>
-                        <button type="button" class="btn btn-secondary ms-2" id="btnLimpiarGeneral">
-                          <i class="bi bi-eraser me-1"></i>
-                          Limpiar
-                        </button>
-                      </div>
-                    </form>
+              <!-- Tab: GPON -->
+              <div class="tab-pane fade" id="tab-gpon" role="tabpanel" aria-labelledby="tab-gpon-btn">
+                <form id="formBusquedaGPON" onsubmit="return false;">
+                  <div class="alert alert-success d-flex align-items-center gap-2 mb-3" role="alert">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <small>Busca recepciones y visitas técnicas por distrito, ubicación, técnico o asesor</small>
                   </div>
-                  
-                  <!-- Tab: GPON -->
-                  <div class="tab-pane fade" id="tab-gpon" role="tabpanel">
-                    <form id="formBusquedaGPON" onsubmit="return false;">
-                      <div class="row g-3">
-                        <div class="col-12">
-                          <label for="qGPON" class="form-label">Buscador Universal</label>
-                          <input type="text" class="form-control" id="qGPON" placeholder="Ej. Zona 1, Juan Perez, Contratista X...">
-                        </div>
-                      </div>
-                      <div class="mt-3">
-                        <button type="submit" class="btn btn-primary" id="btnBuscarGPON" style="background: var(--brand); border-color: var(--brand);">
-                          <i class="bi bi-search me-1"></i>
-                          Buscar Expedientes
-                        </button>
-                        <button type="button" class="btn btn-secondary ms-2" id="btnLimpiarGPON">
-                          <i class="bi bi-eraser me-1"></i>
-                          Limpiar
-                        </button>
-                      </div>
-                    </form>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="qGPON" class="form-label fw-semibold">
+                        <i class="bi bi-universal-access me-1 text-success"></i>
+                        Buscador Universal GPON
+                      </label>
+                      <input type="text" class="form-control form-control-lg" id="qGPON" placeholder="Ej. Zona 1, Juan Perez, Contratista X, Dirección..." autocomplete="off">
+                    </div>
                   </div>
-                  
-                </div>
+                  <div class="mt-4 d-flex gap-2 flex-wrap">
+                    <button type="submit" class="btn btn-success btn-lg px-4" id="btnBuscarGPON">
+                      <i class="bi bi-search me-2"></i>
+                      Buscar Expedientes GPON
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="btnLimpiarGPON">
+                      <i class="bi bi-eraser me-2"></i>
+                      Limpiar
+                    </button>
+                  </div>
+                </form>
               </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sección de Resultados - General -->
+        <div class="card-custom shadow-sm mt-4" id="res-general">
+          <div class="card-header-custom bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <h5 class="mb-0 fw-bold">
+              <i class="bi bi-table me-2" style="color: var(--brand);"></i>
+              Resultados de Búsqueda
+            </h5>
+            <span class="badge bg-secondary" id="totalResultadosBadge">0 resultados</span>
+          </div>
+          <div class="card-body-custom p-0">
+            <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+              <table class="table table-hover align-middle mb-0" id="tablaResultados">
+                <thead class="table-light sticky-top">
+                  <tr>
+                    <th class="ps-3">ID Ruta</th>
+                    <th>Central</th>
+                    <th>Cliente</th>
+                    <th>Tarea</th>
+                    <th>ODF</th>
+                    <th>Hilo</th>
+                    <th>Equipo</th>
+                    <th class="text-end pe-3">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyResGeneral">
+                  <tr>
+                    <td colspan="8" class="text-center text-muted py-5">
+                      <i class="bi bi-inbox" style="font-size: 48px; opacity: 0.3;"></i>
+                      <p class="mt-3 mb-0 fw-medium">Realiza una búsqueda para ver resultados</p>
+                      <small class="text-muted">Usa los filtros de arriba para encontrar expedientes</small>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="p-3 border-top bg-light">
+              <div id="pagerGeneral" class="d-flex justify-content-between align-items-center flex-wrap gap-2"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sección de Resultados - GPON -->
+        <div class="card-custom shadow-sm mt-4 d-none" id="res-gpon">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-bold">
+              <i class="bi bi-reception-4 me-2" style="color: #16a34a;"></i>
+              Resultados GPON
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <!-- Visitas Técnicas -->
+            <h6 class="fw-bold text-primary mb-3">
+              <i class="bi bi-person-badge me-2"></i>
+              Visitas Técnicas
+            </h6>
+            <div class="table-responsive mb-4" style="max-height: 400px; overflow-y: auto;">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>ID</th>
+                    <th>Técnico</th>
+                    <th>Asesor</th>
+                    <th>Dirección</th>
+                    <th>Fecha</th>
+                    <th class="text-end">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyResVisitas">
+                  <tr>
+                    <td colspan="6" class="text-center text-muted py-4">
+                      <i class="bi bi-inbox" style="font-size: 32px; opacity: 0.3;"></i>
+                      <p class="mt-2 mb-0">Sin resultados</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             
-            <!-- Resultados -->
-            <div class="card-custom" id="res-general">
-              <div class="card-header-custom">
-                <h5 class="mb-0"><i class="bi bi-table me-2"></i>Resultados de Búsqueda</h5>
-              </div>
-              <div class="card-body-custom">
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle" id="tablaResultados">
-                    <thead class="table-light">
-                      <tr>
-                        <th>ID Ruta</th>
-                        <th>Central</th>
-                        <th>Cliente</th>
-                        <th>Tarea</th>
-                        <th>ODF</th>
-                        <th>Hilo</th>
-                        <th>Equipo</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbodyResGeneral">
-                      <tr>
-                        <td colspan="8" class="text-center text-muted py-4">
-                          <i class="bi bi-inbox" style="font-size: 32px;"></i>
-                          <p class="mt-2 mb-0">Realiza una búsqueda para ver resultados</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div id="pagerGeneral" class="d-flex justify-content-between align-items-center mt-3"></div>
+            <!-- Recepciones GPON -->
+            <h6 class="fw-bold text-success mb-3">
+              <i class="bi bi-check-circle me-2"></i>
+              Recepciones GPON
+            </h6>
+            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>ID</th>
+                    <th>Distrito</th>
+                    <th>Ubicación</th>
+                    <th>Recepciona</th>
+                    <th>Entrega</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th class="text-end">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyResRecepciones">
+                  <tr>
+                    <td colspan="8" class="text-center text-muted py-4">
+                      <i class="bi bi-inbox" style="font-size: 32px; opacity: 0.3;"></i>
+                      <p class="mt-2 mb-0">Sin resultados</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="pagerGPON" class="d-flex justify-content-between align-items-center mt-3"></div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Modal para Acciones de Ruta -->
+      <div class="modal fade" id="modalAccionesRuta" tabindex="-1" aria-labelledby="modalAccionesRutaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0 pb-0">
+              <h5 class="modal-title fw-bold" id="modalAccionesRutaLabel">
+                <i class="bi bi-three-dots-vertical me-2"></i>
+                Acciones de Ruta
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-3">
+              <div class="d-grid gap-2">
+                <button class="btn btn-outline-danger text-start" id="btnModalAverias">
+                  <i class="bi bi-exclamation-triangle me-2"></i>
+                  Ver Averías
+                </button>
+                <button class="btn btn-outline-info text-start" id="btnModalRuta">
+                  <i class="bi bi-map me-2"></i>
+                  Ver Ruta en Mapa
+                </button>
+                <button class="btn btn-outline-primary text-start" id="btnModalEditar">
+                  <i class="bi bi-pencil-square me-2"></i>
+                  Editar Ruta
+                </button>
+                <button class="btn btn-outline-secondary text-start" id="btnModalLiberar">
+                  <i class="bi bi-unlock me-2"></i>
+                  Liberar Ruta
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      
+      <!-- Modal para Confirmación -->
+      <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0 pb-0">
+              <h5 class="modal-title fw-bold">
+                <i class="bi bi-question-circle me-2 text-warning"></i>
+                Confirmar Acción
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-3">
+              <p id="modalConfirmacionMensaje" class="mb-0">¿Estás seguro de realizar esta acción?</p>
+            </div>
+            <div class="modal-footer border-0 pt-0">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger" id="btnModalConfirmar">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <!-- Módulo: Infraestructura -->
       <section id="module-infraestructura" class="module-section">
@@ -605,7 +761,8 @@
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   
-  <script src="/js/menu-nuevo.js?v=1" defer></script>
+  <script src="/js/buscar-dashboard.js?v=1" defer></script>
+  <script src="/js/menu-nuevo.js?v=2" defer></script>
   
 </body>
 </html>
