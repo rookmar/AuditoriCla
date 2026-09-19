@@ -216,6 +216,11 @@
     if (targetSection) {
       targetSection.classList.add('active');
       
+      // Inicializar módulo si tiene función de inicialización
+      if (moduleId === 'buscar' && typeof window.initBuscarModule === 'function') {
+        setTimeout(() => window.initBuscarModule(), 100);
+      }
+      
       // Si hay submódulo, manejar lógica específica
       if (submoduleId) {
         console.log(`Mostrando submódulo: ${submoduleId} en ${moduleId}`);
