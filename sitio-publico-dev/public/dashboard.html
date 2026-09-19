@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Auditoría - Dashboard</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brand: #c62828;
+      --brand-dark: #a72b23;
+      --brand-light: #ef5350;
+      --sidebar-width: 280px;
+      --header-height: 60px;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f5f7fa;
+      overflow-x: hidden;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: white;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    
+    .sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 3px;
+    }
+    
+    .sidebar-brand {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .sidebar-brand i {
+      font-size: 28px;
+    }
+    
+    .sidebar-brand span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    .user-info {
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    
+    .user-details {
+      flex: 1;
+      overflow: hidden;
+    }
+    
+    .user-name {
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .user-role {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    
+    .sidebar-menu {
+      padding: 10px 0;
+    }
+    
+    .menu-item {
+      margin: 2px 10px;
+    }
+    
+    .menu-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      font-size: 14px;
+    }
+    
+    .menu-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+    
+    .menu-link.active {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+    
+    .menu-link i.bi {
+      margin-right: 10px;
+      font-size: 16px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .menu-link .chevron {
+      transition: transform 0.3s ease;
+    }
+    
+    .menu-link[aria-expanded="true"] .chevron {
+      transform: rotate(180deg);
+    }
+    
+    .submenu {
+      background: rgba(0,0,0,0.15);
+      border-radius: 8px;
+      margin: 2px 10px;
+      padding: 5px 0;
+    }
+    
+    .submenu-item {
+      margin: 2px 5px;
+    }
+    
+    .submenu-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px 10px 45px;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    
+    .submenu-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+    
+    .submenu-link.active {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+    
+    /* Main Content */
+    .main-content {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+      transition: margin-left 0.3s ease;
+    }
+    
+    /* Header */
+    .top-header {
+      background: white;
+      height: var(--header-height);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    
+    .sidebar-toggle {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+      padding: 8px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    
+    .sidebar-toggle:hover {
+      background: #f0f0f0;
+    }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .btn-logout {
+      background: #fee2e2;
+      color: var(--brand);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .btn-logout:hover {
+      background: #fecaca;
+    }
+    
+    /* Content Area */
+    .content-area {
+      padding: 24px;
+    }
+    
+    .module-section {
+      display: none;
+    }
+    
+    .module-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Cards */
+    .card-custom {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7eb;
+      margin-bottom: 20px;
+    }
+    
+    .card-header-custom {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f9fafb;
+      border-radius: 12px 12px 0 0;
+    }
+    
+    .card-body-custom {
+      padding: 20px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+      
+      .sidebar.show {
+        transform: translateX(0);
+      }
+      
+      .main-content {
+        margin-left: 0;
+      }
+      
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+      }
+      
+      .sidebar-overlay.show {
+        display: block;
+      }
+    }
+    
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <i class="bi bi-shield-check"></i>
+      <span>Auditoría Claro</span>
+    </div>
+    
+    <div class="user-info">
+      <div class="user-avatar" id="userAvatar">U</div>
+      <div class="user-details">
+        <div class="user-name" id="userName">Cargando...</div>
+        <div class="user-role" id="userRole">Usuario</div>
+      </div>
+    </div>
+    
+    <nav class="sidebar-menu" id="sidebarMenu">
+      <!-- Menú generado dinámicamente -->
+    </nav>
+  </aside>
+  
+  <!-- Overlay para móvil -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <header class="top-header">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="bi bi-list"></i>
+      </button>
+      
+      <div class="header-actions">
+        <button class="btn-logout" id="btnLogout">
+          <i class="bi bi-box-arrow-right me-1"></i>
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+    
+    <!-- Content Area -->
+    <div class="content-area">
+      
+      <!-- Módulo: Buscar -->
+      <section id="module-buscar" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-search me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Centro de Consultas</h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            <div class="card-custom">
+              <div class="card-header-custom">
+                <ul class="nav nav-tabs card-header-tabs" id="buscarTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-general-btn" data-bs-toggle="tab" data-bs-target="#tab-general" type="button" role="tab">
+                      <i class="bi bi-folder2-open me-1"></i>
+                      Expediente 360 (General)
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-gpon-btn" data-bs-toggle="tab" data-bs-target="#tab-gpon" type="button" role="tab">
+                      <i class="bi bi-reception-4 me-1"></i>
+                      Recepciones GPON
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="card-body-custom">
+                <div class="tab-content" id="buscarTabsContent">
+                  
+                  <!-- Tab: Búsqueda General -->
+                  <div class="tab-pane fade show active" id="tab-general" role="tabpanel">
+                    <form id="formBusquedaGeneral" onsubmit="return false;">
+                      <div class="row g-3">
+                        <div class="col-md-4">
+                          <label for="q" class="form-label">Cliente / Tarea / ODF / Equipo</label>
+                          <input type="text" class="form-control" id="q" placeholder="Ej. Cliente X o ID central">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="central" class="form-label">Central</label>
+                          <select class="form-select" id="central">
+                            <option value="">(Todas)</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <label for="odf" class="form-label">ODF</label>
+                          <select class="form-select" id="odf">
+                            <option value="">(Todos)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <button type="submit" class="btn btn-primary" id="btnBuscarGeneral" style="background: var(--brand); border-color: var(--brand);">
+                          <i class="bi bi-search me-1"></i>
+                          Buscar
+                        </button>
+                        <button type="button" class="btn btn-secondary ms-2" id="btnLimpiarGeneral">
+                          <i class="bi bi-eraser me-1"></i>
+                          Limpiar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                  <!-- Tab: GPON -->
+                  <div class="tab-pane fade" id="tab-gpon" role="tabpanel">
+                    <form id="formBusquedaGPON" onsubmit="return false;">
+                      <div class="row g-3">
+                        <div class="col-12">
+                          <label for="qGPON" class="form-label">Buscador Universal</label>
+                          <input type="text" class="form-control" id="qGPON" placeholder="Ej. Zona 1, Juan Perez, Contratista X...">
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <button type="submit" class="btn btn-primary" id="btnBuscarGPON" style="background: var(--brand); border-color: var(--brand);">
+                          <i class="bi bi-search me-1"></i>
+                          Buscar Expedientes
+                        </button>
+                        <button type="button" class="btn btn-secondary ms-2" id="btnLimpiarGPON">
+                          <i class="bi bi-eraser me-1"></i>
+                          Limpiar
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <!-- Resultados -->
+            <div class="card-custom" id="res-general">
+              <div class="card-header-custom">
+                <h5 class="mb-0"><i class="bi bi-table me-2"></i>Resultados de Búsqueda</h5>
+              </div>
+              <div class="card-body-custom">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle" id="tablaResultados">
+                    <thead class="table-light">
+                      <tr>
+                        <th>ID Ruta</th>
+                        <th>Central</th>
+                        <th>Cliente</th>
+                        <th>Tarea</th>
+                        <th>ODF</th>
+                        <th>Hilo</th>
+                        <th>Equipo</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbodyResGeneral">
+                      <tr>
+                        <td colspan="8" class="text-center text-muted py-4">
+                          <i class="bi bi-inbox" style="font-size: 32px;"></i>
+                          <p class="mt-2 mb-0">Realiza una búsqueda para ver resultados</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="pagerGeneral" class="d-flex justify-content-between align-items-center mt-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Módulo: Infraestructura -->
+      <section id="module-infraestructura" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-building me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Infraestructura</h2>
+        </div>
+        <div class="alert alert-info">
+          <i class="bi bi-info-circle me-2"></i>
+          Contenido del módulo de infraestructura
+        </div>
+      </section>
+      
+      <!-- Módulo: Incidencias -->
+      <section id="module-incidencia" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-exclamation-triangle me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Incidencias</h2>
+        </div>
+        <div class="alert alert-info">
+          <i class="bi bi-info-circle me-2"></i>
+          Contenido del módulo de incidencias
+        </div>
+      </section>
+      
+      <!-- Otros módulos (placeholders) -->
+      <section id="module-ruta" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-compass me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Ruta</h2>
+        </div>
+        <div class="alert alert-info">Contenido del módulo de ruta</div>
+      </section>
+      
+      <section id="module-usuarios" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-people me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Usuarios</h2>
+        </div>
+        <div class="alert alert-info">Contenido del módulo de usuarios</div>
+      </section>
+      
+      <section id="module-carga" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-upload me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Carga Masiva</h2>
+        </div>
+        <div class="alert alert-info">Contenido del módulo de carga masiva</div>
+      </section>
+      
+      <section id="module-bitacora" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-journal-text me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Bitácora</h2>
+        </div>
+        <div class="alert alert-info">Contenido del módulo de bitácora</div>
+      </section>
+      
+      <section id="module-reportes" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-bar-chart me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Reportes</h2>
+        </div>
+        <div class="alert alert-info">Contenido del módulo de reportes</div>
+      </section>
+      
+      <section id="module-infra_movil" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-cone-striped me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Modo Construcción</h2>
+        </div>
+        <div class="alert alert-info">Contenido del modo construcción</div>
+      </section>
+      
+      <section id="module-reportes_incidencias" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-graph-up me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Dashboard Averías</h2>
+        </div>
+        <div class="alert alert-info">Contenido del dashboard de averías</div>
+      </section>
+      
+      <section id="module-recepciones" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-check-circle me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Recepción GPON</h2>
+        </div>
+        <div class="alert alert-info">Contenido del módulo de recepciones</div>
+      </section>
+      
+      <section id="module-dashboard_gpon" class="module-section">
+        <div class="d-flex align-items-center mb-4">
+          <i class="bi bi-speedometer2 me-2" style="font-size: 24px; color: var(--brand);"></i>
+          <h2 class="mb-0">Dashboard GPON</h2>
+        </div>
+        <div class="alert alert-info">Contenido del dashboard GPON</div>
+      </section>
+      
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="/js/menu-nuevo.js?v=1" defer></script>
+  
+</body>
+</html>
