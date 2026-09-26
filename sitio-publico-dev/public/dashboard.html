@@ -672,14 +672,259 @@
       
       <!-- Módulo: Incidencias -->
       <section id="module-incidencia" class="module-section">
-        <div class="d-flex align-items-center mb-4">
-          <i class="bi bi-exclamation-triangle me-2" style="font-size: 24px; color: var(--brand);"></i>
-          <h2 class="mb-0">Incidencias</h2>
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-exclamation-triangle me-2" style="font-size: 28px; color: var(--brand);"></i>
+            <div>
+              <h2 class="mb-0 fw-bold">Reporte de Incidencias</h2>
+              <small class="text-muted">Registro y seguimiento de fallas en red</small>
+            </div>
+          </div>
         </div>
-        <div class="alert alert-info">
-          <i class="bi bi-info-circle me-2"></i>
-          Contenido del módulo de incidencias
+        
+        <!-- Información General -->
+        <div class="card-custom shadow-sm mb-4">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-info-circle me-2" style="color: var(--brand);"></i>
+              1. Información General
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="incidencia_fecha_reparacion" class="form-label fw-bold">Fecha de la Reparación</label>
+                <input type="date" id="incidencia_fecha_reparacion" class="form-control form-control-lg">
+              </div>
+              <div class="col-md-4">
+                <label for="incidencia_area_trabajo" class="form-label fw-bold">Área de Trabajo</label>
+                <select id="incidencia_area_trabajo" class="form-select form-select-lg">
+                  <option value="">Seleccione...</option>
+                  <option value="TI_VG_SC">TI_VG_SC</option>
+                  <option value="GV_NM_VN">GV_NM_VN</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="incidencia_n_falla" class="form-label fw-bold">Número de Falla</label>
+                <input type="text" id="incidencia_n_falla" class="form-control form-control-lg" placeholder="Ej. INC-123456">
+              </div>
+            </div>
+            <div class="mt-3">
+              <label for="incidencia_tecnicos_atienden" class="form-label fw-bold">Técnicos que Atienden</label>
+              <input type="text" id="incidencia_tecnicos_atienden" class="form-control form-control-lg" placeholder="Nombres de los técnicos...">
+            </div>
+          </div>
         </div>
+        
+        <!-- Datos del Cliente -->
+        <div class="card-custom shadow-sm mb-4">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-person me-2" style="color: var(--brand);"></i>
+              2. Datos del Cliente
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6 position-relative">
+                <label for="incidencia_busquedaCliente" class="form-label fw-bold">ID del Cliente</label>
+                <input type="text" id="incidencia_busquedaCliente" class="form-control form-control-lg" placeholder="Buscar ID..." autocomplete="off">
+                <div id="incidencia_resultadosBusqueda" class="position-absolute w-100" style="background:#fff; border:1px solid #e5e7eb; border-radius:12px; max-height:200px; overflow-y:auto; box-shadow:0 12px 28px rgba(16,24,40,.08); margin-top:4px; z-index:10; display:none;"></div>
+              </div>
+              <div class="col-md-6">
+                <label for="incidencia_nombre_cliente" class="form-label fw-bold">Nombre del Cliente</label>
+                <input type="text" id="incidencia_nombre_cliente" class="form-control form-control-lg" placeholder="Nombre completo...">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="incidencia_direccion_cliente" class="form-label fw-bold">Dirección del Cliente</label>
+              <input type="text" id="incidencia_direccion_cliente" class="form-control form-control-lg" placeholder="Dirección exacta...">
+            </div>
+            
+            <div id="incidencia_alertaReincidencia" class="alert alert-danger border-start border-4 border-danger" style="display:none;">
+              ⚠️ ATENCIÓN: Este cliente reportó fallas en los últimos 30 días.
+            </div>
+          </div>
+        </div>
+        
+        <!-- Detalle de la Falla -->
+        <div class="card-custom shadow-sm mb-4" id="incidencia_bloque_selectores_red">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-wrench me-2" style="color: var(--brand);"></i>
+              3. Detalle de la Falla en Red
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label for="incidencia_dano_red" class="form-label fw-bold">Daño en Red</label>
+                <select id="incidencia_dano_red" class="form-select form-select-lg">
+                  <option value="">Seleccione tipo de red...</option>
+                  <option value="Secundaria">Secundaria (Distribución/Dispersión)</option>
+                  <option value="Primaria">Primaria (Troncal)</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="incidencia_nodo" class="form-label fw-bold">Nodo al que pertenece</label>
+                <select id="incidencia_nodo" class="form-select form-select-lg">
+                  <option value="">Seleccione Nodo...</option>
+                  <option value="Claro">Claro</option>
+                  <option value="XT">XT</option>
+                  <option value="Telecomuniqu">Telecomuniqu</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="incidencia_tecnologia" class="form-label fw-bold">Tecnología</label>
+                <select id="incidencia_tecnologia" class="form-select form-select-lg">
+                  <option value="GPON">GPON</option>
+                  <option value="Ultima Milla">Última Milla</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Secundaria -->
+            <div id="incidencia_wrap_secundaria" class="p-3 mb-3" style="display:none; background:#f8fafc; border-radius:12px; border:1px dashed #e5e7eb;">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="incidencia_tipo_dano_secundaria" class="form-label fw-bold">Tipo de daño GPON</label>
+                  <select id="incidencia_tipo_dano_secundaria" class="form-select form-select-lg">
+                    <option value="">Seleccione...</option>
+                    <option value="Conector">Conector</option>
+                    <option value="Corte de abonado">Corte de abonado</option>
+                    <option value="Nap/Fat">Nap/Fat</option>
+                    <option value="Mufa">Mufa</option>
+                    <option value="Spliter Dañado">Spliter Dañado</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="incidencia_tipo_solucion_secundaria" class="form-label fw-bold">Tipo de Solución</label>
+                  <select id="incidencia_tipo_solucion_secundaria" class="form-select form-select-lg">
+                    <option value="">Seleccione...</option>
+                    <option value="cambio de conector">Cambio de conector</option>
+                    <option value="cambio y/o reparacion de acometida">Cambio y/o reparación de acometida</option>
+                    <option value="Sustitucion de cable Fo">Sustitución de cable Fo</option>
+                    <option value="Sustitucion de Cable Preconectorizado">Sustitución de Cable Preconectorizado</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Primaria -->
+            <div id="incidencia_wrap_primaria" class="p-3 mb-3" style="display:none; background:#fdf2f8; border-radius:12px; border:1px dashed #fbcfe8;">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="incidencia_tipo_dano_primaria" class="form-label fw-bold">Tipo de daño Troncal</label>
+                  <select id="incidencia_tipo_dano_primaria" class="form-select form-select-lg">
+                    <option value="">Seleccione...</option>
+                    <option value="corte">Corte</option>
+                    <option value="atenuacion">Atenuación</option>
+                    <option value="reflectancia">Reflectancia</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="incidencia_tipo_solucion_primaria" class="form-label fw-bold">Tipo de Solución (Troncal)</label>
+                  <select id="incidencia_tipo_solucion_primaria" class="form-select form-select-lg">
+                    <option value="">Seleccione...</option>
+                    <option value="cambio de cable">Cambio de cable</option>
+                    <option value="fusion">Fusión</option>
+                    <option value="reparacion en mufa">Reparación en mufa</option>
+                    <option value="conector">Conector</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <!-- ¿Se realiza reparación? -->
+            <div class="row g-3 align-items-end">
+              <div class="col-md-4">
+                <label for="incidencia_reparado" class="form-label fw-bold">¿Se realiza Reparación?</label>
+                <select id="incidencia_reparado" class="form-select form-select-lg">
+                  <option value="1">Sí</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              <div class="col-md-8" id="incidencia_wrap_motivo_no" style="display:none;">
+                <label for="incidencia_motivo_no_reparacion" class="form-label fw-bold text-danger">Motivo de NO reparación (Obligatorio)</label>
+                <input type="text" id="incidencia_motivo_no_reparacion" class="form-control form-control-lg" placeholder="Explique por qué no se pudo reparar..." style="border-color:#fecaca;">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Materiales y Red Alterna -->
+        <div class="card-custom shadow-sm mb-4" id="incidencia_seccion_materiales">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-box-seam me-2" style="color: var(--brand);"></i>
+              4. Materiales y Red Alterna
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="mb-3">
+              <label for="incidencia_material_utilizado" class="form-label fw-bold">Material utilizado</label>
+              <input type="text" id="incidencia_material_utilizado" class="form-control form-control-lg" placeholder="Ej. 15mts cable drop, 2 conectores...">
+            </div>
+            <div class="row g-3 align-items-end">
+              <div class="col-md-4">
+                <label for="incidencia_red_alterna" class="form-label fw-bold">Red alterna (¿Se cambia a red cercana?)</label>
+                <select id="incidencia_red_alterna" class="form-select form-select-lg">
+                  <option value="0">No</option>
+                  <option value="1">Sí</option>
+                </select>
+              </div>
+              <div class="col-md-8" id="incidencia_wrap_nombre_red" style="display:none;">
+                <label for="incidencia_nombre_red_alterna" class="form-label fw-bold">Ingrese red alterna</label>
+                <input type="text" id="incidencia_nombre_red_alterna" class="form-control form-control-lg" placeholder="Nombre de la nueva red...">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Evidencia en Campo -->
+        <div class="card-custom shadow-sm mb-4" id="incidencia_seccion_evidencia">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-camera me-2" style="color: var(--brand);"></i>
+              5. Evidencia en Campo
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="mb-4 text-center">
+              <button id="incidencia_btnGPSIncidencia" class="btn btn-info text-white py-3 px-4">
+                <i class="bi bi-geo-alt me-2"></i>
+                Capturar Ubicación GPS
+              </button>
+              <div id="incidencia_gpsTxtIncidencia" class="mt-2 text-muted" style="font-size:0.9rem;">Sin coordenadas...</div>
+            </div>
+            <input type="hidden" id="incidencia_latIncidencia">
+            <input type="hidden" id="incidencia_lngIncidencia">
+            <div>
+              <label for="incidencia_fotoIncidencia" class="form-label fw-bold">Foto de la Avería</label>
+              <input type="file" id="incidencia_fotoIncidencia" class="form-control form-control-lg" accept="image/*" capture="camera">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Notas del Técnico -->
+        <div class="card-custom shadow-sm mb-4" id="incidencia_seccion_notas">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-journal-text me-2" style="color: var(--brand);"></i>
+              Notas del Técnico
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <label for="incidencia_notas_tecnico" class="form-label fw-bold">Observaciones adicionales, obstáculos o sugerencias en campo:</label>
+            <textarea id="incidencia_notas_tecnico" class="form-control" rows="4" placeholder="Detalle aquí cualquier sugerencia, obstáculo en campo o trabajo pendiente..."></textarea>
+          </div>
+        </div>
+        
+        <!-- Botón Guardar -->
+        <button id="incidencia_btnGuardarIncidencia" class="btn btn-danger btn-lg w-100 py-3 fw-bold">
+          <i class="bi bi-save me-2"></i>
+          GUARDAR REPORTE
+        </button>
       </section>
       
       <!-- Otros módulos (placeholders) -->
@@ -921,11 +1166,170 @@
       </section>
       
       <section id="module-infra_movil" class="module-section">
-        <div class="d-flex align-items-center mb-4">
-          <i class="bi bi-cone-striped me-2" style="font-size: 24px; color: var(--brand);"></i>
-          <h2 class="mb-0">Modo Construcción</h2>
+        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-cone-striped me-2" style="font-size: 28px; color: var(--brand);"></i>
+            <div>
+              <h2 class="mb-0 fw-bold">Modo Construcción</h2>
+              <small class="text-muted">Levantamiento de infraestructura en campo</small>
+            </div>
+          </div>
         </div>
-        <div class="alert alert-info">Contenido del modo construcción</div>
+        
+        <!-- Panel GPS -->
+        <div class="card-custom shadow-sm mb-4">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-geo-alt me-2" style="color: #3b82f6;"></i>
+              Ubicación GPS
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="gps-panel text-center p-4" style="background: #eff6ff; border: 2px dashed #3b82f6; border-radius: 12px;">
+              <div id="gpsData" class="mb-3" style="font-family: 'Courier New', monospace; font-size: 1.1rem; color: #1e40af;">
+                Esperando señal GPS...
+              </div>
+              <button type="button" id="btnGPS" class="btn btn-primary w-100 py-3 fw-bold">
+                <i class="bi bi-crosshair me-2"></i>
+                CAPTURAR POSICIÓN ACTUAL
+              </button>
+              
+              <div id="radarResult" class="mt-3 p-3" style="display: none; background: #ecfdf5; border: 2px solid #16a34a; border-radius: 10px;">
+                <div id="radarMsg" class="fw-bold mb-2" style="color: #065f46;"></div>
+                <button type="button" id="btnUsarExistente" class="btn btn-success w-100">
+                  <i class="bi bi-check-circle me-2"></i>
+                  CONFIRMAR PUNTO EXISTENTE
+                </button>
+              </div>
+            </div>
+            
+            <input type="hidden" id="lat">
+            <input type="hidden" id="lng">
+            
+            <div id="containerAccionMufa" class="mt-3 p-3" style="display: none; background: #eff6ff; border: 2px solid #1e40af; border-radius: 10px;">
+              <button type="button" id="btnAbrirMufa" class="btn btn-primary w-100 py-3 fw-bold">
+                🪢 GESTIONAR MATRIZ MUFA EN ESTE PUNTO
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Buscador de Clientes -->
+        <div class="card-custom shadow-sm mb-4">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-search me-2" style="color: var(--brand);"></i>
+              Información del Cliente
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="mb-3">
+              <label for="clienteSearch" class="form-label fw-bold">🔍 Buscar Cliente (Nombre / ID / Tarea)</label>
+              <div class="position-relative">
+                <input type="text" id="clienteSearch" class="form-control form-control-lg" placeholder="Ej: Brenntag...">
+                <div id="clienteResults" class="position-absolute w-100" style="background: white; border: 1px solid #ddd; z-index: 100; max-height: 250px; overflow-y: auto; border-radius: 8px; display: none; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);"></div>
+              </div>
+              <input type="hidden" id="id_cliente_real">
+              <div id="clienteSeleccionado" class="mt-2 fw-bold" style="color: #16a34a; font-size: 0.9rem;"></div>
+            </div>
+            
+            <div id="statusTramo" class="p-3" style="background: #fff7ed; border: 1px solid #ffedd5; border-radius: 10px; line-height: 1.6;">
+              <span style="font-size: 1.3rem;">🚩</span> 
+              <b>PASO 1:</b> Captura el punto de inicio (A) para comenzar.
+            </div>
+          </div>
+        </div>
+        
+        <!-- Datos del Tramo -->
+        <div class="card-custom shadow-sm mb-4">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-rulers me-2" style="color: var(--brand);"></i>
+              Datos del Tramo
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="distancia_sig" class="form-label fw-bold">Distancia sig. (m)</label>
+                <input type="number" id="distancia_sig" class="form-control form-control-lg" placeholder="0.00">
+              </div>
+              <div class="col-md-6">
+                <label for="metraje_cable" class="form-label fw-bold">Metraje cable (m)</label>
+                <input type="number" id="metraje_cable" class="form-control form-control-lg" placeholder="0.00">
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="datos_cable" class="form-label fw-bold">Datos del Cable (Carrete / Tipo)</label>
+              <input type="text" id="datos_cable" class="form-control form-control-lg" placeholder="Ej: F.O. 24 hilos - Carrete #45">
+            </div>
+            
+            <div class="mb-3">
+              <label for="nota_tramo" class="form-label fw-bold">Comentario del Tramo</label>
+              <textarea id="nota_tramo" class="form-control" rows="2" placeholder="Notas sobre el metraje o la ruta del tramo..."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Punto de Infraestructura -->
+        <div class="card-custom shadow-sm mb-4" id="panelPunto">
+          <div class="card-header-custom bg-white">
+            <h5 class="mb-0 fw-semibold">
+              <i class="bi bi-pin-angle me-2" style="color: var(--brand);"></i>
+              Punto de Infraestructura
+            </h5>
+          </div>
+          <div class="card-body-custom">
+            <div class="mb-3">
+              <label for="tipo_punto" class="form-label fw-bold">Tipo de Infraestructura</label>
+              <select id="tipo_punto" class="form-select form-select-lg">
+                <option value="poste">Poste</option>
+                <option value="pozo">Pozo</option>
+                <option value="mufa">Mufa / Empalme</option>
+                <option value="nap">NAP / Terminal</option>
+                <option value="cliente">Punto Cliente</option>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <label for="nombre_punto" class="form-label fw-bold">Nombre / ID del Punto</label>
+              <input type="text" id="nombre_punto" class="form-control form-control-lg" placeholder="Ej: P-102">
+            </div>
+            
+            <div class="mb-3">
+              <label for="desc_punto" class="form-label fw-bold">Observaciones del Punto</label>
+              <textarea id="desc_punto" class="form-control" rows="2" placeholder="Estado físico, herrajes, altura, etc..."></textarea>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label fw-bold">Evidencia Fotográfica</label>
+              <input type="file" id="foto" class="form-control form-control-lg" accept="image/*" capture="environment" style="display:none">
+              <button type="button" onclick="document.getElementById('foto').click()" class="btn btn-dark w-100 py-3 mb-2">
+                <i class="bi bi-camera me-2"></i>
+                TOMAR FOTO DEL PUNTO
+              </button>
+              <img id="preview" class="img-fluid rounded mt-2" style="display: none; border: 1px solid #eee;">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Botonera Inferior -->
+        <div class="position-fixed bottom-0 start-0 end-0 p-3" style="background: white; box-shadow: 0 -5px 15px rgba(0,0,0,0.05); z-index: 1000;">
+          <div class="d-flex gap-2">
+            <button id="btnFinalizarInfra" class="btn btn-secondary flex-fill py-3 fw-bold">
+              <i class="bi bi-flag me-2"></i>
+              FINALIZAR
+            </button>
+            <button id="btnGuardarInfra" class="btn btn-danger flex-fill py-3 fw-bold" disabled>
+              <i class="bi bi-arrow-right me-2"></i>
+              SIGUIENTE PUNTO
+            </button>
+          </div>
+        </div>
+        
+        <!-- Espacio para evitar que la botonera tape contenido -->
+        <div style="height: 100px;"></div>
       </section>
       
       <section id="module-reportes_incidencias" class="module-section">
@@ -960,6 +1364,8 @@
   
   <script src="/js/buscar-dashboard.js?v=1" defer></script>
   <script src="/js/usuarios-dashboard.js?v=1" defer></script>
+  <script src="/js/infra-movil-dashboard.js?v=1" defer></script>
+  <script src="/js/incidencia-dashboard.js?v=1" defer></script>
   <script src="/js/menu-nuevo.js?v=2" defer></script>
   
 </body>
