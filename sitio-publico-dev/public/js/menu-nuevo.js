@@ -221,6 +221,10 @@
         setTimeout(() => window.initBuscarModule(), 100);
       } else if (moduleId === 'usuarios' && typeof window.initUsuariosModule === 'function') {
         setTimeout(() => window.initUsuariosModule(), 100);
+      } else if (moduleId === 'infra_movil' && typeof window.initInfraMovilModule === 'function') {
+        setTimeout(() => window.initInfraMovilModule(), 100);
+      } else if (moduleId === 'incidencia' && typeof window.initIncidenciaModule === 'function') {
+        setTimeout(() => window.initIncidenciaModule(), 100);
       }
       
       // Si hay submódulo, manejar lógica específica
